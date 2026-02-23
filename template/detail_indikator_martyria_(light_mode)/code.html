@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detail Indikator Martyria</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ecb613",
+                        "primary-dark": "#b88c0b",
+                        "background-light": "#fcfbf8",
+                        "background-dark": "#221d10",
+                        "surface": "#ffffff",
+                        "surface-accent": "#f3f0e7",
+                        "text-main": "#1b180d",
+                        "text-muted": "#9a864c",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f3f0e7; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1cbb8; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9a864c; 
+        }
+    </style>
+</head>
+<body class="bg-background-light text-text-main font-display antialiased overflow-hidden selection:bg-primary/30">
+<div class="flex h-screen w-full">
+<!-- Side Navigation -->
+<aside class="flex w-72 flex-col justify-between border-r border-[#e7e1cf] bg-[#fcfbf8] p-4 hidden lg:flex">
+<div class="flex flex-col gap-8">
+<!-- Profile / Brand -->
+<div class="flex items-center gap-3 px-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 shadow-sm border border-primary/20" data-alt="Portrait of a pastoral administrator" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCo8-AvrJR8JtSmx0-gk3E7haGKs28-T1bEkPvu4bxtJ1-zTP8IH2GbMiH2cGMbXuxMg4pgW5q8hKFhN4uQGGBReQHBta_cWpSfQSmfE3T1T50CgTqX4jKrMFV4srWLA5hsDS223KpIt3GySncxSOGmW_vMPiW3hwr1lzkCwgLAl4jZl6O8lJ5pE5rLbV2rPOL1wXqc8JCyaRmZJt357HUkQlASjhKeveFDaW3GYh0fcMdZyajxHuI1oK32vizdG5XVd7lvZDvQaBA");'></div>
+<div class="flex flex-col">
+<h1 class="text-text-main text-base font-bold leading-normal">Rev. Thomas Wise</h1>
+<p class="text-text-muted text-xs font-medium uppercase tracking-wider">Admin Panel</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-surface-accent transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">grid_view</span>
+<p class="text-text-main text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-surface-accent transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">bar_chart</span>
+<p class="text-text-main text-sm font-medium">Performance</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-surface-accent transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">volunteer_activism</span>
+<p class="text-text-main text-sm font-medium">Pastoral Care</p>
+</a>
+<!-- Active Item -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 border-l-4 border-primary shadow-sm" href="#">
+<span class="material-symbols-outlined text-primary font-bold">local_fire_department</span>
+<p class="text-text-main text-sm font-bold">Martyria</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-surface-accent transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">settings</span>
+<p class="text-text-main text-sm font-medium">Settings</p>
+</a>
+</nav>
+</div>
+<!-- Bottom Action -->
+<div class="px-2">
+<button class="flex w-full items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-red-50 text-red-600 transition-colors">
+<span class="material-symbols-outlined">logout</span>
+<p class="text-sm font-medium">Log Out</p>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex flex-1 flex-col h-full overflow-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between border-b border-[#e7e1cf] bg-white/80 backdrop-blur-md px-8 py-4 z-10 sticky top-0">
+<div class="flex items-center gap-4">
+<!-- Mobile Menu Toggle (Visible only on small screens) -->
+<button class="lg:hidden p-2 text-text-main">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-text-main text-xl font-bold tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                        Performance Evaluation
+                    </h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-text-muted text-[20px]">search</span>
+</div>
+<input class="block w-64 pl-10 pr-3 py-2 border-none rounded-lg bg-surface-accent text-sm placeholder-text-muted focus:ring-2 focus:ring-primary/50 transition-all" placeholder="Search indicators..." type="text"/>
+</div>
+<button class="relative p-2 rounded-full hover:bg-surface-accent transition-colors">
+<span class="material-symbols-outlined text-text-main">notifications</span>
+<span class="absolute top-1.5 right-1.5 size-2 bg-red-500 rounded-full border border-white"></span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<main class="flex-1 overflow-y-auto bg-[#fcfbf8] p-4 md:p-8">
+<div class="mx-auto max-w-6xl flex flex-col gap-8">
+<!-- Breadcrumbs & Heading -->
+<div class="flex flex-col gap-4">
+<nav class="flex items-center gap-2 text-sm">
+<a class="text-text-muted hover:text-primary transition-colors" href="#">Dashboard</a>
+<span class="text-text-muted">/</span>
+<a class="text-text-muted hover:text-primary transition-colors" href="#">Performance</a>
+<span class="text-text-muted">/</span>
+<span class="text-primary font-medium">Martyria</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-4xl font-black tracking-tight text-text-main mb-2">Detail Indikator: Martyria</h1>
+<p class="text-text-muted text-lg">Detailed analysis of Witnessing &amp; Mission performance indicators.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-accent hover:bg-[#e9e4d6] text-text-main rounded-lg text-sm font-bold transition-colors">
+<span class="material-symbols-outlined text-[20px]">share</span>
+                                    Share
+                                </button>
+<button class="flex items-center gap-2 px-5 py-2 bg-primary hover:bg-primary-dark text-white rounded-lg text-sm font-bold shadow-md shadow-primary/20 transition-all">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                                    Download Report
+                                </button>
+</div>
+</div>
+</div>
+<!-- Summary Hero Card -->
+<div class="bg-gradient-to-br from-white to-[#fffdf5] border border-[#e7e1cf] rounded-xl p-8 shadow-sm flex flex-col md:flex-row items-center gap-8 relative overflow-hidden group">
+<!-- Decorative bg element -->
+<div class="absolute -right-12 -top-12 size-64 bg-primary/5 rounded-full blur-3xl pointer-events-none group-hover:bg-primary/10 transition-all duration-500"></div>
+<div class="relative size-40 min-w-[160px] flex items-center justify-center">
+<!-- Circular Progress Visual -->
+<svg class="size-full -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-accent" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-primary drop-shadow-md" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="88, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-4xl font-black text-text-main">4.4</span>
+<span class="text-sm font-medium text-text-muted">out of 5.0</span>
+</div>
+</div>
+<div class="flex flex-col gap-4 flex-1 text-center md:text-left z-0">
+<div class="flex items-center justify-center md:justify-start gap-3">
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">local_fire_department</span>
+</div>
+<h3 class="text-xl font-bold text-text-main">Excellent Performance</h3>
+</div>
+<p class="text-text-muted max-w-xl leading-relaxed">
+                                Great commitment to public witnessing and mission. The indicators show strong integrity in personal life and active engagement in public forums. Advocacy efforts are stable, with opportunities for growth in community-led initiatives.
+                            </p>
+<div class="flex flex-wrap gap-3 justify-center md:justify-start mt-2">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+<span class="size-1.5 rounded-full bg-green-600 mr-1.5"></span>
+                                    On Track
+                                </span>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary-dark">
+                                    Top 10%
+                                </span>
+</div>
+</div>
+</div>
+<!-- Key Indicators Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1 -->
+<div class="bg-white p-6 rounded-xl border border-[#e7e1cf] shadow-sm flex flex-col gap-4 hover:border-primary/50 transition-colors">
+<div class="flex justify-between items-start">
+<div class="bg-blue-50 p-2 rounded-lg text-blue-600">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<span class="text-xs font-bold bg-gray-100 px-2 py-1 rounded text-gray-600">Peer Review</span>
+</div>
+<div>
+<p class="text-text-muted text-sm font-medium mb-1">Integritas &amp; Kesaksian Hidup</p>
+<p class="text-2xl font-bold text-text-main">4.8 <span class="text-sm font-normal text-text-muted">/ 5.0</span></p>
+</div>
+<div class="w-full bg-surface-accent rounded-full h-2 mt-auto">
+<div class="bg-blue-500 h-2 rounded-full" style="width: 96%"></div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-6 rounded-xl border border-[#e7e1cf] shadow-sm flex flex-col gap-4 hover:border-primary/50 transition-colors">
+<div class="flex justify-between items-start">
+<div class="bg-purple-50 p-2 rounded-lg text-purple-600">
+<span class="material-symbols-outlined">forum</span>
+</div>
+<span class="text-xs font-bold bg-green-100 text-green-700 px-2 py-1 rounded">+4 this month</span>
+</div>
+<div>
+<p class="text-text-muted text-sm font-medium mb-1">Forum Publik/Luar Gereja</p>
+<p class="text-2xl font-bold text-text-main">12 <span class="text-sm font-normal text-text-muted">Activities</span></p>
+</div>
+<p class="text-xs text-text-muted mt-auto">Seminars, town halls, &amp; dialogues.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-6 rounded-xl border border-[#e7e1cf] shadow-sm flex flex-col gap-4 hover:border-primary/50 transition-colors">
+<div class="flex justify-between items-start">
+<div class="bg-orange-50 p-2 rounded-lg text-orange-600">
+<span class="material-symbols-outlined">balance</span>
+</div>
+<span class="text-xs font-bold bg-gray-100 px-2 py-1 rounded text-gray-600">Impact</span>
+</div>
+<div>
+<p class="text-text-muted text-sm font-medium mb-1">Advokasi Keadilan</p>
+<p class="text-2xl font-bold text-text-main">2 <span class="text-sm font-normal text-text-muted">Cases</span></p>
+</div>
+<div class="flex -space-x-2 overflow-hidden mt-auto">
+<img class="inline-block size-6 rounded-full ring-2 ring-white object-cover" data-alt="Case study thumbnail 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-zacpA894MqNz0TZLZYAA_QX0Ruc_Gi9f3AeZ2Y_1O0ka6Peb3wsTGL1Y17o7_I3LKkU3DUZVHlohtSgsltpY6qi1acb7jtj8M3QyrAil1YTTUr0PlAnHnT9ZImIA4L5evqp8CB27SK5Pr9O6mdJNNakXvAGixbdUaQpoO5OB9MgqiiFRg4Z0Ml_L-WCeZ51c9XsSVlUWZheHHBQTlQxBzSIIn0ARCYTZ2CDj414Ev5NKAOnmFzekcYu4frpuETEhpqxp9z5vgWI"/>
+<img class="inline-block size-6 rounded-full ring-2 ring-white object-cover" data-alt="Case study thumbnail 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwTdBWITGsuoRKZAdNpZs_evPoZMTENy3U7SxMn4BjKjD21ww3ccT0qwbXTnx3ZhxeuBQWGu0jKpFgn0Nac1kGSi7Pm0Nav-4YgNCiMa2lyXLwwAXXq7EsRLAplBcI_7EE5LJ3_EW6NmdL5sM0477v435Rezf8nkX7c_a6_q_mb7c2CvWdd1Q3oIs8SaETnyxegJFPFWuUfP7m8HrEAGnwgTKLbL-JLuQDgYpNlARAwfRgLTkaOBl9VL2fMqG4ImKKNzT1Etqp7jw"/>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white p-6 rounded-xl border border-[#e7e1cf] shadow-sm flex flex-col gap-4 hover:border-primary/50 transition-colors group">
+<div class="flex justify-between items-start">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">military_tech</span>
+</div>
+<span class="text-xs font-bold bg-primary/20 text-primary-dark px-2 py-1 rounded animate-pulse">Awarded</span>
+</div>
+<div>
+<p class="text-text-muted text-sm font-medium mb-1">Keberanian Beropini Iman</p>
+<p class="text-xl font-bold text-text-main">Gold Badge</p>
+</div>
+<p class="text-xs text-text-muted mt-auto">High engagement in public discourse.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Activity Log -->
+<div class="lg:col-span-2 flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold text-text-main">Public Activity Log</h3>
+<button class="text-sm font-bold text-primary hover:underline">View All History</button>
+</div>
+<div class="bg-white rounded-xl border border-[#e7e1cf] shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm">
+<thead class="bg-surface-accent text-text-muted uppercase text-xs font-semibold tracking-wider">
+<tr>
+<th class="px-6 py-4">Date</th>
+<th class="px-6 py-4">Activity</th>
+<th class="px-6 py-4">Role</th>
+<th class="px-6 py-4">Impact</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#e7e1cf]">
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 font-medium text-text-muted whitespace-nowrap">Oct 24, 2023</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-semibold text-text-main">Inter-faith Peace Dialogue</span>
+<span class="text-xs text-text-muted">City Hall Auditorium</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded bg-blue-50 text-blue-700 text-xs font-medium border border-blue-100">Keynote Speaker</span>
+</td>
+<td class="px-6 py-4 text-text-muted">
+                                                    High (200+ attendees)
+                                                </td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 font-medium text-text-muted whitespace-nowrap">Oct 12, 2023</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-semibold text-text-main">Community Clean-up</span>
+<span class="text-xs text-text-muted">Riverside District</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded bg-gray-100 text-gray-700 text-xs font-medium border border-gray-200">Organizer</span>
+</td>
+<td class="px-6 py-4 text-text-muted">
+                                                    Medium (Local news coverage)
+                                                </td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 font-medium text-text-muted whitespace-nowrap">Sep 28, 2023</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-semibold text-text-main">Justice Advocacy Workshop</span>
+<span class="text-xs text-text-muted">Online Webinar</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded bg-purple-50 text-purple-700 text-xs font-medium border border-purple-100">Moderator</span>
+</td>
+<td class="px-6 py-4 text-text-muted">
+                                                    Low (Internal Training)
+                                                </td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 font-medium text-text-muted whitespace-nowrap">Sep 15, 2023</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-semibold text-text-main">Local School Board Meeting</span>
+<span class="text-xs text-text-muted">District 4 Office</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded bg-green-50 text-green-700 text-xs font-medium border border-green-100">Participant</span>
+</td>
+<td class="px-6 py-4 text-text-muted">
+                                                    Medium (Policy input)
+                                                </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-[#e7e1cf] bg-surface-accent/30 text-center">
+<button class="text-sm font-medium text-text-muted hover:text-primary transition-colors flex items-center justify-center gap-1 w-full">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+                                        Log New Activity
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Right Column: Testimonials -->
+<div class="flex flex-col gap-6">
+<h3 class="text-lg font-bold text-text-main">Community Feedback</h3>
+<div class="flex flex-col gap-4">
+<!-- Testimonial Card 1 -->
+<div class="bg-white p-6 rounded-xl border border-[#e7e1cf] shadow-sm relative">
+<span class="material-symbols-outlined absolute top-4 right-4 text-primary/20 text-4xl">format_quote</span>
+<p class="text-text-main italic mb-4 relative z-10 text-sm leading-relaxed">
+                                        "Rev. Thomas showed great wisdom during the town hall meeting. His ability to bridge the gap between conflicting parties was truly a witness to his faith."
+                                    </p>
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Portrait of Sarah Jenkins" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCvnS1oLGgxDctTAyP1z9cfuNJ-uRhNKaHIYm2U1ouc268NouwARcBdqnLygK9bL7eDVLfHc_H5QV9U6oI1DuHu-V-HdEWfFNV_uIajvq8irRlZS1a6d4Efwqb66k-LsGAWGp0KtzMim3wMQD_C7iQ3sjBfohCqhmlKOebHk4ITu-BYsm7e_IQ3I85ad93f6dWg82vZcwox7INLkU4u0ydddn-ryk6aLu53k964iwBpeUQuOHdVha5e_HHgiNGoRruWj0BDppyYUmk");'></div>
+<div>
+<p class="text-sm font-bold text-text-main">Sarah Jenkins</p>
+<p class="text-xs text-text-muted">Local Community Leader</p>
+</div>
+</div>
+</div>
+<!-- Testimonial Card 2 -->
+<div class="bg-white p-6 rounded-xl border border-[#e7e1cf] shadow-sm relative">
+<span class="material-symbols-outlined absolute top-4 right-4 text-primary/20 text-4xl">format_quote</span>
+<p class="text-text-main italic mb-4 relative z-10 text-sm leading-relaxed">
+                                        "His consistent presence at the food drive inspires our volunteers. He doesn't just preach; he serves alongside us."
+                                    </p>
+<div class="flex items-center gap-3">
+<div class="bg-primary/20 rounded-full size-10 flex items-center justify-center text-primary-dark font-bold text-sm">
+                                            MJ
+                                        </div>
+<div>
+<p class="text-sm font-bold text-text-main">Michael Jones</p>
+<p class="text-xs text-text-muted">NGO Partner, FoodBank</p>
+</div>
+</div>
+</div>
+<button class="w-full py-3 rounded-lg border border-dashed border-text-muted/40 text-text-muted hover:border-primary hover:text-primary hover:bg-primary/5 transition-all text-sm font-medium flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">rate_review</span>
+                                    Request Feedback
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Spacer -->
+<div class="h-10"></div>
+</main>
+</div>
+</div>
+</body></html>

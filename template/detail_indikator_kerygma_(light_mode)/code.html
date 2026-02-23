@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detail Indikator Kerygma</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                        "secondary-text": "#4c9a66",
+                        "dark-text": "#0d1b12",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e7f3eb;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d1e7d9;
+        }
+        
+        /* Grid pattern for background texture */
+        .bg-grid-pattern {
+            background-image: radial-gradient(#13ec5b 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-dark-text font-display antialiased overflow-hidden">
+<div class="flex h-screen w-full relative">
+<!-- Side Navigation -->
+<aside class="hidden lg:flex w-64 flex-col bg-white border-r border-[#e7f3eb] z-20 h-full">
+<div class="p-6 flex flex-col gap-1">
+<div class="mb-8 px-2">
+<h1 class="text-dark-text text-xl font-bold leading-normal tracking-tight">Pastoral Eval</h1>
+<p class="text-secondary-text text-xs font-medium uppercase tracking-wider mt-1">Admin Panel</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#e7f3eb] transition-colors group" href="#">
+<span class="material-symbols-outlined text-secondary-text group-hover:text-dark-text">dashboard</span>
+<p class="text-secondary-text group-hover:text-dark-text text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#e7f3eb]" href="#">
+<span class="material-symbols-outlined text-dark-text fill-1">menu_book</span>
+<p class="text-dark-text text-sm font-bold">Kerygma</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#e7f3eb] transition-colors group" href="#">
+<span class="material-symbols-outlined text-secondary-text group-hover:text-dark-text">church</span>
+<p class="text-secondary-text group-hover:text-dark-text text-sm font-medium">Liturgia</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#e7f3eb] transition-colors group" href="#">
+<span class="material-symbols-outlined text-secondary-text group-hover:text-dark-text">volunteer_activism</span>
+<p class="text-secondary-text group-hover:text-dark-text text-sm font-medium">Diakonia</p>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#e7f3eb] transition-colors group" href="#">
+<span class="material-symbols-outlined text-secondary-text group-hover:text-dark-text">diversity_3</span>
+<p class="text-secondary-text group-hover:text-dark-text text-sm font-medium">Martyria</p>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 border-t border-[#e7f3eb]">
+<div class="flex items-center gap-3 px-2">
+<div class="w-10 h-10 rounded-full bg-cover bg-center border-2 border-primary" data-alt="Profile picture of the current user" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDk3FCQKsq-tn0QdMi8xazm6-Nk2Tvl85m34ygU1uYPFeJHq8mXf62ilp34OaO76anjL2IE2n18eQzjwJNs9cIQVghI1BtNBFUn7TkGr4oqSOXYm0AvheR4_SPzIB89xxMMKg06wKxTMrwA7mLlHaT97jrm_saNjx_7b-aIWwQqKTNLNtnws4xSsr9dkNZGdZ0vx2Oe6WCevlDWDZdbW3-csUScH2vCbXCYSSq8Nb8SaVCGazlt4WVmvC-o0nMb-K4f6ikLZ7EVVxk');"></div>
+<div>
+<p class="text-dark-text text-sm font-bold">Romo Budi</p>
+<p class="text-secondary-text text-xs">Kepala Paroki</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<main class="flex-1 flex flex-col h-full relative overflow-hidden">
+<!-- Top Header -->
+<header class="h-16 flex items-center justify-between px-6 lg:px-8 border-b border-[#e7f3eb] bg-white/80 backdrop-blur-sm z-10">
+<div class="flex items-center gap-4">
+<!-- Mobile Toggle -->
+<button class="lg:hidden text-dark-text">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Search -->
+<div class="relative hidden sm:block w-64">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-secondary-text text-xl">search</span>
+<input class="w-full h-10 pl-10 pr-4 bg-[#f2f7f4] border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/50 text-dark-text placeholder:text-secondary-text/70 transition-all" placeholder="Cari indikator..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-[#e7f3eb] text-dark-text transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-[#e7f3eb] text-dark-text transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-6 lg:p-8 relative">
+<div class="bg-grid-pattern absolute inset-0 pointer-events-none"></div>
+<div class="max-w-[1200px] mx-auto flex flex-col gap-6 relative z-0">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 text-sm font-medium">
+<a class="text-secondary-text hover:text-primary transition-colors" href="#">Dashboard</a>
+<span class="text-secondary-text/50">/</span>
+<a class="text-secondary-text hover:text-primary transition-colors" href="#">Evaluasi</a>
+<span class="text-secondary-text/50">/</span>
+<span class="text-dark-text">Kerygma</span>
+</div>
+<!-- Page Heading & Controls -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="flex flex-col gap-1">
+<h2 class="text-3xl md:text-4xl font-bold text-dark-text tracking-tight">Detail Indikator: <span class="text-[#059648]">Kerygma</span></h2>
+<p class="text-secondary-text">Analisis performa pilar pengajaran dan pewartaan</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="h-10 px-4 bg-white border border-[#e7f3eb] rounded-xl text-dark-text text-sm font-bold shadow-sm hover:shadow-md transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<span>Q1 2024</span>
+</button>
+<button class="h-10 px-4 bg-primary text-dark-text text-sm font-bold rounded-xl shadow-[0_4px_14px_rgba(19,236,91,0.3)] hover:shadow-[0_6px_20px_rgba(19,236,91,0.4)] hover:-translate-y-0.5 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">download</span>
+<span>Export Report</span>
+</button>
+</div>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Summary Card (Score) -->
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-[#e7f3eb] flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute right-[-20px] top-[-20px] bg-[#e7f3eb] rounded-full w-24 h-24 flex items-center justify-center opacity-50 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl text-primary mt-4 mr-4">auto_stories</span>
+</div>
+<div>
+<p class="text-secondary-text text-sm font-medium mb-1">Skor Kerygma</p>
+<div class="flex items-baseline gap-2">
+<h3 class="text-5xl font-bold text-dark-text tracking-tight">4.7</h3>
+<span class="text-secondary-text text-lg font-medium">/ 5.0</span>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-2 bg-[#e7f3eb] w-fit px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-sm text-[#059648]">trending_up</span>
+<span class="text-xs font-bold text-[#059648]">+0.2% dari bulan lalu</span>
+</div>
+</div>
+<!-- Participants Counter -->
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-[#e7f3eb] flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<p class="text-secondary-text text-sm font-medium">Peserta Katekumen</p>
+<span class="material-symbols-outlined text-primary bg-[#e7f3eb] p-1.5 rounded-lg">groups</span>
+</div>
+<div class="mt-2">
+<h3 class="text-4xl font-bold text-dark-text">124</h3>
+<p class="text-xs text-secondary-text mt-1">Total peserta aktif bulan ini</p>
+</div>
+<div class="w-full bg-[#f2f7f4] rounded-full h-1.5 mt-4">
+<div class="bg-primary h-1.5 rounded-full" style="width: 78%"></div>
+</div>
+</div>
+<!-- Rating: Kedalaman Materi -->
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-[#e7f3eb] flex flex-col justify-between md:col-span-2 lg:col-span-1">
+<div class="flex justify-between items-start mb-4">
+<p class="text-secondary-text text-sm font-medium">Kedalaman Materi</p>
+<span class="material-symbols-outlined text-primary bg-[#e7f3eb] p-1.5 rounded-lg">psychology</span>
+</div>
+<div class="flex flex-col gap-4">
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-sm font-bold text-dark-text">Teologis</span>
+<span class="text-sm font-bold text-dark-text">4.8</span>
+</div>
+<div class="w-full bg-[#f2f7f4] rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 96%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-sm font-bold text-dark-text">Relevansi</span>
+<span class="text-sm font-bold text-dark-text">4.2</span>
+</div>
+<div class="w-full bg-[#f2f7f4] rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 84%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Skills Badges -->
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-[#e7f3eb] flex flex-col lg:col-span-1">
+<div class="flex justify-between items-start mb-4">
+<p class="text-secondary-text text-sm font-medium">Metode Pengajaran</p>
+<span class="material-symbols-outlined text-primary bg-[#e7f3eb] p-1.5 rounded-lg">school</span>
+</div>
+<div class="flex flex-wrap gap-2 content-start">
+<span class="inline-flex items-center px-2.5 py-1 rounded-lg bg-[#e7f3eb] text-[#059648] text-xs font-bold border border-[#d1e7d9]">
+                                    Storytelling
+                                </span>
+<span class="inline-flex items-center px-2.5 py-1 rounded-lg bg-[#e7f3eb] text-[#059648] text-xs font-bold border border-[#d1e7d9]">
+                                    Visual Aids
+                                </span>
+<span class="inline-flex items-center px-2.5 py-1 rounded-lg bg-[#e7f3eb] text-[#059648] text-xs font-bold border border-[#d1e7d9]">
+                                    Interactive
+                                </span>
+<span class="inline-flex items-center px-2.5 py-1 rounded-lg bg-white text-secondary-text text-xs font-bold border border-dashed border-secondary-text/40 hover:border-primary hover:text-primary cursor-pointer transition-colors">
+                                    + Add Tag
+                                </span>
+</div>
+<div class="mt-auto pt-4">
+<p class="text-xs text-secondary-text">Dinovilai sangat kreatif dalam penyampaian materi.</p>
+</div>
+</div>
+</div>
+<!-- Row 2: Heatmap & Resources -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Calendar Heatmap -->
+<div class="lg:col-span-2 bg-white p-6 rounded-2xl shadow-sm border border-[#e7f3eb]">
+<div class="flex justify-between items-center mb-6">
+<div>
+<h3 class="text-lg font-bold text-dark-text">Konsistensi Jadwal</h3>
+<p class="text-sm text-secondary-text">Frekuensi sesi pengajaran dalam 3 bulan terakhir</p>
+</div>
+<div class="flex items-center gap-2 text-xs text-secondary-text">
+<span>Kurang</span>
+<div class="flex gap-1">
+<div class="w-3 h-3 rounded-sm bg-[#f2f7f4]"></div>
+<div class="w-3 h-3 rounded-sm bg-[#bbf7ce]"></div>
+<div class="w-3 h-3 rounded-sm bg-[#5ef28d]"></div>
+<div class="w-3 h-3 rounded-sm bg-primary"></div>
+</div>
+<span>Sering</span>
+</div>
+</div>
+<!-- Heatmap Grid Implementation (CSS Grid) -->
+<div class="w-full overflow-x-auto">
+<div class="min-w-[500px] flex flex-col gap-1">
+<!-- Days Labels -->
+<div class="flex gap-1 text-[10px] text-secondary-text mb-1 pl-8">
+<span class="flex-1">Jan</span>
+<span class="flex-1">Feb</span>
+<span class="flex-1">Mar</span>
+</div>
+<div class="flex gap-2">
+<div class="flex flex-col gap-[3px] text-[10px] text-secondary-text pt-1 w-6">
+<span>Sen</span>
+<span>Rbu</span>
+<span>Jum</span>
+</div>
+<div class="flex-1 grid grid-rows-3 grid-flow-col gap-[3px]">
+<!-- Generating pseudo-random heatmap cells -->
+<!-- Week 1 -->
+<div class="w-full aspect-square rounded-sm bg-[#f2f7f4]" title="No activity"></div>
+<div class="w-full aspect-square rounded-sm bg-[#bbf7ce]" title="1 Session"></div>
+<div class="w-full aspect-square rounded-sm bg-primary" title="3 Sessions"></div>
+<!-- Week 2 -->
+<div class="w-full aspect-square rounded-sm bg-[#5ef28d]" title="2 Sessions"></div>
+<div class="w-full aspect-square rounded-sm bg-[#f2f7f4]"></div>
+<div class="w-full aspect-square rounded-sm bg-[#bbf7ce]"></div>
+<!-- Week 3 -->
+<div class="w-full aspect-square rounded-sm bg-primary"></div>
+<div class="w-full aspect-square rounded-sm bg-primary"></div>
+<div class="w-full aspect-square rounded-sm bg-[#5ef28d]"></div>
+<!-- Week 4 -->
+<div class="w-full aspect-square rounded-sm bg-[#f2f7f4]"></div>
+<div class="w-full aspect-square rounded-sm bg-[#bbf7ce]"></div>
+<div class="w-full aspect-square rounded-sm bg-[#bbf7ce]"></div>
+<!-- Week 5 -->
+<div class="w-full aspect-square rounded-sm bg-primary"></div>
+<div class="w-full aspect-square rounded-sm bg-[#5ef28d]"></div>
+<div class="w-full aspect-square rounded-sm bg-primary"></div>
+<!-- Week 6 -->
+<div class="w-full aspect-square rounded-sm bg-[#f2f7f4]"></div>
+<div class="w-full aspect-square rounded-sm bg-[#f2f7f4]"></div>
+<div class="w-full aspect-square rounded-sm bg-[#bbf7ce]"></div>
+<!-- Week 7 -->
+<div class="w-full aspect-square rounded-sm bg-primary"></div>
+<div class="w-full aspect-square rounded-sm bg-primary"></div>
+<div class="w-full aspect-square rounded-sm bg-[#5ef28d]"></div>
+<!-- Week 8 -->
+<div class="w-full aspect-square rounded-sm bg-[#bbf7ce]"></div>
+<div class="w-full aspect-square rounded-sm bg-[#bbf7ce]"></div>
+<div class="w-full aspect-square rounded-sm bg-primary"></div>
+<!-- Week 9 -->
+<div class="w-full aspect-square rounded-sm bg-[#f2f7f4]"></div>
+<div class="w-full aspect-square rounded-sm bg-[#5ef28d]"></div>
+<div class="w-full aspect-square rounded-sm bg-[#5ef28d]"></div>
+<!-- Week 10 -->
+<div class="w-full aspect-square rounded-sm bg-primary"></div>
+<div class="w-full aspect-square rounded-sm bg-[#bbf7ce]"></div>
+<div class="w-full aspect-square rounded-sm bg-[#f2f7f4]"></div>
+<!-- Week 11 -->
+<div class="w-full aspect-square rounded-sm bg-[#5ef28d]"></div>
+<div class="w-full aspect-square rounded-sm bg-primary"></div>
+<div class="w-full aspect-square rounded-sm bg-primary"></div>
+<!-- Week 12 -->
+<div class="w-full aspect-square rounded-sm bg-[#bbf7ce]"></div>
+<div class="w-full aspect-square rounded-sm bg-[#f2f7f4]"></div>
+<div class="w-full aspect-square rounded-sm bg-[#bbf7ce]"></div>
+<!-- Week 13 -->
+<div class="w-full aspect-square rounded-sm bg-primary"></div>
+<div class="w-full aspect-square rounded-sm bg-primary"></div>
+<div class="w-full aspect-square rounded-sm bg-[#5ef28d]"></div>
+<!-- Week 14 -->
+<div class="w-full aspect-square rounded-sm bg-[#bbf7ce]"></div>
+<div class="w-full aspect-square rounded-sm bg-[#bbf7ce]"></div>
+<div class="w-full aspect-square rounded-sm bg-primary"></div>
+<!-- Week 15 -->
+<div class="w-full aspect-square rounded-sm bg-[#f2f7f4]"></div>
+<div class="w-full aspect-square rounded-sm bg-[#5ef28d]"></div>
+<div class="w-full aspect-square rounded-sm bg-[#5ef28d]"></div>
+<!-- Week 16 -->
+<div class="w-full aspect-square rounded-sm bg-primary"></div>
+<div class="w-full aspect-square rounded-sm bg-[#bbf7ce]"></div>
+<div class="w-full aspect-square rounded-sm bg-[#f2f7f4]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Resource Library -->
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-[#e7f3eb] flex flex-col">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-lg font-bold text-dark-text">Materi Ajar</h3>
+<button class="text-xs font-bold text-primary hover:text-[#059648] transition-colors">Lihat Semua</button>
+</div>
+<div class="flex flex-col gap-3 flex-1">
+<!-- File Item 1 -->
+<div class="flex items-center gap-3 p-3 rounded-xl bg-[#f8fcf9] hover:bg-[#e7f3eb] transition-colors cursor-pointer group border border-transparent hover:border-[#d1e7d9]">
+<div class="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center text-red-500">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-dark-text truncate">Katekese_Minggu_1.pdf</p>
+<p class="text-xs text-secondary-text">2.4 MB • 12 Jan 2024</p>
+</div>
+<span class="material-symbols-outlined text-secondary-text opacity-0 group-hover:opacity-100 transition-opacity">download</span>
+</div>
+<!-- File Item 2 -->
+<div class="flex items-center gap-3 p-3 rounded-xl bg-[#f8fcf9] hover:bg-[#e7f3eb] transition-colors cursor-pointer group border border-transparent hover:border-[#d1e7d9]">
+<div class="w-10 h-10 rounded-lg bg-orange-50 flex items-center justify-center text-orange-500">
+<span class="material-symbols-outlined">slideshow</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-dark-text truncate">Slide_Bina_Iman.pptx</p>
+<p class="text-xs text-secondary-text">5.1 MB • 15 Jan 2024</p>
+</div>
+<span class="material-symbols-outlined text-secondary-text opacity-0 group-hover:opacity-100 transition-opacity">download</span>
+</div>
+<!-- File Item 3 -->
+<div class="flex items-center gap-3 p-3 rounded-xl bg-[#f8fcf9] hover:bg-[#e7f3eb] transition-colors cursor-pointer group border border-transparent hover:border-[#d1e7d9]">
+<div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-500">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-dark-text truncate">Panduan_Fasilitator.docx</p>
+<p class="text-xs text-secondary-text">1.2 MB • 20 Jan 2024</p>
+</div>
+<span class="material-symbols-outlined text-secondary-text opacity-0 group-hover:opacity-100 transition-opacity">download</span>
+</div>
+</div>
+<button class="w-full mt-4 py-2 rounded-xl border border-dashed border-secondary-text/40 text-secondary-text text-sm font-medium hover:bg-[#f2f7f4] hover:border-primary hover:text-primary transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">upload_file</span>
+                                Upload Materi Baru
+                            </button>
+</div>
+</div>
+<!-- Evaluation Summary -->
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-[#e7f3eb]">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-full bg-[#e7f3eb] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl">rate_review</span>
+</div>
+<div class="flex-1">
+<h3 class="text-lg font-bold text-dark-text mb-2">Evaluasi Supervisor</h3>
+<div class="prose prose-sm max-w-none text-secondary-text">
+<p class="mb-3">
+                                        "Secara keseluruhan, kinerja pelayanan <strong class="text-dark-text">Kerygma</strong> pada kuartal ini sangat memuaskan. Komunikasi yang dibangun dengan peserta katekumen sangat jelas dan terstruktur. Metode penyampaian materi menggunakan visual aids sangat membantu pemahaman peserta."
+                                    </p>
+<p class="mb-3">
+<strong class="text-dark-text">Area Pengembangan:</strong> Perlu adanya pendalaman teologi yang lebih intensif pada sesi tanya jawab, terutama mengenai sakramen. Disarankan untuk menambah referensi literatur pada sesi minggu ke-3.
+                                    </p>
+</div>
+<div class="mt-6 flex flex-wrap gap-4">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-green-50 border border-green-100">
+<span class="material-symbols-outlined text-green-600 text-sm">check_circle</span>
+<span class="text-xs font-bold text-green-700">Komunikasi Efektif</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-green-50 border border-green-100">
+<span class="material-symbols-outlined text-green-600 text-sm">check_circle</span>
+<span class="text-xs font-bold text-green-700">Kreativitas Metode</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-50 border border-amber-100">
+<span class="material-symbols-outlined text-amber-600 text-sm">warning</span>
+<span class="text-xs font-bold text-amber-700">Pendalaman Teologi</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

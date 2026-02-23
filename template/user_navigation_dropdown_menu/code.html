@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Navigation Dropdown</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col overflow-x-hidden">
+<!-- Main Layout Container -->
+<div class="relative flex h-full grow flex-col">
+<!-- Header Section -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-[#1A2C35] px-6 py-3 shadow-sm">
+<!-- Left: Logo & Title -->
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] hidden sm:block">Pastoral Eval System</h2>
+</div>
+<!-- Right: User Profile Trigger & Dropdown -->
+<div class="relative flex flex-1 justify-end gap-8">
+<!-- Profile Trigger Button (Simulated active state) -->
+<div class="relative group/menu">
+<button class="flex items-center gap-3 cursor-pointer rounded-full pl-1 pr-3 py-1 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50">
+<div class="size-9 rounded-full bg-slate-200 bg-center bg-cover border border-slate-200 dark:border-slate-600" data-alt="User profile avatar of John Doe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuByPEARdKxskzz2Gpwvvmuncvh_vSLrkvM_G1Op_GEFSJz5nPyrLSj5TuknWOK5dOMjr9u3AX5lQPIX7g3piMPaG7FQwAJodW8LF-MOEMSuGibJi3feNI1Z2ZCYjWaUtwMOKsOE7ueQEh6Vv6UTTd4Ma7b5qLixxmlXDbsHTXXG6NrGYah_afA5TiqAvnL92gNkp1OSST01oaQwe3P_epy1ErvbF8FDWkTk-AOAj8ihZubK_aFWc2kNcjFuSoxksjVoZXWf05IW5xU");'></div>
+<div class="hidden md:flex flex-col items-start text-sm">
+<span class="font-semibold text-slate-900 dark:text-white leading-none">John Doe</span>
+</div>
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 text-[20px]">expand_more</span>
+</button>
+<!-- Dropdown Menu Overlay -->
+<!-- Positioned absolutely to simulate the open state requested in the prompt -->
+<div class="absolute right-0 top-full mt-2 w-72 origin-top-right rounded-lg bg-white dark:bg-[#1A2C35] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50 border border-slate-100 dark:border-slate-700">
+<!-- 1. User Info Header -->
+<div class="px-5 py-4 border-b border-slate-100 dark:border-slate-700/50">
+<p class="text-slate-900 dark:text-white font-bold text-base">John Doe</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium mt-0.5 uppercase tracking-wide">Administrator</p>
+</div>
+<!-- 2. Menu Items -->
+<div class="py-2 flex flex-col p-1">
+<a class="group flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-primary dark:text-slate-400 dark:group-hover:text-primary transition-colors">person</span>
+<span class="font-medium">Profil Saya</span>
+</a>
+<a class="group flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-primary dark:text-slate-400 dark:group-hover:text-primary transition-colors">shield</span>
+<span class="font-medium">Pengaturan Keamanan</span>
+</a>
+<a class="group flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-primary dark:text-slate-400 dark:group-hover:text-primary transition-colors">help</span>
+<span class="font-medium">Bantuan &amp; Dukungan</span>
+</a>
+</div>
+<!-- 3. Separator -->
+<div class="h-px bg-slate-100 dark:bg-slate-700/50 my-1 mx-2"></div>
+<!-- 4. Logout Action -->
+<div class="p-1 mb-1">
+<button class="w-full group flex items-center gap-3 px-4 py-2.5 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-md transition-colors">
+<span class="material-symbols-outlined text-[20px] text-red-500 dark:text-red-400 group-hover:text-red-600 dark:group-hover:text-red-300 transition-colors">logout</span>
+<span class="font-semibold">Keluar</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area (Placeholder for context) -->
+<main class="flex-1 flex justify-center p-6 sm:p-10">
+<div class="w-full max-w-[960px] flex flex-col gap-6">
+<!-- Dashboard Hero Card (Context) -->
+<div class="rounded-xl overflow-hidden shadow-sm bg-white dark:bg-[#1A2C35] h-64 relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Abstract blurred office background showing productivity" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC28nWhZHfJYTK2Ry4j9OwqbLmWifKo6ry-75L8XFs4WhsUS_oX7KurmAB4wq5ILacocVkKjuLLRnXCUAvtpSowJzIBRfU--tiyLumhW3nQrKQrx05tPmAlAz4E9lpZqAfHuwT42T73WPNlAK2zgog-5AGxOEfi5uzIp_FS4mtGD-YuuIqtbtS2FnUeiBPziCwA7NsYgVGzuIvXeowfVYAk3mpDVwlBAcZ27doNT0nVj8v0IdhuxttGkdWePr-m9UfQycncDWGYusk");'>
+<div class="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/40 mix-blend-multiply"></div>
+</div>
+<div class="relative z-10 h-full flex flex-col justify-center px-8 sm:px-12 text-white">
+<h1 class="text-3xl font-bold mb-2">Selamat Datang, John Doe</h1>
+<p class="text-slate-200 max-w-xl">Akses dasbor evaluasi pastoral Anda untuk meninjau metrik kinerja dan wawasan pertumbuhan jemaat minggu ini.</p>
+<button class="mt-6 w-fit bg-primary hover:bg-sky-500 text-white px-5 py-2.5 rounded-lg font-bold text-sm transition-colors shadow-lg shadow-primary/30">
+                            Lihat Laporan Terbaru
+                        </button>
+</div>
+</div>
+<!-- Stats Grid (Context) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-[#1A2C35] p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">group</span>
+<span class="text-slate-500 dark:text-slate-400 font-medium text-sm">Total Jemaat</span>
+</div>
+<p class="text-3xl font-bold text-slate-900 dark:text-white">2,450</p>
+</div>
+<div class="bg-white dark:bg-[#1A2C35] p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-emerald-500 bg-emerald-500/10 p-2 rounded-lg">event_available</span>
+<span class="text-slate-500 dark:text-slate-400 font-medium text-sm">Kehadiran Minggu Ini</span>
+</div>
+<p class="text-3xl font-bold text-slate-900 dark:text-white">87%</p>
+</div>
+<div class="bg-white dark:bg-[#1A2C35] p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-amber-500 bg-amber-500/10 p-2 rounded-lg">volunteer_activism</span>
+<span class="text-slate-500 dark:text-slate-400 font-medium text-sm">Pelayanan Aktif</span>
+</div>
+<p class="text-3xl font-bold text-slate-900 dark:text-white">124</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

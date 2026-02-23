@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pusat Bantuan &amp; FAQ - Sistem Pastoral</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "primary-dark": "#0b8acb",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#0f172a", // Slate 900
+                        "surface-dark": "#1e293b", // Slate 800
+                        "border-dark": "#334155", // Slate 700
+                        "text-muted": "#94a3b8", // Slate 400
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "md": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for dark theme consistency */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+        
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary selection:text-white">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Side Navigation -->
+<aside class="flex w-72 flex-col justify-between border-r border-slate-200 dark:border-border-dark bg-white dark:bg-[#111c22] p-4 hidden lg:flex">
+<div class="flex flex-col gap-6">
+<!-- User Profile Snippet -->
+<div class="flex items-center gap-3 rounded-lg p-2 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800">
+<div class="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-slate-200 dark:border-slate-700">
+<img alt="Portrait of a female administrator" class="h-full w-full object-cover" data-alt="Portrait of a female administrator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOKOtIBl4weLxctmvJVJuv0uwkMC-nf8tGk_L-hS8pwHmO9SvlhvqUHwktCIDvmSvRhMNNrOVQa1TGRONs1fZxGJJixrXKTXhYGgLAkOldFWjMXzX2B0mE4v3mCooDdToJyHdNRA-XATay2va_ZqhG7e5ZtZbc_f_iNHAxml2fVUBWLL377NzfquwqLALi9XJzeSEnGlsywZnkeTKadkITyFe6jCrVvJtOZrBQpDJiyugpy7-JCjJ-NvtgKnvYQwGf9s85cz7G0v8"/>
+</div>
+<div class="flex flex-col">
+<h1 class="text-sm font-semibold text-slate-900 dark:text-white">Sistem Pastoral</h1>
+<p class="text-xs text-slate-500 dark:text-text-muted">Admin Gereja</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined text-[24px]">grid_view</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined text-[24px]">assignment</span>
+<span class="text-sm font-medium">Evaluasi</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined text-[24px]">group</span>
+<span class="text-sm font-medium">Tim Saya</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined text-[24px]">bar_chart</span>
+<span class="text-sm font-medium">Laporan</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Action -->
+<div>
+<a class="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2.5 text-primary dark:bg-primary dark:text-white shadow-sm ring-1 ring-inset ring-primary/20" href="#">
+<span class="material-symbols-outlined text-[24px] fill-current">help</span>
+<span class="text-sm font-medium">Bantuan</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden bg-background-light dark:bg-background-dark">
+<!-- Mobile Header Placeholder (visible on small screens) -->
+<div class="flex items-center justify-between border-b border-slate-200 dark:border-border-dark bg-white dark:bg-[#111c22] p-4 lg:hidden">
+<span class="font-bold text-lg text-slate-900 dark:text-white">Pusat Bantuan</span>
+<button class="rounded-md p-1 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="mx-auto flex w-full max-w-[1024px] flex-col gap-8 px-6 py-10 md:px-12 md:py-14">
+<!-- Page Header & Search -->
+<header class="flex flex-col gap-6 text-center">
+<div class="flex flex-col gap-2">
+<h1 class="text-3xl font-black tracking-tight text-slate-900 dark:text-white md:text-4xl">
+                            Pusat Bantuan &amp; FAQ
+                        </h1>
+<p class="text-base text-slate-600 dark:text-text-muted">
+                            Temukan jawaban atas pertanyaan seputar evaluasi pastoral dan penggunaan sistem.
+                        </p>
+</div>
+<!-- Search Bar -->
+<div class="mx-auto w-full max-w-xl">
+<label class="relative flex items-center group">
+<span class="absolute left-4 flex items-center justify-center text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</span>
+<input class="h-12 w-full rounded-lg border border-slate-200 bg-white pl-12 pr-4 text-base text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary dark:border-border-dark dark:bg-surface-dark dark:text-white dark:placeholder:text-slate-500 shadow-sm" placeholder="Cari bantuan..." type="text"/>
+</label>
+</div>
+</header>
+<!-- Categories Grid -->
+<section>
+<h2 class="sr-only">Kategori Bantuan</h2>
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+<!-- Card: Akun -->
+<a class="group flex flex-col items-start gap-4 rounded-lg border border-slate-200 dark:border-border-dark bg-white dark:bg-surface-dark p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-md dark:hover:border-primary/50" href="#">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Akun</h3>
+<p class="text-sm text-slate-500 dark:text-text-muted">Pengaturan profil &amp; login</p>
+</div>
+</a>
+<!-- Card: Proses Evaluasi -->
+<a class="group flex flex-col items-start gap-4 rounded-lg border border-slate-200 dark:border-border-dark bg-white dark:bg-surface-dark p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-md dark:hover:border-primary/50" href="#">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-teal-50 text-teal-600 dark:bg-teal-500/10 dark:text-teal-400 group-hover:bg-teal-500 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">assignment_turned_in</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Proses Evaluasi</h3>
+<p class="text-sm text-slate-500 dark:text-text-muted">Panduan penilaian kinerja</p>
+</div>
+</a>
+<!-- Card: Teknis -->
+<a class="group flex flex-col items-start gap-4 rounded-lg border border-slate-200 dark:border-border-dark bg-white dark:bg-surface-dark p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-md dark:hover:border-primary/50" href="#">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-50 text-purple-600 dark:bg-purple-500/10 dark:text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">build</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Teknis</h3>
+<p class="text-sm text-slate-500 dark:text-text-muted">Masalah sistem &amp; error</p>
+</div>
+</a>
+<!-- Card: Laporan -->
+<a class="group flex flex-col items-start gap-4 rounded-lg border border-slate-200 dark:border-border-dark bg-white dark:bg-surface-dark p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-md dark:hover:border-primary/50" href="#">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-orange-50 text-orange-600 dark:bg-orange-500/10 dark:text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Laporan</h3>
+<p class="text-sm text-slate-500 dark:text-text-muted">Unduh &amp; cetak hasil</p>
+</div>
+</a>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="flex flex-col gap-4">
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Pertanyaan Sering Diajukan</h2>
+<div class="flex flex-col gap-3">
+<!-- Accordion Item 1 -->
+<details class="group rounded-lg border border-slate-200 dark:border-border-dark bg-white dark:bg-surface-dark open:border-primary/30 dark:open:border-primary/30">
+<summary class="flex cursor-pointer list-none items-center justify-between p-5 font-medium text-slate-900 dark:text-white transition-colors hover:text-primary dark:hover:text-primary">
+<span>Bagaimana cara memulai evaluasi baru?</span>
+<span class="transition-transform group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</summary>
+<div class="border-t border-slate-100 dark:border-border-dark px-5 pb-6 pt-4">
+<p class="text-slate-600 dark:text-text-muted leading-relaxed">
+                                    Untuk memulai evaluasi baru, masuk ke menu <strong class="text-slate-900 dark:text-white">Evaluasi</strong> pada sidebar navigasi. Klik tombol "Buat Evaluasi Baru" di pojok kanan atas. Anda akan diminta untuk memilih periode evaluasi dan anggota tim yang akan dinilai. Pastikan semua data awal sudah benar sebelum melanjutkan ke pengisian formulir.
+                                </p>
+</div>
+</details>
+<!-- Accordion Item 2 -->
+<details class="group rounded-lg border border-slate-200 dark:border-border-dark bg-white dark:bg-surface-dark open:border-primary/30 dark:open:border-primary/30">
+<summary class="flex cursor-pointer list-none items-center justify-between p-5 font-medium text-slate-900 dark:text-white transition-colors hover:text-primary dark:hover:text-primary">
+<span>Siapa yang bisa melihat hasil penilaian saya?</span>
+<span class="transition-transform group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</summary>
+<div class="border-t border-slate-100 dark:border-border-dark px-5 pb-6 pt-4">
+<p class="text-slate-600 dark:text-text-muted leading-relaxed">
+                                    Hasil penilaian bersifat rahasia dan hierarkis. Hanya Anda, atasan langsung Anda (Supervisor), dan Administrator Gereja yang memiliki akses untuk melihat detail penilaian lengkap. Anggota tim lain tidak dapat melihat hasil evaluasi pribadi Anda.
+                                </p>
+</div>
+</details>
+<!-- Accordion Item 3 -->
+<details class="group rounded-lg border border-slate-200 dark:border-border-dark bg-white dark:bg-surface-dark open:border-primary/30 dark:open:border-primary/30">
+<summary class="flex cursor-pointer list-none items-center justify-between p-5 font-medium text-slate-900 dark:text-white transition-colors hover:text-primary dark:hover:text-primary">
+<span>Bagaimana jika saya lupa kata sandi?</span>
+<span class="transition-transform group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</summary>
+<div class="border-t border-slate-100 dark:border-border-dark px-5 pb-6 pt-4">
+<p class="text-slate-600 dark:text-text-muted leading-relaxed">
+                                    Jika Anda lupa kata sandi, klik tautan "Lupa Password" pada halaman login. Masukkan alamat email yang terdaftar, dan sistem akan mengirimkan instruksi untuk mengatur ulang kata sandi Anda. Jika email tidak masuk dalam 5 menit, silakan cek folder Spam atau hubungi admin.
+                                </p>
+</div>
+</details>
+<!-- Accordion Item 4 -->
+<details class="group rounded-lg border border-slate-200 dark:border-border-dark bg-white dark:bg-surface-dark open:border-primary/30 dark:open:border-primary/30">
+<summary class="flex cursor-pointer list-none items-center justify-between p-5 font-medium text-slate-900 dark:text-white transition-colors hover:text-primary dark:hover:text-primary">
+<span>Apakah saya bisa mengedit evaluasi yang sudah dikirim?</span>
+<span class="transition-transform group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</summary>
+<div class="border-t border-slate-100 dark:border-border-dark px-5 pb-6 pt-4">
+<p class="text-slate-600 dark:text-text-muted leading-relaxed">
+                                    Secara default, evaluasi yang sudah berstatus "Final" atau "Terkirim" tidak dapat diedit kembali untuk menjaga integritas data. Namun, jika terjadi kesalahan fatal, Anda dapat mengajukan permohonan pembukaan kunci (unlock) kepada Admin Gereja dengan menyertakan alasan revisi.
+                                </p>
+</div>
+</details>
+</div>
+</section>
+<!-- Support Footer Banner -->
+<section class="mt-4 rounded-xl bg-gradient-to-r from-slate-800 to-slate-900 dark:from-surface-dark dark:to-[#16202c] border border-slate-200 dark:border-border-dark p-6 sm:p-8 shadow-lg">
+<div class="flex flex-col items-center justify-between gap-6 text-center sm:flex-row sm:text-left">
+<div class="flex flex-col gap-2">
+<h3 class="text-xl font-bold text-white">Masih butuh bantuan?</h3>
+<p class="text-slate-300 dark:text-text-muted max-w-md">
+                                Jika Anda tidak menemukan jawaban yang Anda cari, tim dukungan kami siap membantu Anda menyelesaikan kendala teknis.
+                            </p>
+</div>
+<button class="flex shrink-0 items-center gap-2 rounded-lg bg-primary px-6 py-3 font-medium text-white transition-colors hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-slate-900">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Hubungi Admin</span>
+</button>
+</div>
+</section>
+<footer class="mt-8 flex justify-center pb-6">
+<p class="text-sm text-slate-400 dark:text-slate-600">
+                        © 2024 Sistem Pastoral Gereja. All rights reserved.
+                    </p>
+</footer>
+</div>
+</main>
+</div>
+</body></html>

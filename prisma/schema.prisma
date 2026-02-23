@@ -1,0 +1,438 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id              String   @id @default(uuid())
+  email           String   @unique
+  name            String?
+  password        String // Wajib di-hash (Bcrypt/Argon2)
+  role            Role     @default(PASTORAL_STAFF)
+  jobTitle        String? // Unmapped, "jobTitle" column
+  dashboardLayout Json?    @map("dashboard_layout")
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  // Additional Profile Info
+  birthDate DateTime? @map("birth_date")
+  joinDate  DateTime? @map("join_date")
+
+  evaluationsGiven    EvaluationSubmission[] @relation("Appraiser")
+  evaluationsReceived EvaluationSubmission[] @relation("Appraisee")
+  developmentPlans    DevelopmentPlan[]
+  feedbackComments    FeedbackComment[]
+
+  // Added Relations for Integrity (Audit Fix)
+  pastoralActivities  PastoralActivity[]
+  assignedTasks       PastoralTask[]     @relation("AssignedTasks")
+  createdTasks        PastoralTask[]     @relation("CreatedTasks")
+  goals               StaffGoal[]        @relation("UserGoals")
+
+  @@map("users")
+}
+
+enum Role {
+  ADMIN
+  PASTORAL_STAFF
+}
+
+model EvaluationPeriod {
+  id        String       @id @default(uuid())
+  name      String
+  startDate DateTime
+  endDate   DateTime
+  status    PeriodStatus @default(DRAFT)
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  questions        Question[]
+  submissions      EvaluationSubmission[]
+  developmentPlans DevelopmentPlan[]
+
+  @@map("evaluation_periods")
+}
+
+enum PeriodStatus {
+  DRAFT
+  ACTIVE
+  CLOSED
+}
+
+model Question {
+  id         String       @id @default(uuid())
+  text       String
+  type       QuestionType
+  order      Int
+  isRequired Boolean      @default(true)
+
+  periodId String
+  period   EvaluationPeriod @relation(fields: [periodId], references: [id])
+
+  weight   Int    @default(1)
+  category String @default("General")
+
+  answers Answer[]
+
+  @@map("questions")
+}
+
+enum QuestionType {
+  SCALE_1_TO_5
+  TEXT
+  BOOLEAN
+}
+
+model EvaluationSubmission {
+  id String @id @default(uuid())
+
+  // Penilai (Bisa null jika mode Anonim diaktifkan)
+  appraiserId String?
+  appraiser   User?   @relation("Appraiser", fields: [appraiserId], references: [id], onDelete: SetNull)
+
+  // Yang Dinilai
+  appraiseeId String?
+  appraisee   User?   @relation("Appraisee", fields: [appraiseeId], references: [id], onDelete: SetNull)
+
+  periodId String
+  period   EvaluationPeriod @relation(fields: [periodId], references: [id])
+
+  submittedAt DateTime @default(now())
+  isFinal     Boolean  @default(false)
+  answers     Answer[]
+
+  // Constraint: Mencegah user yang sama menilai orang yang sama 2x di periode yang sama
+  @@unique([appraiserId, appraiseeId, periodId])
+  @@index([periodId])
+  @@map("evaluation_submissions")
+}
+
+model Answer {
+  id String @id @default(uuid())
+
+  submissionId String
+  submission   EvaluationSubmission @relation(fields: [submissionId], references: [id], onDelete: Cascade)
+
+  questionId String
+  question   Question @relation(fields: [questionId], references: [id])
+
+  scoreValue Int?
+  textValue  String?  @db.Text
+  boolValue  Boolean?
+
+  @@index([questionId])
+  @@map("answers")
+}
+
+// =====================================================
+// PANCA TUGAS (5 PILLARS) - Pastoral Activities
+// =====================================================
+
+enum PastoralPillar {
+  LITURGIA // Peribadatan
+  DIAKONIA // Pelayanan Sosial
+  KERYGMA // Pewartaan
+  KOINONIA // Persekutuan
+  MARTYRIA // Kesaksian
+}
+
+model PastoralActivity {
+  id          String         @id @default(uuid())
+  title       String
+  description String?        @db.Text
+  pillar      PastoralPillar
+  date        DateTime
+  duration    Int            @default(60) // in minutes
+  location    String?
+  notes       String?        @db.Text
+
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([userId])
+  @@index([userId, date])
+  @@map("pastoral_activities")
+}
+
+// =====================================================
+// TASK MANAGEMENT
+// =====================================================
+
+enum TaskStatus {
+  TODO
+  IN_PROGRESS
+  COMPLETED
+}
+
+enum TaskPriority {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+model PastoralTask {
+  id          String       @id @default(uuid())
+  title       String
+  description String?      @db.Text
+  status      TaskStatus   @default(TODO)
+  priority    TaskPriority @default(MEDIUM)
+  dueDate     DateTime?
+  checklist   Json?        @default("[]") // Array of {id, text, isCompleted}
+
+  assignedTo String? // User ID
+  assignee   User?   @relation("AssignedTasks", fields: [assignedTo], references: [id], onDelete: SetNull)
+
+  createdBy  String // User ID
+  creator    User   @relation("CreatedTasks", fields: [createdBy], references: [id], onDelete: Cascade)
+
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+  completedAt DateTime? @map("completed_at")
+
+  milestones TaskMilestone[]
+
+  @@index([assignedTo])
+  @@index([createdBy])
+  @@index([status])
+  @@map("pastoral_tasks")
+}
+
+model TaskMilestone {
+  id        String     @id @default(uuid())
+  taskId    String     @map("task_id")
+  status    TaskStatus
+  note      String?    @db.Text
+  createdBy String     @map("created_by")
+  createdAt DateTime   @default(now()) @map("created_at")
+
+  task PastoralTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@map("task_milestones")
+}
+
+// =====================================================
+// HELP CENTER / FAQ
+// =====================================================
+
+model FAQ {
+  id          String  @id @default(uuid())
+  question    String
+  answer      String  @db.Text
+  category    String  @default("Umum")
+  order       Int     @default(0)
+  isPublished Boolean @default(true)
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("faqs")
+}
+
+// =====================================================
+// DEVELOPMENT PLAN / RECOMMENDATIONS
+// =====================================================
+
+enum PlanStatus {
+  DRAFT
+  FINAL
+}
+
+model DevelopmentPlan {
+  id       String @id @default(uuid())
+  userId   String
+  periodId String
+
+  strengths          String? @db.Text
+  areasOfImprovement String? @db.Text
+  recommendations    String? @db.Text
+
+  status PlanStatus @default(DRAFT)
+
+  createdBy String // Admin ID
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user     User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  period   EvaluationPeriod  @relation(fields: [periodId], references: [id], onDelete: Cascade)
+  comments FeedbackComment[]
+
+  @@unique([userId, periodId])
+  @@map("development_plans")
+}
+
+model MasterData {
+  id        String   @id @default(uuid())
+  type      String // e.g. "JOB_TITLE", "FAQ_CATEGORY"
+  code      String // e.g. "CHAIR"
+  label     String // e.g. "Ketua"
+  order     Int      @default(0)
+  isActive  Boolean  @default(true) // Unmapped, "isActive" column
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@unique([type, code])
+  @@map("master_data")
+}
+
+// =====================================================
+// STAFF GOALS - Personal Target Setting
+// =====================================================
+
+enum GoalStatus {
+  PENDING_APPROVAL // Staff mengusulkan, menunggu review admin
+  ACTIVE           // Admin sudah approve
+  COMPLETED
+  CANCELLED
+  REJECTED         // Admin menolak
+}
+
+enum GoalType {
+  ACTIVITY_COUNT // Target jumlah aktivitas
+  ACTIVITY_DURATION // Target durasi (menit)
+  TASK_COMPLETION // Target tugas selesai
+  PILLAR_BALANCE // Target keseimbangan pilar
+  CUSTOM // Target custom
+}
+
+model StaffGoal {
+  id     String @id @default(uuid())
+  userId String @map("user_id")
+  user   User   @relation("UserGoals", fields: [userId], references: [id], onDelete: Cascade)
+
+  title       String
+  description String?         @db.Text
+  type        GoalType        @default(CUSTOM)
+  pillar      PastoralPillar? // Jika tipe ACTIVITY_COUNT/DURATION untuk pilar tertentu
+
+  targetValue  Int @default(0) @map("target_value")
+  currentValue Int @default(0) @map("current_value")
+
+  startDate  DateTime @default(now()) @map("start_date")
+  targetDate DateTime @map("target_date")
+
+  status GoalStatus @default(PENDING_APPROVAL)
+
+  createdBy   String?   @map("created_by") // null = self-assigned, userId = admin-assigned
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+  completedAt DateTime? @map("completed_at")
+
+  // Review fields (admin approval)
+  reviewedBy String?   @map("reviewed_by") // Admin ID yang review
+  reviewNote String?   @map("review_note") @db.Text
+  reviewedAt DateTime? @map("reviewed_at")
+
+  @@index([userId])
+  @@map("staff_goals")
+}
+
+// =====================================================
+// NOTIFICATIONS - In-App Notification System
+// =====================================================
+
+enum NotificationType {
+  EVALUATION_REMINDER // Pengingat evaluasi
+  TASK_ASSIGNED // Tugas baru di-assign  
+  TASK_DUE_SOON // Tugas hampir deadline
+  TASK_OVERDUE // Tugas sudah lewat deadline
+  GOAL_DEADLINE // Target mendekati deadline
+  GOAL_ACHIEVED // Target tercapai
+  GOAL_APPROVED // Target disetujui admin
+  GOAL_REJECTED // Target ditolak admin
+  DEVELOPMENT_PLAN // Development plan baru
+  SYSTEM // Notifikasi sistem umum
+}
+
+model Notification {
+  id     String @id @default(uuid())
+  userId String @map("user_id")
+
+  type    NotificationType
+  title   String
+  message String           @db.Text
+
+  // Optional link to related entity
+  linkUrl  String? @map("link_url")
+  linkText String? @map("link_text")
+
+  isRead Boolean   @default(false) @map("is_read")
+  readAt DateTime? @map("read_at")
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([userId, isRead])
+  @@index([userId, createdAt])
+  @@map("notifications")
+}
+
+// =====================================================
+// FEEDBACK SYSTEM
+// =====================================================
+
+model FeedbackComment {
+  id      String @id @default(uuid())
+  content String @db.Text
+
+  // Relationship to Development Plan
+  planId          String          @map("plan_id")
+  developmentPlan DevelopmentPlan @relation(fields: [planId], references: [id], onDelete: Cascade)
+
+  // Author
+  authorId String @map("author_id")
+  author   User   @relation(fields: [authorId], references: [id])
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([planId])
+  @@map("feedback_comments")
+}
+
+// =====================================================
+// SCORING CONFIGURATION
+// =====================================================
+
+model ScoringConfig {
+  id   String @id @default(uuid())
+  name String @unique @default("default")
+
+  // Weight percentages (total harus 100%)
+  activityWeight    Int @default(25) @map("activity_weight")    // Aktivitas Panca Tugas
+  pillarWeight      Int @default(20) @map("pillar_weight")      // Keseimbangan 5 Pilar
+  taskWeight        Int @default(20) @map("task_weight")        // Penyelesaian Tugas
+  consistencyWeight Int @default(15) @map("consistency_weight") // Konsistensi Harian
+  evaluationWeight  Int @default(20) @map("evaluation_weight")  // Hasil Evaluasi 360°
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("scoring_configs")
+}
+
+// =====================================================
+// SYSTEM WORDING - Admin Text Management
+// =====================================================
+
+model SystemWording {
+  id          String   @id @default(cuid())
+  key         String
+  value       String   @db.Text
+  locale      String   @default("id") // "id" or "en"
+  description String?
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@unique([key, locale])
+  @@index([locale])
+  @@map("system_wordings")
+}
+

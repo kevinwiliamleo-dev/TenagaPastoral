@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pastoral Eval - Laporan &amp; Hasil Evaluasi</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d171b] dark:text-white font-display min-h-screen flex flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7eff3] dark:border-gray-800 bg-white dark:bg-[#1a2c35] px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-[#0d171b] dark:text-white">
+<div class="size-8 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">church</span>
+</div>
+<h2 class="text-[#0d171b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Pastoral Eval</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="flex gap-2">
+<button class="flex size-10 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-[#e7eff3] dark:bg-gray-700 text-[#0d171b] dark:text-white transition hover:bg-gray-200 dark:hover:bg-gray-600">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="flex size-10 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-[#e7eff3] dark:bg-gray-700 text-[#0d171b] dark:text-white transition hover:bg-gray-200 dark:hover:bg-gray-600">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-white dark:border-gray-800 shadow-sm" data-alt="User profile picture showing a smiling man in a suit" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAhjCLDv9HZUw1DcMffGUjoSucEFM4F6ZOpWQ0rdNc-MnFpmux7an0DWUOVGiNWT8vulCLSXleAdK9EufqAHhkoDpRp9givY6MTesCfe_X1CN0BG1gMf_3BbDAfTj3LfVEJOAcnZd1xVa1O1qb_dDSvjdk-jv0UFu3uSdV-v_9gdMU3IGUU3a3371Dl99Z-2njIEe09FuavexVYjwGhmfvej85e4YTKTDxmvitjS1kqje7wou6QOhBSI8ngCpLO9KyjKqaz8nraocU");'></div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center py-8 px-4 md:px-10 lg:px-20">
+<div class="w-full max-w-[1200px] space-y-8">
+<!-- Page Heading & Description -->
+<div class="flex flex-col gap-2">
+<h1 class="text-[#0d171b] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Laporan Hasil Evaluasi</h1>
+<p class="text-[#4c809a] dark:text-gray-400 text-base font-normal leading-normal">Tinjau kinerja staf dan hasil evaluasi pastoral secara keseluruhan.</p>
+</div>
+<!-- ADMIN VIEW SECTION -->
+<section class="flex flex-col gap-4">
+<!-- Filters & Action Toolbar -->
+<div class="flex flex-col lg:flex-row gap-4 items-end lg:items-center justify-between bg-white dark:bg-[#1a2c35] p-4 rounded-xl shadow-sm border border-[#cfdfe7] dark:border-gray-800">
+<div class="flex flex-1 flex-wrap gap-4 w-full lg:w-auto">
+<!-- Search Input -->
+<div class="relative flex-1 min-w-[240px]">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-[#4c809a]">
+<span class="material-symbols-outlined">search</span>
+</span>
+<input class="w-full h-12 pl-12 pr-4 rounded-lg bg-[#f8fafc] dark:bg-gray-900 border border-[#cfdfe7] dark:border-gray-700 text-[#0d171b] dark:text-white placeholder:text-[#4c809a] focus:outline-none focus:ring-2 focus:ring-primary/50 transition" placeholder="Cari nama staf..."/>
+</div>
+<!-- Period Dropdown -->
+<div class="relative w-full sm:w-64">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-[#4c809a]">
+<span class="material-symbols-outlined">calendar_today</span>
+</span>
+<select class="w-full h-12 pl-12 pr-10 appearance-none rounded-lg bg-[#f8fafc] dark:bg-gray-900 border border-[#cfdfe7] dark:border-gray-700 text-[#0d171b] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 cursor-pointer transition">
+<option>Q1 2024 (Jan - Mar)</option>
+<option>Q4 2023 (Oct - Dec)</option>
+<option>Q3 2023 (Jul - Sep)</option>
+</select>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-[#4c809a] pointer-events-none">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</div>
+</div>
+<!-- Export Button -->
+<button class="h-12 px-6 flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg transition shadow-md shadow-primary/20 w-full lg:w-auto">
+<span class="material-symbols-outlined">download</span>
+<span>Export All Data</span>
+</button>
+</div>
+<!-- Data Table -->
+<div class="overflow-x-auto rounded-xl border border-[#cfdfe7] dark:border-gray-800 bg-white dark:bg-[#1a2c35] shadow-sm">
+<table class="w-full min-w-[800px]">
+<thead>
+<tr class="bg-[#f8fafc] dark:bg-gray-800 border-b border-[#cfdfe7] dark:border-gray-700">
+<th class="px-6 py-4 text-left text-xs font-bold text-[#4c809a] uppercase tracking-wider">Nama Staf</th>
+<th class="px-6 py-4 text-left text-xs font-bold text-[#4c809a] uppercase tracking-wider">Role</th>
+<th class="px-6 py-4 text-left text-xs font-bold text-[#4c809a] uppercase tracking-wider">Rata-rata Skor</th>
+<th class="px-6 py-4 text-left text-xs font-bold text-[#4c809a] uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 text-right text-xs font-bold text-[#4c809a] uppercase tracking-wider">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#cfdfe7] dark:divide-gray-700">
+<!-- Row 1 -->
+<tr class="group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition cursor-pointer">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-cover bg-center" data-alt="Portrait of Budi Santoso" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDMZpxBbPx99UiDNDqqUAJDVxBhlTyGaRtSkb33NazcwNuKVV_TfD9s7vMjP1CsSNlmvdJAVoVVlJaLhvlH4z6OLkzVFcF-gEITRJ8UIF7gBe8S1YAERQ-j82lck_eXDgxgUPAqXGxTVHnK-B87g7Dl9aWaAGNnrs264X_hzm3XtMIvayFHu8tOJuWYn5bK5ay7V-C56rVFJjz-XmtLJyAg3o2yDLoJhzyJzFCX2VmwkHg--zxEgvwyma_km85v-VItiKtjF6YGRow");'></div>
+<div>
+<p class="font-semibold text-[#0d171b] dark:text-white">Budi Santoso</p>
+<p class="text-xs text-[#4c809a]">ID: 2024-001</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[#0d171b] dark:text-gray-300">Youth Pastor</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                        4.8 (Excellent)
+                                    </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-sm text-[#0d171b] dark:text-gray-300">
+<span class="size-2 rounded-full bg-green-500"></span>
+                                        Selesai
+                                    </div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<button class="text-primary hover:text-primary/80 font-semibold flex items-center justify-end gap-1 ml-auto">
+                                        Detail
+                                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition cursor-pointer bg-blue-50/30 dark:bg-blue-900/10 border-l-4 border-l-primary">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-cover bg-center" data-alt="Portrait of Sarah Wijaya" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDxh3iGEJox3yO8mNATArDWsrvR13xgdDkWODKNJXvp1vD6d7H_W6lmM59VUQVBco9pdCMxKDqG-RLccJZJA1yIvY6iC1j0iRHodcF9uRXU18tdUE1pfegjTJ5MmA7457c9ekm3QE5XjXoG4_FDGPkwgYfmBAttcVzumvZc-B8382AXfmkJwT_otOHlundj20kSV2t6z7C3_Qva4wcBS7pylgiLjB4SCYjxM-YixmpZ1i262hnLVOlniLObXwd_bokshtm6ateFA8I");'></div>
+<div>
+<p class="font-semibold text-[#0d171b] dark:text-white">Sarah Wijaya</p>
+<p class="text-xs text-[#4c809a]">ID: 2024-002</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[#0d171b] dark:text-gray-300">Music Director</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400">
+                                        3.8 (Good)
+                                    </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-sm text-[#0d171b] dark:text-gray-300">
+<span class="size-2 rounded-full bg-green-500"></span>
+                                        Selesai
+                                    </div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<button class="text-primary hover:text-primary/80 font-semibold flex items-center justify-end gap-1 ml-auto">
+                                        Detail
+                                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition cursor-pointer">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-cover bg-center" data-alt="Portrait of Andi Pratama" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuClsypQVK5_MKVlV9VS5W_tQPrx7NsYqIW-z6P3IaSIc8AnbUpYz-VtHB5K2FdTu32cw7PO0Egh4CJGlUH7KaHY_ytyf-QgqGykoeZgaityzqqnNDsL4HQZhY7Hu2Ru0aosIskV7F2eqmTud9MmMKGg05NFWQAkZ9K_P2eV11JmoAIhZWvc8EUTAzllazmD5QNwZgt3wp2Ad3uLfE1LXFlqpd0Uzi64YRZ2u80RErho-JIHzcb3yr6oOxIbEvZ-YLzbePpB91_hj94");'></div>
+<div>
+<p class="font-semibold text-[#0d171b] dark:text-white">Andi Pratama</p>
+<p class="text-xs text-[#4c809a]">ID: 2024-003</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-[#0d171b] dark:text-gray-300">Usher Head</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400">
+                                        2.4 (Needs Improv)
+                                    </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-sm text-[#0d171b] dark:text-gray-300">
+<span class="size-2 rounded-full bg-orange-500"></span>
+                                        Pending Review
+                                    </div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<button class="text-primary hover:text-primary/80 font-semibold flex items-center justify-end gap-1 ml-auto">
+                                        Detail
+                                        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination (Simplified) -->
+<div class="flex justify-between items-center px-2">
+<p class="text-sm text-[#4c809a]">Menampilkan 3 dari 28 staf</p>
+<div class="flex gap-2">
+<button class="px-3 py-1 rounded border border-[#cfdfe7] dark:border-gray-700 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-300">Previous</button>
+<button class="px-3 py-1 rounded border border-[#cfdfe7] dark:border-gray-700 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-300">Next</button>
+</div>
+</div>
+</section>
+<!-- SEPARATOR -->
+<div class="relative py-4">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-gray-200 dark:border-gray-700"></div>
+</div>
+<div class="relative flex justify-center">
+<span class="bg-background-light dark:bg-background-dark px-2 text-sm text-gray-400">Selected Staff View (Preview)</span>
+</div>
+</div>
+<!-- DETAIL VIEW SECTION (Simulating user clicked "Sarah Wijaya") -->
+<section class="flex flex-col gap-6 bg-white dark:bg-[#1a2c35] rounded-2xl shadow-sm border border-[#cfdfe7] dark:border-gray-800 p-6 md:p-8">
+<!-- Detail Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 border-b border-[#cfdfe7] dark:border-gray-700">
+<div class="flex items-center gap-5">
+<div class="size-16 md:size-20 rounded-full bg-cover bg-center border-2 border-white dark:border-gray-600 shadow-md" data-alt="Large portrait of Sarah Wijaya" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCtbtYtdzkI903EVqrL51tnz-xvGr8MRYRuwI0wpa7r1__o8vLY9ThcrcnAaRVgPL4kpNBenVFSJh2pBh3st4aRXzT4UhP409zjTUM1gMlsa8nSOtsZrBrl87PxRjMqf4OlR8n6Kp4aweRaOsfUs5GC1R26sU6spcmkyQ9WQhlgu6FLHoMW5-NbdbNKPA5-_1pR3TWjYgHEnEPs_TwRN31hfQP0MnUxiMHLC534NneAULlD_MtBW7x2cu9VMl0EJWCXiNt5Lgf9bnc");'></div>
+<div class="flex flex-col">
+<h2 class="text-2xl font-bold text-[#0d171b] dark:text-white">Sarah Wijaya</h2>
+<div class="flex flex-wrap gap-2 text-[#4c809a] items-center text-sm font-medium mt-1">
+<span>Music Director</span>
+<span class="size-1 rounded-full bg-[#cfdfe7]"></span>
+<span>Dept. Ibadah Raya</span>
+<span class="size-1 rounded-full bg-[#cfdfe7]"></span>
+<span class="text-primary bg-primary/10 px-2 py-0.5 rounded text-xs">Evaluasi Q1 2024</span>
+</div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center gap-2 h-10 px-4 rounded-lg border border-[#cfdfe7] dark:border-gray-700 text-[#0d171b] dark:text-gray-300 font-bold hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+<span class="material-symbols-outlined">share</span>
+<span class="hidden sm:inline">Share</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-10 px-4 rounded-lg bg-primary hover:bg-primary/90 text-white font-bold transition shadow-md shadow-primary/20">
+<span class="material-symbols-outlined">download</span>
+<span>Download Report</span>
+</button>
+</div>
+</div>
+<!-- Dashboard Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Visualizations -->
+<div class="lg:col-span-2 flex flex-col gap-8">
+<!-- Score Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<!-- Overall Score -->
+<div class="bg-background-light dark:bg-gray-800/50 rounded-xl p-5 flex flex-col gap-1 border border-transparent dark:border-gray-700 hover:border-[#cfdfe7] transition">
+<p class="text-sm text-[#4c809a] font-medium uppercase tracking-wide">Overall Score</p>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-black text-[#0d171b] dark:text-white">3.8</span>
+<span class="text-sm text-[#4c809a]">/ 5.0</span>
+</div>
+<div class="w-full bg-[#cfdfe7] dark:bg-gray-700 h-2 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 76%"></div>
+</div>
+<p class="text-xs text-green-600 mt-2 font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+                                    +0.2 vs Last Q
+                                </p>
+</div>
+<!-- Attendance -->
+<div class="bg-background-light dark:bg-gray-800/50 rounded-xl p-5 flex flex-col gap-1 border border-transparent dark:border-gray-700 hover:border-[#cfdfe7] transition">
+<p class="text-sm text-[#4c809a] font-medium uppercase tracking-wide">Kehadiran</p>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-black text-[#0d171b] dark:text-white">92%</span>
+</div>
+<p class="text-xs text-[#4c809a] mt-auto">Total 12/13 Sesi</p>
+</div>
+<!-- Team Rating -->
+<div class="bg-background-light dark:bg-gray-800/50 rounded-xl p-5 flex flex-col gap-1 border border-transparent dark:border-gray-700 hover:border-[#cfdfe7] transition">
+<p class="text-sm text-[#4c809a] font-medium uppercase tracking-wide">Team Feedback</p>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-black text-[#0d171b] dark:text-white">4.2</span>
+</div>
+<div class="flex text-yellow-400 mt-auto">
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="material-symbols-outlined text-[18px] fill-current text-gray-300 dark:text-gray-600">star</span>
+</div>
+</div>
+</div>
+<!-- Radar Chart Container -->
+<div class="bg-white dark:bg-[#1a2c35] border border-[#cfdfe7] dark:border-gray-700 rounded-xl p-6 relative overflow-hidden">
+<h3 class="text-lg font-bold text-[#0d171b] dark:text-white mb-6">Analisis Kompetensi</h3>
+<div class="w-full flex justify-center items-center py-4">
+<!-- SVG Radar Chart -->
+<svg class="w-full max-w-[450px] h-auto drop-shadow-sm" viewbox="0 0 400 350">
+<!-- Background Grid (Pentagon levels) -->
+<g class="stroke-[#e7eff3] dark:stroke-gray-700 fill-none" stroke-width="1">
+<polygon points="200,50 342,154 288,320 112,320 58,154"></polygon> <!-- Outer -->
+<polygon points="200,90 306,162 269,279 131,279 94,162"></polygon>
+<polygon points="200,130 271,171 250,239 150,239 129,171"></polygon>
+<polygon points="200,170 235,180 231,200 169,200 165,180"></polygon> <!-- Inner -->
+</g>
+<!-- Axis Lines -->
+<g class="stroke-[#cfdfe7] dark:stroke-gray-700" stroke-width="1">
+<line x1="200" x2="200" y1="200" y2="50"></line>
+<line x1="200" x2="342" y1="200" y2="154"></line>
+<line x1="200" x2="288" y1="200" y2="320"></line>
+<line x1="200" x2="112" y1="200" y2="320"></line>
+<line x1="200" x2="58" y1="200" y2="154"></line>
+</g>
+<!-- Data Polygon -->
+<!-- Data Points based on visual approx: 
+                                        Top (Spiritual): High
+                                        Right (Leadership): Med
+                                        Bottom Right (Admin): Low
+                                        Bottom Left (Social): High
+                                        Left (Preaching): Med-High
+                                     -->
+<polygon class="fill-primary/20 stroke-primary" points="200,70 310,160 230,260 120,280 80,160" stroke-linejoin="round" stroke-width="3"></polygon>
+<!-- Data Dots -->
+<circle class="fill-primary" cx="200" cy="70" r="4"></circle>
+<circle class="fill-primary" cx="310" cy="160" r="4"></circle>
+<circle class="fill-primary" cx="230" cy="260" r="4"></circle>
+<circle class="fill-primary" cx="120" cy="280" r="4"></circle>
+<circle class="fill-primary" cx="80" cy="160" r="4"></circle>
+<!-- Labels -->
+<text class="text-xs fill-[#4c809a] dark:fill-gray-400 font-bold" text-anchor="middle" x="200" y="35">Spiritual</text>
+<text class="text-xs fill-[#4c809a] dark:fill-gray-400 font-bold" text-anchor="start" x="355" y="155">Leadership</text>
+<text class="text-xs fill-[#4c809a] dark:fill-gray-400 font-bold" text-anchor="middle" x="300" y="340">Admin</text>
+<text class="text-xs fill-[#4c809a] dark:fill-gray-400 font-bold" text-anchor="middle" x="100" y="340">Social</text>
+<text class="text-xs fill-[#4c809a] dark:fill-gray-400 font-bold" text-anchor="end" x="45" y="155">Skills</text>
+</svg>
+</div>
+</div>
+</div>
+<!-- Right Column: Qualitative Feedback -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold text-[#0d171b] dark:text-white">Umpan Balik</h3>
+<button class="text-sm text-primary font-bold hover:underline">View All</button>
+</div>
+<!-- Feedback List -->
+<div class="flex flex-col gap-4 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
+<!-- Comment 1 -->
+<div class="bg-[#f8fafc] dark:bg-gray-800 rounded-lg p-4 border border-[#cfdfe7] dark:border-gray-700">
+<div class="flex gap-3 mb-2">
+<div class="size-8 rounded-full bg-cover bg-center" data-alt="Reviewer photo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFOmuoXUv998_IJmgHEUlb5cH46BlWOX4HW0HL4owzAd4Ktl7Hze4ghpXYJGDUSfaXRBuHrIAtIYiLvTKhlC5Iu01S_u7YDDxgICSNYl7UOSyce37xc1uWASGWBZ-pHJLJxH3V8SKsk9b9XAgTaphh8JvaPM5lUZCo-Y_3VIZIffrQjI8NtEc4NZwKosZz2v5sum5PJbdmhK9NN1JEZtONwG67K3K--sEbFstOm7mK9PgZlo2rQfy7Jb2l7XMo99aqJWQnjFnCU10");'></div>
+<div>
+<p class="text-sm font-bold text-[#0d171b] dark:text-white">Pastor Joshua</p>
+<p class="text-xs text-[#4c809a]">Head Pastor</p>
+</div>
+<span class="ml-auto text-xs text-[#4c809a]">2 days ago</span>
+</div>
+<p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                                    "Sarah menunjukkan kemajuan luar biasa dalam memimpin tim musik. Ibadah minggu lalu sangat memberkati. Namun, perhatikan ketepatan waktu saat briefing sebelum ibadah."
+                                </p>
+</div>
+<!-- Comment 2 -->
+<div class="bg-[#f8fafc] dark:bg-gray-800 rounded-lg p-4 border border-[#cfdfe7] dark:border-gray-700">
+<div class="flex gap-3 mb-2">
+<div class="size-8 rounded-full bg-cover bg-center" data-alt="Reviewer photo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwygON01T4ypLtEtd-2vlGywwW_JN1n0Grnywxnl3aCrpTyUlQjPPlOMnHxdCYrMhft5UdFK-Aw9CKdhfmPjiQd8PgZ4acqZ49o6Bg-HIR5Hwpl_c9zj91zAHIhSD3KkTyUZ9mcGHQ626Rg93QpsftVyaWq9flxVPK7XJETKQOk81PnNeXdWzTtsb2tsDUd8LJUblgEQwZn16BT7cTNbJF9YVIorGCXlROdZa481SLEJe5y3U-FYJFHimCPSni5Oxv107OC_kVcsY");'></div>
+<div>
+<p class="text-sm font-bold text-[#0d171b] dark:text-white">Maria Chen</p>
+<p class="text-xs text-[#4c809a]">Admin Dept.</p>
+</div>
+<span class="ml-auto text-xs text-[#4c809a]">5 days ago</span>
+</div>
+<p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                                    "Laporan bulanan departemen musik perlu lebih detail pada bagian inventaris alat. Mohon diperbaiki untuk bulan depan."
+                                </p>
+</div>
+<!-- Comment 3 -->
+<div class="bg-[#f8fafc] dark:bg-gray-800 rounded-lg p-4 border border-[#cfdfe7] dark:border-gray-700 opacity-75">
+<div class="flex gap-3 mb-2">
+<div class="size-8 bg-gray-200 dark:bg-gray-600 rounded-full flex items-center justify-center text-gray-500 text-xs font-bold">
+                                        A
+                                    </div>
+<div>
+<p class="text-sm font-bold text-[#0d171b] dark:text-white">Anonymous Peer</p>
+<p class="text-xs text-[#4c809a]">Team Member</p>
+</div>
+<span class="ml-auto text-xs text-[#4c809a]">1 week ago</span>
+</div>
+<p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                                    "Sangat senang bekerja dengan Kak Sarah, orangnya sabar mengajari anggota baru lagu-lagu sulit."
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

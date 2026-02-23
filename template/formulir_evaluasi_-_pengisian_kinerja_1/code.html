@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Formulir Evaluasi - Pengisian Kinerja</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col text-slate-900 dark:text-white">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+<div class="px-6 md:px-10 py-3 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">arrow_back</span>
+</a>
+<div class="flex flex-col">
+<h2 class="text-lg font-bold leading-tight tracking-tight">Sistem Evaluasi Pastoral</h2>
+<span class="text-xs text-slate-500 dark:text-slate-400">Panel Evaluator</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-2 px-3 py-1.5 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 rounded-lg text-sm font-medium border border-green-200 dark:border-green-800">
+<span class="material-symbols-outlined text-[18px]">cloud_done</span>
+<span>Tersimpan</span>
+</div>
+<button class="relative p-2 text-slate-500 hover:text-slate-800 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
+</button>
+<div class="size-9 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden border border-slate-200 dark:border-slate-600 bg-center bg-cover" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDLyNgZrkBOB6TyIcYMR-il1SJ-oevs7pKkmX5CCN5rQECkMGlS0c33iOQqGZmn_pWvnZgeF0YLO8ejqbnzBfJF5AKOv_99U-S3uXyin8iHWt9rbu37wlQjEsR9sp5zJWlU7kEBro7ElCuHdu4lcqhJbO4GvhsgZk07th278qmzOcnW9n6dejmsyC1sQeYem7llwWKYklKmkCbiYl2mKq17O8mG32GutxLzthY8c72VOfphbRHkKjuJm7yt3L4SwPTLN-rn4hDax5A");'>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex justify-center w-full px-4 md:px-6 py-8">
+<div class="w-full max-w-[800px] flex flex-col gap-6">
+<!-- Context Header & Progress -->
+<div class="flex flex-col gap-4">
+<div class="flex flex-wrap justify-between items-end gap-3">
+<div>
+<h1 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-1">Evaluasi Semester I 2024</h1>
+<p class="text-slate-500 dark:text-slate-400 font-medium">Target Evaluasi: <span class="text-slate-800 dark:text-slate-200 font-semibold">Pdt. John Doe</span></p>
+</div>
+<div class="px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/20 text-primary text-xs font-bold border border-blue-100 dark:border-blue-800">
+                        STATUS: DRAFT
+                    </div>
+</div>
+<!-- Progress Bar Component -->
+<div class="bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex gap-6 justify-between mb-2">
+<p class="text-slate-800 dark:text-slate-100 text-sm font-semibold">Langkah 2 dari 5</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">40% Selesai</p>
+</div>
+<div class="h-2.5 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500 ease-out" style="width: 40%"></div>
+</div>
+<div class="flex justify-between items-center mt-3">
+<p class="text-slate-500 dark:text-slate-400 text-sm">Bagian Saat Ini: <span class="text-primary font-medium">Kepemimpinan &amp; Visi</span></p>
+<button class="text-xs text-slate-400 hover:text-primary flex items-center gap-1 transition-colors">
+                            Lihat semua bagian <span class="material-symbols-outlined text-[14px]">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Question Card -->
+<div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden">
+<div class="p-6 md:p-8 flex flex-col gap-8">
+<!-- Question Text -->
+<div class="space-y-2 text-center md:text-left">
+<span class="text-xs font-bold tracking-wider text-slate-400 uppercase">Pertanyaan 4 dari 10</span>
+<h2 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white leading-snug">
+                            Seberapa efektif komunikasi visi pastoral yang dilakukan dalam 6 bulan terakhir kepada jemaat?
+                        </h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed max-w-2xl">
+                            Evaluasi kemampuan dalam menyampaikan visi gereja secara jelas, inspiratif, dan konsisten melalui berbagai saluran komunikasi.
+                        </p>
+</div>
+<hr class="border-slate-100 dark:border-slate-700"/>
+<!-- Input: Scale 1-5 -->
+<div class="flex flex-col gap-4">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Berikan Penilaian Anda</label>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-3">
+<label class="relative group cursor-pointer">
+<input class="peer sr-only" name="rating" type="radio" value="1"/>
+<div class="flex flex-col items-center justify-center p-4 rounded-lg border-2 border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-800/50 hover:border-primary/50 hover:bg-primary/5 peer-checked:border-primary peer-checked:bg-primary/10 transition-all duration-200 h-full">
+<span class="text-xl font-bold text-slate-400 peer-checked:text-primary mb-1">1</span>
+<span class="text-xs text-center text-slate-500 peer-checked:text-primary font-medium">Sangat Kurang</span>
+</div>
+<div class="absolute inset-0 border-2 border-primary rounded-lg opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></div>
+</label>
+<label class="relative group cursor-pointer">
+<input class="peer sr-only" name="rating" type="radio" value="2"/>
+<div class="flex flex-col items-center justify-center p-4 rounded-lg border-2 border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-800/50 hover:border-primary/50 hover:bg-primary/5 peer-checked:border-primary peer-checked:bg-primary/10 transition-all duration-200 h-full">
+<span class="text-xl font-bold text-slate-400 peer-checked:text-primary mb-1">2</span>
+<span class="text-xs text-center text-slate-500 peer-checked:text-primary font-medium">Kurang</span>
+</div>
+<div class="absolute inset-0 border-2 border-primary rounded-lg opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></div>
+</label>
+<label class="relative group cursor-pointer">
+<input checked="" class="peer sr-only" name="rating" type="radio" value="3"/>
+<div class="flex flex-col items-center justify-center p-4 rounded-lg border-2 border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-800/50 hover:border-primary/50 hover:bg-primary/5 peer-checked:border-primary peer-checked:bg-primary/10 transition-all duration-200 h-full">
+<span class="text-xl font-bold text-slate-400 peer-checked:text-primary mb-1">3</span>
+<span class="text-xs text-center text-slate-500 peer-checked:text-primary font-medium">Cukup</span>
+</div>
+<div class="absolute inset-0 border-2 border-primary rounded-lg opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></div>
+</label>
+<label class="relative group cursor-pointer">
+<input class="peer sr-only" name="rating" type="radio" value="4"/>
+<div class="flex flex-col items-center justify-center p-4 rounded-lg border-2 border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-800/50 hover:border-primary/50 hover:bg-primary/5 peer-checked:border-primary peer-checked:bg-primary/10 transition-all duration-200 h-full">
+<span class="text-xl font-bold text-slate-400 peer-checked:text-primary mb-1">4</span>
+<span class="text-xs text-center text-slate-500 peer-checked:text-primary font-medium">Baik</span>
+</div>
+<div class="absolute inset-0 border-2 border-primary rounded-lg opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></div>
+</label>
+<label class="relative group cursor-pointer">
+<input class="peer sr-only" name="rating" type="radio" value="5"/>
+<div class="flex flex-col items-center justify-center p-4 rounded-lg border-2 border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-800/50 hover:border-primary/50 hover:bg-primary/5 peer-checked:border-primary peer-checked:bg-primary/10 transition-all duration-200 h-full">
+<span class="text-xl font-bold text-slate-400 peer-checked:text-primary mb-1">5</span>
+<span class="text-xs text-center text-slate-500 peer-checked:text-primary font-medium">Sangat Baik</span>
+</div>
+<div class="absolute inset-0 border-2 border-primary rounded-lg opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></div>
+</label>
+</div>
+</div>
+<!-- Input: Yes/No Toggle -->
+<div class="flex flex-col gap-3">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Apakah ada insiden miskomunikasi yang signifikan?</label>
+<div class="flex items-center gap-4">
+<label class="inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="relative w-14 h-7 bg-slate-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary/20 dark:peer-focus:ring-primary/40 rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+<span class="ms-3 text-sm font-medium text-slate-600 dark:text-slate-300">Tidak / Ya</span>
+</label>
+</div>
+</div>
+<!-- Input: Textarea -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300" for="feedback">Catatan Tambahan (Opsional)</label>
+<textarea class="w-full p-4 text-sm text-slate-900 bg-slate-50 border border-slate-200 rounded-lg focus:ring-primary focus:border-primary dark:bg-slate-900 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none" id="feedback" placeholder="Jelaskan alasan penilaian Anda atau berikan contoh spesifik..." rows="4"></textarea>
+<div class="flex justify-end">
+<span class="text-xs text-slate-400">0/500 karakter</span>
+</div>
+</div>
+</div>
+<!-- Footer / Navigation -->
+<div class="bg-slate-50 dark:bg-slate-900/50 px-6 md:px-8 py-5 border-t border-slate-100 dark:border-slate-700 flex flex-col-reverse sm:flex-row justify-between items-center gap-4">
+<button class="w-full sm:w-auto px-6 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 font-semibold text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">save</span>
+                        Simpan Draft
+                    </button>
+<div class="flex w-full sm:w-auto gap-3">
+<button class="w-full sm:w-auto px-6 py-2.5 rounded-lg border border-transparent text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white font-semibold text-sm transition-colors flex items-center justify-center">
+                            Sebelumnya
+                        </button>
+<button class="w-full sm:w-auto px-8 py-2.5 rounded-lg bg-primary hover:bg-sky-500 text-white font-bold text-sm shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2 group">
+                            Pertanyaan Berikutnya
+                            <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Hint Section (Subtle) -->
+<div class="flex justify-center mt-2">
+<p class="text-xs text-slate-400 dark:text-slate-600 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">info</span>
+                    Perubahan disimpan secara otomatis setiap 30 detik.
+                </p>
+</div>
+</div>
+</main>
+</body></html>

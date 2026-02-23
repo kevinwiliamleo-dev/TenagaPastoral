@@ -1,0 +1,477 @@
+{
+  "Common": {
+    "loading": "Memuat...",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "delete": "Hapus",
+    "edit": "Ubah",
+    "add": "Tambah",
+    "search": "Cari",
+    "filter": "Filter",
+    "actions": "Aksi",
+    "status": "Status",
+    "date": "Tanggal",
+    "back": "Kembali",
+    "submit": "Kirim",
+    "confirm": "Konfirmasi",
+    "yes": "Ya",
+    "no": "Tidak"
+  },
+  "Sidebar": {
+    "dashboard": "Dashboard",
+    "tasks": "Tugas Saya",
+    "activities": "Aktivitas",
+    "results": "Hasil / Rapor",
+    "profile": "Profil",
+    "settings": "Pengaturan",
+    "logout": "Keluar",
+    "admin": "Admin",
+    "users": "Manajemen User",
+    "periods": "Periode Evaluasi",
+    "questions": "Pertanyaan",
+    "admin_tasks": "Tugas Staff",
+    "admin_activities": "Aktivitas Staff",
+    "master_data": "Master Data",
+    "analytics": "Analitik",
+    "scoring_config": "Konfigurasi Scoring",
+    "wording": "Manajemen Teks",
+    "reports": "Laporan",
+    "goals": "Sasaran Kinerja",
+    "evaluations": "Evaluasi",
+    "performance": "Performa Layanan",
+    "leaderboard": "Peringkat",
+    "help": "Bantuan",
+    "calendar": "Kalender",
+    "goal_review": "Review Target"
+  },
+  "Dashboard": {
+    "welcome": "Selamat Datang, {name}",
+    "role": "Peran: {role}",
+    "overview": "Ringkasan",
+    "stats": {
+      "total_staff": "Total Staf",
+      "active_period": "Periode Aktif",
+      "no_active_period": "Tidak Ada Periode Aktif",
+      "completed_evaluation": "Evaluasi Selesai",
+      "evaluation_progress": "Progres Evaluasi",
+      "pending_review": "Menunggu Review",
+      "pending_tasks": "Tugas Pending",
+      "total_tasks": "Total Tugas",
+      "completed_tasks": "Selesai",
+      "activities": "Aktivitas",
+      "avg_score": "Rata-rata Nilai"
+    },
+    "deadlines": {
+      "title": "Batas Waktu Periode",
+      "days": "Hari",
+      "hours": "Jam",
+      "minutes": "Menit",
+      "urgent": "Mendesak! Kurang dari 7 hari lagi."
+    },
+    "charts": {
+      "score_dist": "Distribusi Nilai",
+      "pillar_perf": "Performa per Pillar",
+      "click_detail": "Klik pilar untuk detail"
+    }
+  },
+  "Tasks": {
+    "title": "Manajemen Tugas",
+    "subtitle": "Kelola tugas dan pekerjaan pastoral",
+    "add_task": "Tambah Tugas",
+    "todo": "Perlu Dikerjakan",
+    "in_progress": "Sedang Dikerjakan",
+    "completed": "Selesai",
+    "no_tasks": "Tidak ada tugas",
+    "form": {
+      "title": "Judul",
+      "description": "Deskripsi",
+      "priority": "Prioritas",
+      "due_date": "Tenggat"
+    },
+    "modal": {
+      "checklist": "Daftar Periksa",
+      "add_item": "Tambah item...",
+      "progress": "Kemajuan"
+    }
+  },
+  "Activities": {
+    "title": "Panca Tugas",
+    "subtitle": "Tracking aktivitas 5 pilar pelayanan pastoral",
+    "add_activity": "Tambah Aktivitas",
+    "total_activities": "Total Aktivitas",
+    "total_duration": "Total Durasi",
+    "activity_list": "Daftar Aktivitas",
+    "all_activities": "Semua Aktivitas",
+    "show_all": "Tampilkan Semua",
+    "no_activities": "Belum ada aktivitas tercatat",
+    "start_tracking": "Mulai catat aktivitas pastoral Anda untuk dipantau.",
+    "add_first": "Tambah aktivitas pertama",
+    "minutes": "menit",
+    "hours": "jam",
+    "pillars": {
+      "LITURGIA": "Liturgia (Peribadatan)",
+      "DIAKONIA": "Diakonia (Pelayanan Sosial)",
+      "KERYGMA": "Kerygma (Pewartaan)",
+      "KOINONIA": "Koinonia (Persekutuan)",
+      "MARTYRIA": "Martyria (Kesaksian)"
+    },
+    "form": {
+      "title": "Judul Aktivitas",
+      "pillar": "Pilar",
+      "description": "Deskripsi",
+      "date": "Tanggal",
+      "duration": "Durasi (menit)",
+      "location": "Lokasi"
+    }
+  },
+  "Goals": {
+    "title": "Target Saya",
+    "subtitle": "Tetapkan dan pantau target personal Anda, {name}",
+    "add_goal": "Tambah Target",
+    "stats": {
+      "total": "Total Target",
+      "active": "Aktif",
+      "completed": "Tercapai",
+      "cancelled": "Dibatalkan"
+    },
+    "filter": {
+      "all": "Semua",
+      "active": "Aktif",
+      "completed": "Selesai"
+    },
+    "empty": {
+      "title": "Belum ada target",
+      "description": "Mulai dengan membuat target pertama Anda!"
+    },
+    "types": {
+      "ACTIVITY_COUNT": "Jumlah Aktivitas",
+      "ACTIVITY_DURATION": "Durasi Aktivitas",
+      "TASK_COMPLETION": "Tugas Selesai",
+      "PILLAR_BALANCE": "Keseimbangan Pilar",
+      "CUSTOM": "Kustom"
+    },
+    "actions": {
+      "complete": "Selesaikan",
+      "cancel": "Batalkan",
+      "delete": "Hapus",
+      "confirm_delete": "Hapus target ini?"
+    },
+    "status": {
+      "completed_on": "Selesai pada {date}",
+      "cancelled": "Dibatalkan",
+      "overdue": "Terlambat {days} hari",
+      "due_today": "Deadline hari ini!",
+      "days_left": "{days} hari lagi"
+    },
+    "form": {
+      "title": "Tambah Target Baru",
+      "label_title": "Judul Target",
+      "label_description": "Deskripsi",
+      "label_type": "Tipe Target",
+      "label_pillar": "Pilar",
+      "label_target_value": "Nilai Target",
+      "label_target_date": "Tanggal Target",
+      "placeholder_title": "Contoh: Menyelesaikan 10 aktivitas",
+      "placeholder_description": "Deskripsi opsional...",
+      "option_all_pillars": "Semua Pilar"
+    }
+  },
+  "Auth": {
+    "login_title": "Sistem Evaluasi Kinerja",
+    "login_subtitle": "Tenaga Pastoral (v2.0)",
+    "email_label": "Email",
+    "email_placeholder": "nama@gereja.org",
+    "password_label": "Password",
+    "password_placeholder": "••••••••",
+    "forgot_password": "Lupa Password?",
+    "login_button": "Masuk",
+    "login_processing": "Memproses...",
+    "error_login_failed": "Login Gagal. Silakan periksa email dan password Anda.",
+    "error_generic": "Terjadi kesalahan. Silakan coba lagi.",
+    "validation_email": "Email tidak valid",
+    "validation_password": "Password wajib diisi",
+    "footer": "© 2024 Keuskupan Agung. All rights reserved."
+  },
+  "Evaluations": {
+    "title": "Evaluasi",
+    "subtitle": "Kelola dan isi formulir evaluasi kinerja",
+    "tabs": {
+      "start_new": "Mulai Evaluasi Baru",
+      "history": "Riwayat Evaluasi"
+    },
+    "active_periods": {
+      "title": "Periode Evaluasi Aktif",
+      "subtitle": "Pilih periode evaluasi yang sedang berjalan untuk mengisi formulir",
+      "empty_title": "Tidak Ada Periode Aktif",
+      "empty_desc": "Saat ini tidak ada periode evaluasi yang sedang berjalan. Silakan tunggu administrator membuat periode baru.",
+      "self_eval": "Evaluasi Diri",
+      "peer_eval": "Evaluasi Rekan"
+    },
+    "history": {
+      "title": "Riwayat Evaluasi Anda",
+      "subtitle": "Daftar evaluasi yang sudah Anda isi",
+      "empty_title": "Belum Ada Evaluasi",
+      "empty_desc": "Anda belum pernah mengisi formulir evaluasi. Mulai dengan memilih periode evaluasi aktif.",
+      "start_button": "Mulai Evaluasi",
+      "table": {
+        "period": "Periode",
+        "target": "Target",
+        "date": "Tanggal",
+        "status": "Status",
+        "action": "Aksi"
+      },
+      "self": "Diri Sendiri",
+      "status": {
+        "submitted": "Terkirim",
+        "draft": "Draft"
+      },
+      "continue": "Lanjutkan"
+    }
+  },
+  "EvaluationForm": {
+    "header": {
+      "title": "Sistem Evaluasi Pastoral",
+      "self": "Evaluasi Diri",
+      "peer": "Evaluasi Rekan",
+      "saved": "Tersimpan"
+    },
+    "peer_selection": {
+      "title": "Pilih Rekan untuk Dievaluasi",
+      "subtitle": "Pilih salah satu rekan pastoral yang akan Anda evaluasi",
+      "empty": "Tidak ada rekan yang tersedia untuk dievaluasi",
+      "back": "Kembali"
+    },
+    "context": {
+      "target": "Target Evaluasi",
+      "status_submitted": "TERKIRIM",
+      "status_draft": "DRAFT",
+      "progress": "Pertanyaan {current} dari {total}",
+      "completed": "{percent}% Selesai",
+      "answered": "Dijawab: {count}/{total}"
+    },
+    "question": {
+      "required": "* Wajib dijawab",
+      "rating_label": "Berikan Penilaian Anda",
+      "boolean_label": "Pilih Jawaban",
+      "text_label": "Jawaban Anda",
+      "text_placeholder": "Tulis jawaban Anda di sini...",
+      "chars": "karakter"
+    },
+    "actions": {
+      "save_draft": "Simpan Draft",
+      "prev": "Sebelumnya",
+      "next": "Berikutnya",
+      "submit": "Kirim Evaluasi"
+    },
+    "hint": "Gunakan tombol \"Simpan Draft\" untuk menyimpan progres Anda.",
+    "toast": {
+      "error_title": "Error",
+      "success_title": "Berhasil",
+      "saved_title": "Tersimpan",
+      "attention_title": "Perhatian",
+      "select_target": "Pilih target evaluasi terlebih dahulu",
+      "draft_saved": "Draft berhasil disimpan",
+      "save_failed": "Gagal menyimpan draft",
+      "unanswered": "Masih ada {count} pertanyaan wajib yang belum dijawab",
+      "submit_success": "Evaluasi berhasil dikirim!",
+      "submit_failed": "Gagal mengirim evaluasi"
+    },
+    "ratings": {
+      "1": "Sangat Kurang",
+      "2": "Kurang",
+      "3": "Cukup",
+      "4": "Baik",
+      "5": "Sangat Baik"
+    },
+    "boolean": {
+      "yes": "Ya",
+      "no": "Tidak"
+    }
+  },
+  "Results": {
+    "title": "Hasil Saya",
+    "subtitle": "Lihat hasil evaluasi dan rencana pengembangan Anda",
+    "period_selector": {
+      "empty_title": "Belum Ada Periode",
+      "empty_desc": "Tidak ada periode evaluasi yang tersedia saat ini.",
+      "loading": "Memuat hasil..."
+    },
+    "evaluation_card": {
+      "title": "Hasil Evaluasi",
+      "subtitle": "Rangkuman hasil evaluasi dari penilai Anda",
+      "average_score": "Skor Rata-rata",
+      "category_score": "Skor per Kategori",
+      "total_evaluators": "Total evaluasi diterima: {count} penilai",
+      "empty_title": "Belum Ada Evaluasi",
+      "empty_desc": "Anda belum menerima evaluasi untuk periode ini."
+    },
+    "development_plan": {
+      "title": "Rencana Pengembangan",
+      "subtitle": "Rekomendasi dari Admin untuk pengembangan Anda",
+      "strengths": "Kekuatan",
+      "areas_of_improvement": "Area Pengembangan",
+      "recommendations": "Rekomendasi",
+      "status_label": "Status",
+      "status_final": "Finalisasi",
+      "status_draft": "Draft",
+      "empty_title": "Belum Ada Rencana",
+      "empty_desc": "Admin belum membuat rencana pengembangan untuk Anda pada periode ini."
+    },
+    "history": {
+      "title": "Riwayat Pengembangan",
+      "subtitle": "Rencana pengembangan dari periode sebelumnya",
+      "empty_title": "Belum Ada Riwayat",
+      "empty_desc": "Belum ada rencana pengembangan yang tercatat."
+    },
+    "badges": {
+      "excellent": "Sangat Baik",
+      "good": "Baik",
+      "average": "Cukup",
+      "needs_improvement": "Perlu Perbaikan"
+    }
+  },
+  "Performance": {
+    "title": "Dashboard Kinerja",
+    "subtitle": "Ringkasan performa aktivitas dan tugas Anda, {name}",
+    "score_card": {
+      "title": "Skor Kinerja Anda",
+      "activity": "Aktivitas",
+      "pillar": "Pilar",
+      "task": "Tugas",
+      "consistency": "Konsistensi",
+      "evaluation": "Evaluasi",
+      "view_rank": "Klik untuk lihat peringkat →"
+    },
+    "summary": {
+      "total_activities": "Total Aktivitas",
+      "total_duration": "Total Durasi",
+      "active_streak": "Streak Aktif",
+      "tasks_completed": "Tugas Selesai",
+      "days": "hari",
+      "minutes": "menit",
+      "hours": "jam"
+    },
+    "charts": {
+      "monthly_activity": "Aktivitas Per Bulan",
+      "no_data": "Belum ada data aktivitas",
+      "pillar_balance": "Keseimbangan Pilar",
+      "activities_count": "{count} aktivitas"
+    },
+    "tasks": {
+      "title": "Status Tugas",
+      "total": "Total Tugas",
+      "todo": "Akan Dikerjakan",
+      "in_progress": "Sedang Dikerjakan",
+      "completed": "Selesai",
+      "progress": "Progress Keseluruhan"
+    },
+    "metrics": {
+      "this_month": "Bulan Ini",
+      "recorded_activities": "aktivitas tercatat",
+      "avg_duration": "Rata-rata Durasi",
+      "per_activity": "per aktivitas",
+      "longest_streak": "Streak Terpanjang",
+      "last_30_days": "dalam 30 hari terakhir"
+    }
+  },
+  "Calendar": {
+    "title": "Kalender Kegiatan",
+    "subtitle": "Jadwal periode evaluasi, tugas, dan target pencapaian Anda.",
+    "controls": {
+      "today": "Hari Ini"
+    },
+    "legend": {
+      "period": "Periode",
+      "task": "Tugas",
+      "goal": "Sasaran"
+    },
+    "days": {
+      "mon": "Sen",
+      "tue": "Sel",
+      "wed": "Rab",
+      "thu": "Kam",
+      "fri": "Jum",
+      "sat": "Sab",
+      "sun": "Min"
+    },
+    "event_details": {
+      "status": "Status",
+      "view_detail": "Lihat Detail"
+    }
+  },
+  "Leaderboard": {
+    "title": "Peringkat Kinerja",
+    "subtitle": "Lihat skor dan peringkat Anda dibanding rekan lainnya",
+    "your_score": "Skor Anda",
+    "rank": "Peringkat",
+    "from_staff": "dari {count} staff",
+    "metrics": {
+      "activity": "Aktivitas",
+      "pillar": "Pilar",
+      "task": "Tugas",
+      "consistency": "Konsistensi",
+      "evaluation": "Evaluasi",
+      "total": "Total"
+    },
+    "table": {
+      "title": "Papan Peringkat",
+      "headers": {
+        "rank": "#",
+        "name": "Nama",
+        "activity": "Aktivitas",
+        "pillar": "Pilar",
+        "task": "Tugas",
+        "consistency": "Konsistensi",
+        "evaluation": "Evaluasi",
+        "total": "Total"
+      },
+      "you": "(Anda)"
+    },
+    "scoring_info": {
+      "title": "Cara Penilaian",
+      "activity_desc": "Jumlah & durasi aktivitas bulanan",
+      "pillar_desc": "Keseimbangan 5 pilar pastoral",
+      "task_desc": "Rasio penyelesaian tugas",
+      "consistency_desc": "Streak & keteraturan aktivitas",
+      "evaluation_desc": "Rata-rata hasil evaluasi 360°"
+    }
+  },
+  "Profile": {
+    "title": "Halaman Profil",
+    "subtitle": "Kelola informasi akun dan keamanan Anda",
+    "roles": {
+      "admin": "Administrator",
+      "staff": "Tenaga Pastoral"
+    },
+    "info": {
+      "name_placeholder": "Nama belum diisi",
+      "email_label": "Email Akun",
+      "contact_admin": "Hubungi administrator untuk mengubah email."
+    },
+    "edit_profile": {
+      "title": "Data Diri",
+      "name_label": "Nama Lengkap",
+      "name_placeholder": "Masukkan nama lengkap",
+      "name_help": "Nama ini akan ditampilkan pada laporan evaluasi.",
+      "save": "Simpan Nama",
+      "saving": "Menyimpan..."
+    },
+    "security": {
+      "title": "Keamanan",
+      "current_password": "Password Lama",
+      "new_password": "Password Baru",
+      "confirm_password": "Konfirmasi Password",
+      "show_password": "Tampilkan password",
+      "min_chars": "Minimal 6 karakter.",
+      "change_password": "Ubah Password",
+      "changing": "Mengubah..."
+    },
+    "messages": {
+      "success": "Berhasil",
+      "error": "Error",
+      "update_error": "Gagal memperbarui profil",
+      "password_mismatch": "Konfirmasi password tidak cocok",
+      "password_error": "Gagal mengubah password"
+    }
+  }
+}

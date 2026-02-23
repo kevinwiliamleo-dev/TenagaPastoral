@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Proses Pengerjaan Tugas - Pastoral Dashboard</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "primary-dark": "#0b8acb",
+                        "background-light": "#f6f7f8", // Not used in this dark mode request but kept for config
+                        "background-dark": "#0f172a", // Slate 900
+                        "card-dark": "#1e293b", // Slate 800
+                        "border-dark": "#334155", // Slate 700
+                        "text-main": "#f8fafc", // Slate 50
+                        "text-muted": "#94a3b8", // Slate 400
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem", // rounded-md
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for dark mode */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569; 
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-text-main min-h-screen flex overflow-hidden">
+<!-- Side Navigation -->
+<aside class="w-64 bg-card-dark border-r border-border-dark flex-shrink-0 flex flex-col h-screen fixed left-0 top-0 z-20">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-12 w-12 border-2 border-primary" data-alt="Profile picture of Reverend Thomas" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBEMqcmDMqjCkbOR7PzjgcSRsW1fw6ATm22RUTI8iXFiP3Qovf4ZhBXrCLRtpJBPcD5PylU77rrpz1TlcDwaUQOxC19uEhVlXNuMJ6BAkqFWQL7X0wgUMLPQ9pfZBc1awr4EduwFH9ZJ4FqFDgKG8Q_n_yuNKQb77Siuum5lRTZZ-0bU4pc7Xfe-4ya2SlS6dZE8B47ZhjF-_2u-U-W9IYtJxrokvSLYgXxCVQMYZCCfvtNUaijCkI9Jf65vrjVm8MvOgQUDg_v-kg");'>
+</div>
+<div class="flex flex-col">
+<h1 class="text-text-main text-base font-semibold leading-tight">Rev. Thomas</h1>
+<p class="text-text-muted text-xs font-normal">Senior Pastor</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-slate-700/50 hover:text-text-main transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary border border-primary/20" href="#">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_box</span>
+<span class="text-sm font-medium">My Tasks</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-slate-700/50 hover:text-text-main transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">bar_chart</span>
+<span class="text-sm font-medium">Performance</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-slate-700/50 hover:text-text-main transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">volunteer_activism</span>
+<span class="text-sm font-medium">Pastoral Care</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-muted hover:bg-slate-700/50 hover:text-text-main transition-colors group" href="#">
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 border-t border-border-dark">
+<button class="flex items-center gap-2 text-text-muted hover:text-text-main text-sm font-medium transition-colors w-full">
+<span class="material-symbols-outlined text-lg">logout</span>
+                Sign Out
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-64 p-8 overflow-y-auto h-screen bg-background-dark">
+<div class="max-w-6xl mx-auto space-y-6">
+<!-- Breadcrumbs -->
+<nav class="flex items-center text-sm font-medium text-text-muted">
+<a class="hover:text-primary transition-colors" href="#">Performance Evaluation</a>
+<span class="mx-2 text-slate-600">/</span>
+<a class="hover:text-primary transition-colors" href="#">Tasks</a>
+<span class="mx-2 text-slate-600">/</span>
+<span class="text-primary">Persiapan Khotbah Minggu</span>
+</nav>
+<!-- Page Header -->
+<header class="flex flex-col md:flex-row md:items-start justify-between gap-4 pb-4 border-b border-border-dark">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<h1 class="text-3xl font-bold text-text-main tracking-tight">Persiapan Khotbah Minggu</h1>
+<span class="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full border border-blue-500/20">In Progress</span>
+</div>
+<p class="text-text-muted max-w-2xl">
+                        Preparation of Sunday sermon material based on the lectionary. Includes drafting outlines, selecting hymns, and final review with the music director.
+                    </p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-card-dark border border-border-dark text-text-main rounded-lg text-sm font-medium hover:bg-slate-700 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">bookmark_border</span>
+                        Save Draft
+                    </button>
+<button class="px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-lg text-sm font-medium shadow-lg shadow-primary/20 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">send</span>
+                        Submit Review
+                    </button>
+</div>
+</header>
+<!-- Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Left Column: Workflow (Timeline & Checklist) -->
+<div class="lg:col-span-2 space-y-6">
+<!-- Timeline Section -->
+<section class="bg-card-dark rounded-xl border border-border-dark p-6 shadow-sm">
+<h2 class="text-lg font-semibold text-text-main mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">timeline</span>
+                            Timeline Progress
+                        </h2>
+<div class="relative pl-2">
+<!-- Step 1: Completed -->
+<div class="grid grid-cols-[40px_1fr] pb-8 group">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center border border-green-500/30 z-10 shadow-[0_0_10px_rgba(74,222,128,0.2)]">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div class="w-0.5 h-full bg-green-500/30 -mt-2"></div>
+</div>
+<div class="pt-1">
+<h3 class="text-text-main font-medium">Assignment Received</h3>
+<p class="text-text-muted text-sm mt-0.5">Oct 24, 10:00 AM • Automated System</p>
+</div>
+</div>
+<!-- Step 2: Active -->
+<div class="grid grid-cols-[40px_1fr] pb-8 group">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center z-10 shadow-[0_0_15px_rgba(19,164,236,0.5)] ring-4 ring-primary/10">
+<span class="material-symbols-outlined text-sm">edit</span>
+</div>
+<div class="w-0.5 h-full bg-border-dark -mt-2 group-hover:bg-primary/30 transition-colors"></div>
+</div>
+<div class="pt-1">
+<h3 class="text-primary font-semibold">Drafting &amp; Preparation</h3>
+<p class="text-text-muted text-sm mt-0.5">Current Stage • Due in 2 days</p>
+</div>
+</div>
+<!-- Step 3: Pending -->
+<div class="grid grid-cols-[40px_1fr] pb-8 opacity-60">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-card-dark border-2 border-border-dark text-text-muted flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</div>
+<div class="w-0.5 h-full bg-border-dark -mt-2"></div>
+</div>
+<div class="pt-1">
+<h3 class="text-text-main font-medium">Peer Review</h3>
+<p class="text-text-muted text-sm mt-0.5">Pending completion of draft</p>
+</div>
+</div>
+<!-- Step 4: Pending -->
+<div class="grid grid-cols-[40px_1fr] opacity-60">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-card-dark border-2 border-border-dark text-text-muted flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-sm">flag</span>
+</div>
+</div>
+<div class="pt-1">
+<h3 class="text-text-main font-medium">Finalize</h3>
+<p class="text-text-muted text-sm mt-0.5">Approval required</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Checklist Section -->
+<section class="bg-card-dark rounded-xl border border-border-dark p-6 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-lg font-semibold text-text-main flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">checklist</span>
+                                Action Items
+                            </h2>
+<span class="text-xs font-medium px-2 py-1 rounded bg-slate-700 text-text-muted">1/4 Completed</span>
+</div>
+<div class="space-y-3">
+<!-- Item 1: Checked -->
+<label class="flex items-start gap-4 p-4 rounded-lg bg-slate-800/50 border border-border-dark cursor-pointer hover:bg-slate-800 transition-colors group">
+<div class="relative flex items-center">
+<input checked="" class="peer h-5 w-5 rounded border-2 border-slate-500 bg-transparent text-primary checked:border-primary checked:bg-primary focus:ring-offset-0 focus:ring-2 focus:ring-primary/50 transition-all cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex-1">
+<p class="text-text-muted line-through decoration-slate-500 font-medium group-hover:text-text-muted transition-colors">Read Scripture Passage (Psalm 23)</p>
+<span class="text-xs text-slate-500 mt-1 block">Completed today at 9:00 AM</span>
+</div>
+</label>
+<!-- Item 2: Active -->
+<label class="flex items-start gap-4 p-4 rounded-lg bg-slate-800 border border-primary/30 shadow-[0_0_0_1px_rgba(19,164,236,0.1)] cursor-pointer hover:bg-slate-700/80 transition-colors group">
+<div class="relative flex items-center">
+<input class="peer h-5 w-5 rounded border-2 border-slate-400 bg-transparent text-primary checked:border-primary checked:bg-primary focus:ring-offset-0 focus:ring-2 focus:ring-primary/50 transition-all cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex-1">
+<p class="text-text-main font-medium group-hover:text-primary transition-colors">Draft Sermon Outline &amp; Key Points</p>
+<span class="text-xs text-primary/80 mt-1 block font-medium">Next priority</span>
+</div>
+</label>
+<!-- Item 3: Unchecked -->
+<label class="flex items-start gap-4 p-4 rounded-lg bg-slate-800/30 border border-border-dark/50 cursor-pointer hover:bg-slate-800/80 hover:border-slate-600 transition-colors group">
+<div class="relative flex items-center">
+<input class="peer h-5 w-5 rounded border-2 border-slate-600 bg-transparent text-primary checked:border-primary checked:bg-primary focus:ring-offset-0 focus:ring-2 focus:ring-primary/50 transition-all cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex-1">
+<p class="text-text-main font-normal group-hover:text-text-main transition-colors">Select Hymns for Service</p>
+</div>
+</label>
+<!-- Item 4: Unchecked -->
+<label class="flex items-start gap-4 p-4 rounded-lg bg-slate-800/30 border border-border-dark/50 cursor-pointer hover:bg-slate-800/80 hover:border-slate-600 transition-colors group">
+<div class="relative flex items-center">
+<input class="peer h-5 w-5 rounded border-2 border-slate-600 bg-transparent text-primary checked:border-primary checked:bg-primary focus:ring-offset-0 focus:ring-2 focus:ring-primary/50 transition-all cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex-1">
+<p class="text-text-main font-normal group-hover:text-text-main transition-colors">Confirm details with Worship Leader</p>
+</div>
+</label>
+</div>
+</section>
+</div>
+<!-- Right Column: Actions & Metrics -->
+<div class="space-y-6">
+<!-- Metric Panel -->
+<section class="relative bg-card-dark rounded-xl border border-border-dark p-6 overflow-hidden">
+<!-- Glow effect -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
+<div class="relative z-10">
+<h3 class="text-sm font-semibold uppercase tracking-wider text-text-muted mb-4">Impact Analysis</h3>
+<div class="flex items-end justify-between mb-2">
+<div class="flex flex-col">
+<span class="text-4xl font-bold text-white">+15</span>
+<span class="text-sm text-green-400 font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-base">trending_up</span>
+                                        Projected Score
+                                    </span>
+</div>
+<div class="h-12 w-12 relative flex items-center justify-center">
+<svg class="transform -rotate-90 w-full h-full" viewbox="0 0 36 36">
+<path class="text-slate-700" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4"></path>
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="75, 100" stroke-width="4"></path>
+</svg>
+<span class="absolute text-[10px] font-bold text-text-main">75%</span>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-border-dark">
+<p class="text-xs text-text-muted leading-relaxed">
+                                    Completing this task on time will improve your "Preparation Consistency" metric by 5%.
+                                </p>
+</div>
+</div>
+</section>
+<!-- Upload Area -->
+<section class="bg-card-dark rounded-xl border border-border-dark p-6 shadow-sm">
+<h2 class="text-lg font-semibold text-text-main mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">cloud_upload</span>
+                            Submission
+                        </h2>
+<div class="group relative w-full h-48 rounded-xl border-2 border-dashed border-border-dark hover:border-primary hover:bg-slate-800/50 transition-all duration-300 flex flex-col items-center justify-center cursor-pointer overflow-hidden">
+<!-- Pulse effect on hover -->
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10 flex flex-col items-center text-center p-4">
+<div class="bg-slate-800 p-3 rounded-full mb-3 group-hover:scale-110 transition-transform duration-300 group-hover:bg-primary/20">
+<span class="material-symbols-outlined text-slate-400 text-3xl group-hover:text-primary transition-colors">upload_file</span>
+</div>
+<p class="text-sm font-medium text-text-main mb-1">Click to upload or drag and drop</p>
+<p class="text-xs text-text-muted">PDF, DOCX, or TXT (Max 10MB)</p>
+</div>
+</div>
+<!-- Attached Files List (Empty State shown above, populating hypothetical uploaded file below) -->
+<div class="mt-4 space-y-2">
+<div class="flex items-center justify-between p-3 rounded-lg bg-slate-800/40 border border-transparent hover:border-border-dark transition-all">
+<div class="flex items-center gap-3">
+<div class="bg-blue-900/30 p-2 rounded text-blue-400">
+<span class="material-symbols-outlined text-xl">description</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-text-main">Worship_Draft_v1.docx</span>
+<span class="text-xs text-text-muted">24 KB</span>
+</div>
+</div>
+<button class="text-slate-500 hover:text-red-400 transition-colors">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Notes/Comments -->
+<section class="bg-card-dark rounded-xl border border-border-dark p-6 shadow-sm">
+<h2 class="text-lg font-semibold text-text-main mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">sticky_note_2</span>
+                            Pastoral Notes
+                        </h2>
+<div class="relative">
+<textarea class="w-full bg-slate-900/50 border border-border-dark rounded-lg p-3 text-sm text-text-main placeholder-slate-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary min-h-[120px] resize-none" placeholder="Add personal reflection or notes for the reviewer..."></textarea>
+<div class="absolute bottom-3 right-3">
+<button class="p-1.5 rounded-md hover:bg-slate-700 text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">sentiment_satisfied</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</main>
+</body></html>

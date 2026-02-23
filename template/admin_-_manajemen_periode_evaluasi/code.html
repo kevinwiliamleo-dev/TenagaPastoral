@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin - Manajemen Periode Evaluasi</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display text-[#0d171b] dark:text-slate-100 transition-colors duration-200">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white dark:bg-[#15232b] border-b border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="max-w-7xl mx-auto px-4 md:px-8">
+<div class="flex items-center justify-between h-16">
+<!-- Logo & Brand -->
+<div class="flex items-center gap-4">
+<div class="size-8 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">admin_panel_settings</span>
+</div>
+<h2 class="text-lg font-bold tracking-tight">Admin Console</h2>
+</div>
+<!-- Navigation Links (Hidden on small screens) -->
+<div class="hidden md:flex flex-1 justify-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Dashboard</a>
+<a class="text-primary text-sm font-bold" href="#">Evaluasi</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Pengguna</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Pengaturan</a>
+</div>
+<!-- Right Actions -->
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-[#15232b]"></span>
+</button>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border border-slate-200 dark:border-slate-700 cursor-pointer" data-alt="User profile avatar showing a smiling person" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXPRHz-9rLWiNx3nIGsi7o1oQ5AxG9gC2dr8ZB8WFwQxAW8E-yc_kuyz_TM3zpJ0F3scIK35RhhPPXgOjyMJfV-SX-_19qLyo3sOS_UmO9KDj8SWDt_f_cf9GpqUjeF3VUPY1i7GQomgbY7QOYdyFDrwSKRdvA7JybusFvXBe_roLGAvW66xGsY99fX3LJ86Z_qhQhugdsVnkvHGqNkk8R7z7a8GgwXBQ7yRQ2WlQUKtkeWk4MUcCU36hpFU9JFH-nTylXGBlFB_U");'>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 max-w-7xl mx-auto w-full px-4 md:px-8 py-8">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+<div>
+<h1 class="text-2xl md:text-3xl font-bold tracking-tight text-[#0d171b] dark:text-white">Manajemen Periode Evaluasi</h1>
+<p class="text-slate-500 dark:text-slate-400 mt-1 text-sm">Kelola siklus penilaian kinerja pastoral Anda.</p>
+</div>
+<button class="group flex items-center justify-center gap-2 bg-primary hover:bg-[#1090d0] text-white px-5 py-2.5 rounded-lg text-sm font-semibold shadow-sm transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Buat Periode Baru</span>
+</button>
+</div>
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1: Active Period -->
+<article class="flex flex-col bg-white dark:bg-[#15232b] rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-slate-200 dark:border-slate-700 overflow-hidden group hover:border-primary/50 transition-colors">
+<div class="p-5 flex flex-col gap-4 flex-1">
+<!-- Status Badge -->
+<div class="flex justify-between items-start">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-green-100 text-green-700 dark:bg-green-500/10 dark:text-green-400 border border-green-200 dark:border-green-500/20">
+<span class="size-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                            ACTIVE
+                        </span>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- Title & Date -->
+<div>
+<h2 class="text-lg font-bold text-slate-900 dark:text-white mb-2 leading-tight">Evaluasi Semester I 2024</h2>
+<div class="flex items-center text-slate-500 dark:text-slate-400 text-sm gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span class="font-medium">01 Jan - 30 Jun 2024</span>
+</div>
+</div>
+<!-- Stats Row -->
+<div class="grid grid-cols-2 gap-3 mt-2">
+<div class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-lg border border-slate-100 dark:border-slate-700/50">
+<div class="flex items-center gap-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-[16px]">quiz</span>
+                                Soal
+                            </div>
+<p class="text-base font-bold text-slate-800 dark:text-slate-200">15 Items</p>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-lg border border-slate-100 dark:border-slate-700/50">
+<div class="flex items-center gap-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-[16px]">inbox</span>
+                                Progress
+                            </div>
+<div class="flex justify-between items-end mb-1">
+<p class="text-base font-bold text-slate-800 dark:text-slate-200">42/50</p>
+<span class="text-xs font-bold text-primary">84%</span>
+</div>
+<div class="h-1.5 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 84%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="px-5 py-4 border-t border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-[#1a2c36] flex items-center justify-between gap-2">
+<button class="flex items-center justify-center p-2 rounded-lg text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700 hover:text-slate-900 transition-colors" title="Edit Period">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<div class="flex gap-2">
+<button class="px-3 py-2 rounded-lg text-sm font-bold text-primary hover:bg-primary/10 transition-colors">
+                            Kelola Pertanyaan
+                        </button>
+<button class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-700 hover:border-red-200 hover:text-red-600 dark:hover:text-red-400 transition-all">
+                            Tutup Periode
+                        </button>
+</div>
+</div>
+</article>
+<!-- Card 2: Draft Period -->
+<article class="flex flex-col bg-white dark:bg-[#15232b] rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-slate-200 dark:border-slate-700 overflow-hidden group hover:border-primary/50 transition-colors">
+<div class="p-5 flex flex-col gap-4 flex-1">
+<!-- Status Badge -->
+<div class="flex justify-between items-start">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-600">
+<span class="size-1.5 rounded-full bg-slate-400"></span>
+                            DRAFT
+                        </span>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- Title & Date -->
+<div>
+<h2 class="text-lg font-bold text-slate-900 dark:text-white mb-2 leading-tight">Evaluasi Semester II 2024</h2>
+<div class="flex items-center text-slate-500 dark:text-slate-400 text-sm gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span class="font-medium">01 Jul - 31 Dec 2024</span>
+</div>
+</div>
+<!-- Stats Row -->
+<div class="grid grid-cols-2 gap-3 mt-2">
+<div class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-lg border border-slate-100 dark:border-slate-700/50">
+<div class="flex items-center gap-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-[16px]">quiz</span>
+                                Soal
+                            </div>
+<p class="text-base font-bold text-slate-800 dark:text-slate-200">0 Items</p>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-lg border border-slate-100 dark:border-slate-700/50 opacity-60">
+<div class="flex items-center gap-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-[16px]">inbox</span>
+                                Progress
+                            </div>
+<div class="flex justify-between items-end mb-1">
+<p class="text-base font-bold text-slate-800 dark:text-slate-200">0/50</p>
+<span class="text-xs font-bold text-slate-400">0%</span>
+</div>
+<div class="h-1.5 w-full bg-slate-200 dark:bg-slate-700 rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="px-5 py-4 border-t border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-[#1a2c36] flex items-center justify-between gap-2">
+<button class="flex items-center justify-center p-2 rounded-lg text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700 hover:text-slate-900 transition-colors" title="Edit Period">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<div class="flex gap-2">
+<button class="px-3 py-2 rounded-lg text-sm font-bold text-primary hover:bg-primary/10 transition-colors">
+                            Setup Pertanyaan
+                        </button>
+<button class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-400 cursor-not-allowed border border-slate-100 dark:border-slate-700 bg-white dark:bg-transparent" disabled="">
+                            Tutup Periode
+                        </button>
+</div>
+</div>
+</article>
+<!-- Card 3: Closed Period -->
+<article class="flex flex-col bg-white dark:bg-[#15232b] rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-slate-200 dark:border-slate-700 overflow-hidden group hover:border-primary/50 transition-colors opacity-90 hover:opacity-100">
+<div class="p-5 flex flex-col gap-4 flex-1">
+<!-- Status Badge -->
+<div class="flex justify-between items-start">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 text-red-700 dark:bg-red-500/10 dark:text-red-400 border border-red-200 dark:border-red-500/20">
+<span class="material-symbols-outlined text-[14px] font-bold">lock</span>
+                            CLOSED
+                        </span>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- Title & Date -->
+<div>
+<h2 class="text-lg font-bold text-slate-900 dark:text-white mb-2 leading-tight">Evaluasi Semester II 2023</h2>
+<div class="flex items-center text-slate-500 dark:text-slate-400 text-sm gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span class="font-medium">01 Jul - 31 Dec 2023</span>
+</div>
+</div>
+<!-- Stats Row -->
+<div class="grid grid-cols-2 gap-3 mt-2">
+<div class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-lg border border-slate-100 dark:border-slate-700/50">
+<div class="flex items-center gap-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-[16px]">quiz</span>
+                                Soal
+                            </div>
+<p class="text-base font-bold text-slate-800 dark:text-slate-200">20 Items</p>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-lg border border-slate-100 dark:border-slate-700/50">
+<div class="flex items-center gap-1.5 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-[16px]">inbox</span>
+                                Progress
+                            </div>
+<div class="flex justify-between items-end mb-1">
+<p class="text-base font-bold text-slate-800 dark:text-slate-200">50/50</p>
+<span class="text-xs font-bold text-green-600 dark:text-green-400">100%</span>
+</div>
+<div class="h-1.5 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-green-500 rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="px-5 py-4 border-t border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-[#1a2c36] flex items-center justify-between gap-2">
+<button class="flex items-center justify-center p-2 rounded-lg text-slate-400 cursor-not-allowed" disabled="" title="Cannot Edit Closed Period">
+<span class="material-symbols-outlined text-[20px]">edit_off</span>
+</button>
+<div class="flex gap-2">
+<button class="px-3 py-2 rounded-lg text-sm font-bold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">
+                            Lihat Laporan
+                        </button>
+<button class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-400 border border-slate-100 dark:border-slate-700 bg-white dark:bg-transparent cursor-not-allowed">
+                            Tutup Periode
+                        </button>
+</div>
+</div>
+</article>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Proses Pengerjaan Tugas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- SideNavBar -->
+<aside class="w-64 flex-shrink-0 border-r border-slate-200 bg-white dark:bg-[#1a2c35] dark:border-slate-800 hidden md:flex flex-col">
+<div class="flex h-full flex-col justify-between p-4">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Abstract gradient logo in blue and teal" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCa-SdOFpqvMwmmoMQMlr6_UqO7p4T5zLx9EYpL_V40WLfsdzmMggCrjUfVSQAP3uokI-2v2K9q2fKO8jwshntjjN3gRTgiq-sEI4jtCvC-DlK6Qm-TtY-XIF3eFLEjolO9sRzJH_zxEnYtx0Zv7KgF7X23op1x7mw8VxQUUHraPW_2ws4u0N5mXoFlvmRh1OUejreEAVBHFkkKZH-zseMhCPa33m7xW3mJSO7S3yjjMrlcbnmRzp5BvK4ky0JfaBGjkF4vZC4vMtk");'></div>
+<h1 class="text-slate-900 dark:text-white text-lg font-bold leading-normal">PastoralApp</h1>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined text-[24px] fill-1">check_circle</span>
+<p class="text-sm font-bold leading-normal">Tugas Saya</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">calendar_today</span>
+<p class="text-sm font-medium leading-normal">Jadwal</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">bar_chart</span>
+<p class="text-sm font-medium leading-normal">Evaluasi</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<p class="text-sm font-medium leading-normal">Pengaturan</p>
+</a>
+</nav>
+</div>
+<div class="flex items-center gap-3 px-3 py-4 border-t border-slate-100 dark:border-slate-800 mt-auto">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture of a smiling man" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBRUbX9sm_PD-m11P8OLjqX13uP87PXbXMBXYMBFrdAWdonR8DyFEpOFE2IpXquHPDep_JaeP9DdaUHPYawiJbv0R-A7Jffbvx1NOHEw6X5GVBDO65y7_1irbGL41mB417on-yXUgCVzvPrfrHKHeaH7TuKaBn0RcvpZwJTJYh7sWrp6Wa9K2q2468u-vRyE7rp0oJIPUEdXosVd0GX5z3Pvgha8c3lgxkFhSvr3gfyPhu2JGPf5bq7E2MnV4YRXpotu6Z5LM_wK60");'></div>
+<div class="flex flex-col">
+<p class="text-sm font-bold text-slate-900 dark:text-white">Pdt. Simanjuntak</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Gembala Sidang</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-[#1a2c35] px-6 py-4 z-10">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="md:hidden">
+<span class="material-symbols-outlined cursor-pointer">menu</span>
+</div>
+<h2 class="text-lg font-bold leading-tight">Detail Tugas</h2>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<div class="hidden md:flex w-full max-w-sm items-center rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 h-10 px-3">
+<span class="material-symbols-outlined text-slate-400">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-sm text-slate-900 dark:text-white placeholder:text-slate-400" placeholder="Cari tugas, jemaat..."/>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer">notifications</span>
+<span class="absolute top-0 right-0 size-2 bg-red-500 rounded-full border-2 border-white dark:border-[#1a2c35]"></span>
+</div>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark p-6 lg:px-10 pb-24">
+<div class="max-w-6xl mx-auto flex flex-col gap-6">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 items-center text-sm">
+<a class="text-slate-500 hover:text-primary font-medium" href="#">Dashboard</a>
+<span class="text-slate-300">/</span>
+<a class="text-slate-500 hover:text-primary font-medium" href="#">Tugas Saya</a>
+<span class="text-slate-300">/</span>
+<span class="text-slate-900 dark:text-white font-medium">Kunjungan Jemaat</span>
+</div>
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<h1 class="text-3xl font-black text-slate-900 dark:text-white tracking-tight">Kunjungan Jemaat Sakit - Bp. Budi</h1>
+</div>
+<div class="flex flex-wrap items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-orange-100 text-orange-700 font-medium text-xs border border-orange-200">
+<span class="material-symbols-outlined text-[16px]">priority_high</span> Prioritas Tinggi
+                                </span>
+<span class="w-1 h-1 rounded-full bg-slate-300"></span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">event</span>
+                                    Tenggat: 25 Okt 2023
+                                </span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold text-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                                Simpan Draft
+                            </button>
+</div>
+</div>
+<!-- Two Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Left Column (Detail & Checklist) -->
+<div class="lg:col-span-2 flex flex-col gap-6">
+<!-- Task Description Card -->
+<div class="bg-white dark:bg-[#1a2c35] rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-6">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">Deskripsi Tugas</h3>
+<p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                                    Melakukan kunjungan pastoral dan doa untuk jemaat yang sedang dirawat di RS Siloam (Kamar 402). 
+                                    Mohon untuk memberikan dukungan moril kepada keluarga dan mendoakan kesembuhan Bp. Budi.
+                                    Pastikan membawa buah tangan yang sudah disiapkan oleh tim Diakonia.
+                                </p>
+<h4 class="text-sm font-semibold text-slate-900 dark:text-white mb-3 uppercase tracking-wider text-xs text-opacity-70">Lampiran</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="size-10 rounded bg-red-100 dark:bg-red-900/30 text-red-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium text-slate-900 dark:text-white truncate group-hover:text-primary">Panduan_Kunjungan.pdf</p>
+<p class="text-xs text-slate-500">2.4 MB</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary">download</span>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="size-10 rounded bg-blue-100 dark:bg-blue-900/30 text-blue-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium text-slate-900 dark:text-white truncate group-hover:text-primary">Data_Jemaat_Budi.docx</p>
+<p class="text-xs text-slate-500">1.1 MB</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary">download</span>
+</div>
+</div>
+</div>
+<!-- Checklist Card -->
+<div class="bg-white dark:bg-[#1a2c35] rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-6">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Checklist Pengerjaan</h3>
+<span class="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">33% Selesai</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-2 mb-6 overflow-hidden">
+<div class="bg-primary h-2 rounded-full transition-all duration-500" style="width: 33%"></div>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Checked Item -->
+<label class="flex items-start gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-100 transition-colors">
+<div class="relative flex items-center pt-0.5">
+<input checked="" class="peer size-5 cursor-pointer appearance-none rounded border border-slate-300 checked:border-primary checked:bg-primary focus:ring-2 focus:ring-primary/20 dark:border-slate-600 dark:bg-slate-800 dark:checked:bg-primary" type="checkbox"/>
+<span class="material-symbols-outlined absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-sm text-white opacity-0 peer-checked:opacity-100 pointer-events-none">check</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-slate-500 line-through">Hubungi keluarga jemaat untuk konfirmasi jam</span>
+<span class="text-xs text-slate-400">Selesai: 10:30 AM</span>
+</div>
+</label>
+<!-- Unchecked Item -->
+<label class="flex items-start gap-3 p-3 rounded-lg bg-white dark:bg-[#1a2c35] border border-slate-200 dark:border-slate-700 cursor-pointer hover:border-primary/50 transition-colors shadow-sm">
+<div class="relative flex items-center pt-0.5">
+<input class="peer size-5 cursor-pointer appearance-none rounded border border-slate-300 checked:border-primary checked:bg-primary focus:ring-2 focus:ring-primary/20 dark:border-slate-600 dark:bg-slate-800 dark:checked:bg-primary" type="checkbox"/>
+<span class="material-symbols-outlined absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-sm text-white opacity-0 peer-checked:opacity-100 pointer-events-none">check</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-slate-900 dark:text-white">Beli buah tangan di toko buah segar</span>
+</div>
+</label>
+<!-- Unchecked Item -->
+<label class="flex items-start gap-3 p-3 rounded-lg bg-white dark:bg-[#1a2c35] border border-slate-200 dark:border-slate-700 cursor-pointer hover:border-primary/50 transition-colors shadow-sm">
+<div class="relative flex items-center pt-0.5">
+<input class="peer size-5 cursor-pointer appearance-none rounded border border-slate-300 checked:border-primary checked:bg-primary focus:ring-2 focus:ring-primary/20 dark:border-slate-600 dark:bg-slate-800 dark:checked:bg-primary" type="checkbox"/>
+<span class="material-symbols-outlined absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-sm text-white opacity-0 peer-checked:opacity-100 pointer-events-none">check</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-slate-900 dark:text-white">Doa bersama &amp; dokumentasi</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Right Column (Workflow) -->
+<div class="flex flex-col gap-6">
+<!-- Impact Card -->
+<div class="bg-gradient-to-br from-white to-slate-50 dark:from-[#1a2c35] dark:to-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-5 relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[80px] text-primary">trending_up</span>
+</div>
+<h3 class="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2">Dampak Penilaian</h3>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black text-primary">+0.5</span>
+<span class="text-lg font-bold text-slate-800 dark:text-white">Poin Disiplin</span>
+</div>
+<p class="text-xs text-slate-500 mt-2">Menyelesaikan tugas ini tepat waktu akan meningkatkan indikator pelayanan Anda.</p>
+</div>
+<!-- Timeline Card -->
+<div class="bg-white dark:bg-[#1a2c35] rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-6">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-5">Aktivitas</h3>
+<div class="relative pl-2">
+<!-- Step 1 -->
+<div class="flex gap-4 pb-8 relative">
+<div class="flex flex-col items-center">
+<div class="size-3 rounded-full bg-primary ring-4 ring-primary/20 z-10"></div>
+<div class="w-0.5 h-full bg-slate-200 dark:bg-slate-700 absolute top-3"></div>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Tugas Dibuat</p>
+<p class="text-xs text-slate-500">Sistem • 08:00 AM</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex gap-4 pb-8 relative">
+<div class="flex flex-col items-center">
+<div class="size-3 rounded-full bg-primary ring-4 ring-primary/20 z-10"></div>
+<div class="w-0.5 h-full bg-slate-200 dark:bg-slate-700 absolute top-3"></div>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">Pengerjaan Dimulai</p>
+<p class="text-xs text-slate-500">Anda • 09:15 AM</p>
+</div>
+</div>
+<!-- Step 3 (Current) -->
+<div class="flex gap-4 relative">
+<div class="flex flex-col items-center">
+<div class="size-3 rounded-full border-2 border-slate-300 bg-white z-10"></div>
+</div>
+<div>
+<p class="text-sm font-medium text-slate-500">Menunggu Bukti</p>
+<p class="text-xs text-slate-400 italic">Belum diunggah</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Upload Evidence -->
+<div class="bg-white dark:bg-[#1a2c35] rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-6 flex flex-col flex-1">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">Unggah Bukti</h3>
+<label class="flex-1 min-h-[160px] flex flex-col items-center justify-center border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-lg p-6 hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-primary transition-all cursor-pointer group">
+<div class="size-12 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-400 group-hover:text-primary group-hover:bg-primary/10 flex items-center justify-center mb-3 transition-colors">
+<span class="material-symbols-outlined text-[28px]">cloud_upload</span>
+</div>
+<p class="text-sm font-medium text-slate-900 dark:text-white text-center">Klik atau seret file ke sini</p>
+<p class="text-xs text-slate-500 text-center mt-1">Foto (JPG, PNG) atau Dokumen</p>
+<input class="hidden" type="file"/>
+</label>
+</div>
+<!-- Primary Action Button -->
+<div class="mt-2">
+<button class="w-full flex items-center justify-center gap-2 bg-primary hover:bg-sky-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg shadow-primary/20 transition-all transform active:scale-[0.98]">
+<span class="material-symbols-outlined">check_circle</span>
+<span>Selesaikan Tugas</span>
+</button>
+<p class="text-xs text-center text-slate-400 mt-2">Pastikan semua checklist selesai.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

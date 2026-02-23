@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Manajemen Penugasan - Pastoral Eval System</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#0f172a", // Updated to user request
+                        "surface-dark": "#1e293b",    // Updated to user request for cards
+                        "accent-dark": "#334155",     // Updated to user request for hover
+                        "text-main": "#f8fafc",
+                        "text-muted": "#94a3b8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem", // rounded-md approx
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "glow": "0 0 10px rgba(19, 164, 236, 0.5)",
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-dark text-text-main font-display antialiased overflow-x-hidden min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="border-b border-slate-800 bg-background-dark/95 backdrop-blur sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<!-- Logo & Brand -->
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">church</span>
+</div>
+<h1 class="text-text-main text-lg font-bold tracking-tight">Pastoral Eval System</h1>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-text-muted hover:text-primary text-sm font-medium transition-colors" href="#">Dashboard</a>
+<a class="text-primary text-sm font-medium transition-colors" href="#">Penugasan</a>
+<a class="text-text-muted hover:text-primary text-sm font-medium transition-colors" href="#">Evaluasi</a>
+<a class="text-text-muted hover:text-primary text-sm font-medium transition-colors" href="#">Pengaturan</a>
+</nav>
+<!-- User Profile -->
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-3">
+<div class="bg-center bg-cover rounded-full size-9 border border-slate-700" data-alt="Portrait of a user" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBcMZQFJkbz5NjwOu0BJgc7FTtfyu-UiE_kAszJqxsITH_udyXbnjTdRYuZPFKQ3l9Y3T3sgIbYibKknfv1YBY2mP28TzCZfdgqfMaUHzUmWHDg1_cXhxCkDlFNJ90b1bXIGPwrQ5S_e7uwopH1ChHye4POsRqDA6QJGlpYenFi4aqs4CJwUC2jp9Qb_6WN8pW925klCDzabXi0yzd4-qqfQuDWDd8QbvmeoJJJDuzy1Sia6g5f0POOBvK_qjBwRpUzA9px5-6Xno0");'>
+</div>
+</div>
+<button class="flex items-center justify-center rounded-lg h-9 px-4 bg-surface-dark border border-slate-700 hover:bg-slate-700 text-text-main text-sm font-semibold transition-colors">
+                        Log Out
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Layout -->
+<main class="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
+<!-- Page Heading -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+<div class="flex flex-col gap-2">
+<h2 class="text-3xl md:text-4xl font-black tracking-tight text-white">Manajemen Penugasan</h2>
+<p class="text-text-muted text-base max-w-2xl">
+                    Kelola dan pantau tugas staf pastoral untuk evaluasi kinerja periode ini.
+                </p>
+</div>
+<button class="flex items-center gap-2 bg-primary hover:bg-sky-500 text-white px-5 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-sky-500/20 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Buat Penugasan Baru</span>
+</button>
+</div>
+<!-- Stats Overview -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+<!-- Stat Card 1 -->
+<div class="bg-surface-dark p-5 rounded-xl border border-slate-800">
+<div class="flex items-center justify-between mb-2">
+<p class="text-text-muted text-sm font-medium">Total Penugasan</p>
+<span class="material-symbols-outlined text-slate-600">assignment</span>
+</div>
+<div class="flex items-end gap-3">
+<p class="text-3xl font-bold text-white">124</p>
+<span class="text-emerald-400 text-sm font-medium mb-1 bg-emerald-400/10 px-1.5 py-0.5 rounded flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> 12%
+                    </span>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface-dark p-5 rounded-xl border border-slate-800">
+<div class="flex items-center justify-between mb-2">
+<p class="text-text-muted text-sm font-medium">Menunggu Review</p>
+<span class="material-symbols-outlined text-slate-600">rate_review</span>
+</div>
+<div class="flex items-end gap-3">
+<p class="text-3xl font-bold text-white">18</p>
+<span class="text-amber-400 text-sm font-medium mb-1 bg-amber-400/10 px-1.5 py-0.5 rounded flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">warning</span> 5%
+                    </span>
+</div>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-surface-dark p-5 rounded-xl border border-slate-800">
+<div class="flex items-center justify-between mb-2">
+<p class="text-text-muted text-sm font-medium">Selesai Bulan Ini</p>
+<span class="material-symbols-outlined text-slate-600">check_circle</span>
+</div>
+<div class="flex items-end gap-3">
+<p class="text-3xl font-bold text-white">86%</p>
+<span class="text-emerald-400 text-sm font-medium mb-1 bg-emerald-400/10 px-1.5 py-0.5 rounded flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> 2%
+                    </span>
+</div>
+</div>
+</div>
+<!-- Filters & Search Toolbar -->
+<div class="flex flex-col lg:flex-row gap-4 mb-8 items-start lg:items-center justify-between bg-surface-dark/50 p-2 rounded-xl border border-slate-800/50">
+<!-- Search -->
+<div class="relative w-full lg:w-96 group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-text-muted group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2.5 border-none rounded-lg leading-5 bg-surface-dark text-text-main placeholder-text-muted focus:outline-none focus:bg-slate-800 focus:ring-1 focus:ring-primary sm:text-sm transition-colors" placeholder="Cari judul tugas atau nama staf..." type="text"/>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-2 overflow-x-auto pb-2 lg:pb-0 w-full lg:w-auto no-scrollbar">
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg bg-primary text-white text-sm font-medium whitespace-nowrap">
+                    Semua Status
+                    <span class="material-symbols-outlined text-[18px]">keyboard_arrow_down</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-dark hover:bg-slate-700 border border-slate-700 text-text-muted hover:text-white text-sm font-medium whitespace-nowrap transition-colors">
+<span class="size-2 rounded-full bg-amber-500"></span>
+                    Dalam Proses
+                </button>
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-dark hover:bg-slate-700 border border-slate-700 text-text-muted hover:text-white text-sm font-medium whitespace-nowrap transition-colors">
+<span class="size-2 rounded-full bg-emerald-500"></span>
+                    Selesai
+                </button>
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-dark hover:bg-slate-700 border border-slate-700 text-text-muted hover:text-white text-sm font-medium whitespace-nowrap transition-colors">
+<span class="size-2 rounded-full bg-rose-500"></span>
+                    Terlambat
+                </button>
+</div>
+</div>
+<!-- Task Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1: In Progress -->
+<article class="group relative flex flex-col bg-surface-dark hover:bg-accent-dark border border-slate-800 rounded-xl p-5 transition-all duration-200 cursor-pointer shadow-sm hover:shadow-lg hover:border-slate-600">
+<div class="flex justify-between items-start mb-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                        In Progress
+                    </span>
+<button class="text-text-muted hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<h3 class="text-lg font-bold text-white mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+                    Persiapan Kotbah Minggu
+                </h3>
+<div class="flex items-center gap-2 text-text-muted text-sm mb-4">
+<span class="material-symbols-outlined text-[18px] text-primary">local_library</span>
+<span>KPI: Pelayanan Mimbar</span>
+</div>
+<div class="mt-auto pt-4 border-t border-slate-700/50">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs text-text-muted font-medium">Progress</span>
+<span class="text-xs text-white font-bold">75%</span>
+</div>
+<!-- Progress Bar with Glow -->
+<div class="w-full bg-slate-700 rounded-full h-1.5 mb-4">
+<div class="bg-primary h-1.5 rounded-full shadow-glow" style="width: 75%"></div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-cover bg-center border-2 border-slate-600" data-alt="User avatar 1" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD-o729QsECLNyl30hBRWWXjWhsVARHSx04bCuWBU5i-Hu0ZraR9tGSQ9Y3LYO988sFYMuLdn6Ow-g8SO8ZEarAZ_lKpoXuQ-X-e2ulqKEhqq2Vlv7K5ro7iC5ZeirtH-ebgY73tUVR39fAOgTKaMnXHgStEJJEF07fDcnBh5mTULyEbMr50I88k-Lk4ImBb72gMlmP5-7FCG6A2VFDGNrDB_4CLjFNh6INkprL5Nd-OqTPmD0rlMMiJn-Mxfr6KhYkQIJ_xnlbBJw");'></div>
+<div class="flex flex-col">
+<span class="text-xs text-white font-medium">Budi Santoso</span>
+<span class="text-[10px] text-text-muted">Due 12 Oct</span>
+</div>
+</div>
+<div class="text-text-muted group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 2: Completed -->
+<article class="group relative flex flex-col bg-surface-dark hover:bg-accent-dark border border-slate-800 rounded-xl p-5 transition-all duration-200 cursor-pointer shadow-sm hover:shadow-lg hover:border-slate-600">
+<div class="flex justify-between items-start mb-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                        Selesai
+                    </span>
+<button class="text-text-muted hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<h3 class="text-lg font-bold text-white mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+                    Kunjungan Jemaat Sakit (RS Umum)
+                </h3>
+<div class="flex items-center gap-2 text-text-muted text-sm mb-4">
+<span class="material-symbols-outlined text-[18px] text-primary">diversity_3</span>
+<span>KPI: Pastoral Care</span>
+</div>
+<div class="mt-auto pt-4 border-t border-slate-700/50">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs text-text-muted font-medium">Progress</span>
+<span class="text-xs text-white font-bold">100%</span>
+</div>
+<div class="w-full bg-slate-700 rounded-full h-1.5 mb-4">
+<div class="bg-emerald-500 h-1.5 rounded-full" style="width: 100%"></div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-cover bg-center border-2 border-slate-600" data-alt="User avatar 2" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDezim2VHPQcR9MMhoPsyh-NZr1uhOeJjVxgCThON7fA4fIT_GuQKd2RmcbaweU9OYYPX45kG-Sg-HsvK5ZQ8OEdLbOR3IZdf7LG8faxlo8_8u4DZ4HxJnyzo_1UbLOpbYs11XFttfK181ThvDqDNGuOCq03dRh00xvrG0T3DGxROuXGdcGoC2Hew8iOD73eR4Y_3I7gt_jEKdROpaibB6IKLoHBd68YMqjtGQ9V3Cgb1ibK8ArQYxGbUKzR4pA9Nf-B5IDa-NHbrE");'></div>
+<div class="flex flex-col">
+<span class="text-xs text-white font-medium">Siti Aminah</span>
+<span class="text-[10px] text-text-muted">Done 10 Oct</span>
+</div>
+</div>
+<div class="text-text-muted group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 3: Late -->
+<article class="group relative flex flex-col bg-surface-dark hover:bg-accent-dark border border-slate-800 rounded-xl p-5 transition-all duration-200 cursor-pointer shadow-sm hover:shadow-lg hover:border-slate-600">
+<div class="flex justify-between items-start mb-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                        Terlambat
+                    </span>
+<button class="text-text-muted hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<h3 class="text-lg font-bold text-white mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+                    Laporan Bulanan Komisi Pemuda
+                </h3>
+<div class="flex items-center gap-2 text-text-muted text-sm mb-4">
+<span class="material-symbols-outlined text-[18px] text-primary">description</span>
+<span>KPI: Administrasi</span>
+</div>
+<div class="mt-auto pt-4 border-t border-slate-700/50">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs text-text-muted font-medium">Progress</span>
+<span class="text-xs text-white font-bold">40%</span>
+</div>
+<div class="w-full bg-slate-700 rounded-full h-1.5 mb-4">
+<div class="bg-rose-500 h-1.5 rounded-full" style="width: 40%"></div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-cover bg-center border-2 border-slate-600" data-alt="User avatar 3" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCwfob21oupLlEKLF44sAd8O1UcKQMlZ3XLZV-vJp2gA1NS7OHdd4VrjVP-sga2MQIpPTw8yFwz32IEazBI4-KXMUtU8Xxh5Km27P-zR8WyGUzecOwJXtgMGD8VmGp5H4f3DYQq6GjP4cQeHcFNW0SPYY0eN03QUJbJddXeIgRqKhRi862BmUUz1M7xqNs2JyXVWS1BU970vQhweF8HhFHl6oiic6c7gzHsjrPE1WMZd5Q1lKFXX_yXN9y0Az5zFEahAhqlvnjthpk");'></div>
+<div class="flex flex-col">
+<span class="text-xs text-white font-medium">Joko Widodo</span>
+<span class="text-[10px] text-rose-400 font-bold">Due Yesterday</span>
+</div>
+</div>
+<div class="text-text-muted group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 4: In Progress -->
+<article class="group relative flex flex-col bg-surface-dark hover:bg-accent-dark border border-slate-800 rounded-xl p-5 transition-all duration-200 cursor-pointer shadow-sm hover:shadow-lg hover:border-slate-600">
+<div class="flex justify-between items-start mb-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                        In Progress
+                    </span>
+<button class="text-text-muted hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<h3 class="text-lg font-bold text-white mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+                    Pembinaan Pranikah Kelas A
+                </h3>
+<div class="flex items-center gap-2 text-text-muted text-sm mb-4">
+<span class="material-symbols-outlined text-[18px] text-primary">school</span>
+<span>KPI: Pendidikan Kristen</span>
+</div>
+<div class="mt-auto pt-4 border-t border-slate-700/50">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs text-text-muted font-medium">Progress</span>
+<span class="text-xs text-white font-bold">60%</span>
+</div>
+<div class="w-full bg-slate-700 rounded-full h-1.5 mb-4">
+<div class="bg-primary h-1.5 rounded-full shadow-glow" style="width: 60%"></div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-cover bg-center border-2 border-slate-600" data-alt="User avatar 4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCwBOzl9edFfapZHQNBP3kQ4JY1DCuOPFAuiStwnCnQ94REhN6ySV4LyuFt-y4Ujqc4GUB4_5RfI44IVWEwoLD9SPyBpZZzBsy4yWzaRnw8pQ5n0E0NQLzcsdvPy3nOxBeK3n09DO1d36Xiq8stkt1fSohuqsE0Rwl98amY2UaoJ3qli5WEhSrYjLriU62Fsn5iYhRGsotWpztxWW4o4YABvDsqqKuL9P8ZZbj_ucngPkmJnW3bWZOG6z4sr4tVruIetuEH5VC3ySY");'></div>
+<div class="flex flex-col">
+<span class="text-xs text-white font-medium">David Tan</span>
+<span class="text-[10px] text-text-muted">Due 15 Oct</span>
+</div>
+</div>
+<div class="text-text-muted group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 5: In Progress -->
+<article class="group relative flex flex-col bg-surface-dark hover:bg-accent-dark border border-slate-800 rounded-xl p-5 transition-all duration-200 cursor-pointer shadow-sm hover:shadow-lg hover:border-slate-600">
+<div class="flex justify-between items-start mb-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                        In Progress
+                    </span>
+<button class="text-text-muted hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<h3 class="text-lg font-bold text-white mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+                    Rapat Evaluasi Triwulan III
+                </h3>
+<div class="flex items-center gap-2 text-text-muted text-sm mb-4">
+<span class="material-symbols-outlined text-[18px] text-primary">groups</span>
+<span>KPI: Manajemen Gereja</span>
+</div>
+<div class="mt-auto pt-4 border-t border-slate-700/50">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs text-text-muted font-medium">Progress</span>
+<span class="text-xs text-white font-bold">25%</span>
+</div>
+<div class="w-full bg-slate-700 rounded-full h-1.5 mb-4">
+<div class="bg-primary h-1.5 rounded-full shadow-glow" style="width: 25%"></div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-cover bg-center border-2 border-slate-600" data-alt="User avatar 5" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD1xx6CwYAVGG-3b1xNzluqyyjWRMVgcYoqNpKSuD-74DeN8rES9MBs_TXC1clnbZ9bI0eoJL7-Lou0yL4yASbKQx8epXAxOgLfJWNRoERSyOpkUdu8uXUYjWC5MGkFkCgAAfWX2oznF6OL6FdVyNC-NB7sN1h_Zghi3ZiKdYpUA15Wpdrm7fHALyF2UGJ_MMmjmFy3axcWI6ifwhQLKT6dvdV43O1CHW78tUeo_keGS68vw8QorK22GGaANYJZdarLrf6YHs0tH6g");'></div>
+<div class="flex flex-col">
+<span class="text-xs text-white font-medium">Sarah Lee</span>
+<span class="text-[10px] text-text-muted">Due 20 Oct</span>
+</div>
+</div>
+<div class="text-text-muted group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 6: New Task Placeholder / Create new -->
+<article class="flex flex-col justify-center items-center bg-surface-dark/40 hover:bg-surface-dark border border-dashed border-slate-700 rounded-xl p-5 transition-all duration-200 cursor-pointer h-full min-h-[220px]">
+<div class="bg-slate-800 rounded-full p-4 mb-4 group-hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">add_task</span>
+</div>
+<h3 class="text-lg font-bold text-white mb-1">Buat Tugas Baru</h3>
+<p class="text-sm text-text-muted text-center max-w-[200px]">Tambahkan penugasan baru untuk anggota staf.</p>
+</article>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-center mt-12 gap-2">
+<button class="flex items-center justify-center size-10 rounded-lg bg-surface-dark border border-slate-700 text-text-muted hover:text-white hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-lg bg-primary text-white font-bold shadow-glow">1</button>
+<button class="flex items-center justify-center size-10 rounded-lg bg-surface-dark border border-slate-700 text-text-muted hover:text-white hover:bg-slate-700 transition-colors">2</button>
+<button class="flex items-center justify-center size-10 rounded-lg bg-surface-dark border border-slate-700 text-text-muted hover:text-white hover:bg-slate-700 transition-colors">3</button>
+<span class="text-text-muted mx-1">...</span>
+<button class="flex items-center justify-center size-10 rounded-lg bg-surface-dark border border-slate-700 text-text-muted hover:text-white hover:bg-slate-700 transition-colors">8</button>
+<button class="flex items-center justify-center size-10 rounded-lg bg-surface-dark border border-slate-700 text-text-muted hover:text-white hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</main>
+</body></html>

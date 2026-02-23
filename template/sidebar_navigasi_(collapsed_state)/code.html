@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pastoral Performance Evaluation - Collapsed Sidebar</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                        "card-light": "#ffffff",
+                        "card-dark": "#18282f", // Slightly lighter than background-dark
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Tooltip Arrow */
+        .tooltip-arrow::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            margin-top: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent #1f2937 transparent transparent; /* Matches bg-gray-800 */
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-200">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Collapsed Sidebar -->
+<aside class="flex flex-col items-center justify-between w-20 py-6 border-r border-slate-200 dark:border-slate-800 bg-card-light dark:bg-card-dark z-20 shadow-sm transition-all duration-300">
+<!-- Top Section: Brand & Nav -->
+<div class="flex flex-col items-center w-full gap-8">
+<!-- Brand Icon -->
+<div class="relative flex items-center justify-center size-10 rounded-xl bg-gradient-to-br from-primary to-blue-600 text-white shadow-lg shadow-blue-500/20">
+<span class="material-symbols-outlined text-[24px]">church</span>
+</div>
+<!-- Navigation Menu -->
+<nav class="flex flex-col w-full gap-2 px-3">
+<!-- Dashboard -->
+<a class="group relative flex items-center justify-center w-full h-12 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">grid_view</span>
+<!-- Tooltip (Hidden by default, shown on hover via CSS in a real app, simplified here) -->
+<div class="absolute left-full ml-3 px-3 py-1.5 bg-gray-800 text-white text-xs font-medium rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity z-50 tooltip-arrow shadow-xl">
+                            Dashboard
+                        </div>
+</a>
+<!-- Users (Active State with Visible Tooltip for Demo) -->
+<div class="relative w-full flex justify-center">
+<a class="flex items-center justify-center w-full h-12 rounded-lg bg-primary/10 text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px] fill-1">group</span>
+</a>
+<!-- Persistent Tooltip for design demonstration -->
+<div class="absolute left-full top-1/2 -translate-y-1/2 ml-3 px-3 py-1.5 bg-gray-800 text-white text-xs font-medium rounded-md whitespace-nowrap z-50 tooltip-arrow shadow-xl animate-bounce-x">
+                            Manajemen Pengguna
+                        </div>
+</div>
+<!-- Periods -->
+<a class="group relative flex items-center justify-center w-full h-12 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">calendar_month</span>
+<div class="absolute left-full ml-3 px-3 py-1.5 bg-gray-800 text-white text-xs font-medium rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity z-50 tooltip-arrow shadow-xl">
+                            Periode Evaluasi
+                        </div>
+</a>
+<!-- Reports -->
+<a class="group relative flex items-center justify-center w-full h-12 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">bar_chart</span>
+<div class="absolute left-full ml-3 px-3 py-1.5 bg-gray-800 text-white text-xs font-medium rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity z-50 tooltip-arrow shadow-xl">
+                            Laporan
+                        </div>
+</a>
+<!-- Spacer -->
+<div class="h-px w-8 bg-slate-200 dark:bg-slate-700 my-2 mx-auto"></div>
+<!-- Settings -->
+<a class="group relative flex items-center justify-center w-full h-12 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<div class="absolute left-full ml-3 px-3 py-1.5 bg-gray-800 text-white text-xs font-medium rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity z-50 tooltip-arrow shadow-xl">
+                            Pengaturan
+                        </div>
+</a>
+</nav>
+</div>
+<!-- Expand Toggle -->
+<button class="flex items-center justify-center size-10 rounded-lg text-slate-500 hover:text-primary hover:bg-primary/10 dark:text-slate-400 dark:hover:text-primary transition-all">
+<span class="material-symbols-outlined text-[24px]">chevron_right</span>
+</button>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-y-auto bg-background-light dark:bg-background-dark">
+<!-- Breadcrumbs Section -->
+<div class="w-full px-8 pt-6 pb-2">
+<div class="flex flex-wrap gap-2 items-center">
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary text-sm font-medium leading-normal flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[18px]">home</span>
+                        Beranda
+                    </a>
+<span class="text-slate-400 text-sm font-medium leading-normal">/</span>
+<span class="text-slate-900 dark:text-white text-sm font-medium leading-normal">Manajemen Pengguna</span>
+</div>
+</div>
+<!-- Page Heading -->
+<div class="w-full px-8 py-4">
+<div class="flex flex-wrap justify-between items-end gap-4">
+<div class="flex flex-col gap-2">
+<h1 class="text-slate-900 dark:text-white text-3xl font-bold tracking-tight">Manajemen Pengguna</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal">Kelola data pendeta dan staf untuk evaluasi kinerja pastoral.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-card-dark border border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[20px]">file_upload</span>
+                            Export
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-sky-600 shadow-md shadow-sky-500/20 transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                            Tambah Pengguna
+                        </button>
+</div>
+</div>
+</div>
+<!-- Stats Section -->
+<div class="w-full px-8 py-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Stat Card 1 -->
+<div class="flex flex-col gap-1 p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-card-dark shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Pengguna</p>
+<span class="material-symbols-outlined text-primary text-[24px]">group</span>
+</div>
+<p class="text-slate-900 dark:text-white text-2xl font-bold mt-2">142</p>
+<p class="text-green-500 text-xs font-medium flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+                            +12% bulan ini
+                        </p>
+</div>
+<!-- Stat Card 2 -->
+<div class="flex flex-col gap-1 p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-card-dark shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Pendeta Aktif</p>
+<span class="material-symbols-outlined text-blue-500 text-[24px]">person_check</span>
+</div>
+<p class="text-slate-900 dark:text-white text-2xl font-bold mt-2">85</p>
+<p class="text-slate-400 text-xs font-medium mt-1">
+                            60% dari total staf
+                        </p>
+</div>
+<!-- Stat Card 3 -->
+<div class="flex flex-col gap-1 p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-card-dark shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Evaluasi Pending</p>
+<span class="material-symbols-outlined text-amber-500 text-[24px]">pending_actions</span>
+</div>
+<p class="text-slate-900 dark:text-white text-2xl font-bold mt-2">12</p>
+<p class="text-amber-500 text-xs font-medium flex items-center gap-1 mt-1">
+                            Perlu tindakan segera
+                        </p>
+</div>
+<!-- Stat Card 4 -->
+<div class="flex flex-col gap-1 p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-card-dark shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Rata-rata Skor</p>
+<span class="material-symbols-outlined text-purple-500 text-[24px]">monitoring</span>
+</div>
+<p class="text-slate-900 dark:text-white text-2xl font-bold mt-2">4.2</p>
+<p class="text-green-500 text-xs font-medium flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+                            +0.3 dari periode lalu
+                        </p>
+</div>
+</div>
+</div>
+<!-- Table Section -->
+<div class="w-full px-8 py-4 flex-1 mb-8">
+<div class="@container w-full">
+<div class="flex flex-col overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-card-dark shadow-sm">
+<!-- Table Toolbar -->
+<div class="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-700">
+<div class="relative max-w-sm w-full">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="w-full pl-10 pr-4 py-2 border border-slate-200 dark:border-slate-600 rounded-lg text-sm bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" placeholder="Cari pengguna..." type="text"/>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-slate-50 dark:bg-slate-800/50">
+<tr>
+<th class="px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Nama Lengkap</th>
+<th class="hidden sm:table-cell px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Jabatan</th>
+<th class="hidden md:table-cell px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Wilayah</th>
+<th class="px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider text-right">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center" data-alt="Avatar of Pdt. Budi" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCWpv3gCnxGH50Ux3sa6xwaKs-E9-gaq19gGx53C7_M3iFWEEJMUXORrOKXHDf3Ky__3R1vsVtjyJwjjvIMaBQpqM58KFRW65ejGnXt1M4VLSF4lOJPj9xMUGd5fB_Qux9W4m-EZQS_JiamPAl2BytdA_g6EO37NubS_lzk786Djxs2S3K229OXTpkaP_J8kEc09CVHAOJ26qDd_Iq-qJtcP5S1s3eJpLSt9bbbwvXb1LOl4avQ_id8i0vyX3z2vMsvSR7GDVxIeUs");'></div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-slate-900 dark:text-white">Pdt. Budi Santoso</span>
+<span class="text-xs text-slate-500 dark:text-slate-500">ID: #USR-001</span>
+</div>
+</div>
+</td>
+<td class="hidden sm:table-cell px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Gembala Sidang</td>
+<td class="hidden md:table-cell px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Wilayah 1</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                                Aktif
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center" data-alt="Avatar of Pdt. Siti" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8SlzJV74saLoDTjnhN8HmeNPGrIhd5J8Tm3zQFJ8M4HuJrWvcJWZ2GHx6cu9gYGO1cOeI9bbPhYSz41yMPUhDp98kMaKUsFcVExSaY41S1w75kk5_59YQL2CwzP5I5Z9p4zeTQiBB1thnGTHd4V6Us9TNNnvCArgLyHvFhKcsQi3ltBr9UE1GkzSYN0_8g1nIaOncwtvRKiMiiUUBlhO7VldGzhfOPzAt73BTQE2EP5sF62xaHOgGJbcmt19rgaQY2VOUrQTEZLQ");'></div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-slate-900 dark:text-white">Pdt. Siti Aminah</span>
+<span class="text-xs text-slate-500 dark:text-slate-500">ID: #USR-002</span>
+</div>
+</div>
+</td>
+<td class="hidden sm:table-cell px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Asisten Gembala</td>
+<td class="hidden md:table-cell px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Wilayah 2</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                                Aktif
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center" data-alt="Avatar of Ev. Joko" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDcDz0Lbxr0hn6f74EUkff-UComy04pSlHmxP0d-mY_CqRjjY7SfFwpOh-BXUoW6nrJhmYJyAFQcezcgU0_rjOOt1JmG3heu7uGKBbmEdp1h0MJN3cSlvj7Jcddzi2b902I-eJffVphuKmP22vJk-JXm0KrCtxIXWRDlespktw3e60avEDPCSaZVXMbx6pHjvGkBvb2JQOhfXWuOw4tJK7yhQozUESWiHVH7O3Ts20IZ3kZjYkAxsxMS5QYcGeIid6SDnfQ4w0fd1U");'></div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-slate-900 dark:text-white">Ev. Joko Widodo</span>
+<span class="text-xs text-slate-500 dark:text-slate-500">ID: #USR-003</span>
+</div>
+</div>
+</td>
+<td class="hidden sm:table-cell px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Penginjil</td>
+<td class="hidden md:table-cell px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Wilayah 1</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400">
+                                                Cuti
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center" data-alt="Avatar of Pdt. Andi" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAFVfkP1N1k1L9PTES2-9ecQUZ837K9D6PbtS_tZ0I6lvQlloGv-SWKdGp2f-TkyVXmVdE_afl-g3uc1NiJC10m9sqEGN0hsRa2m5fJHsR-vsDHewLAfubD49ZHxPzfRr5d88GhLPo3adW0XQywRai9WubAfT4ksAwT3EQ7RkM2tfJf3rnQzFwbWeocGeqdXiqjRg_FgZTwHCP42CIv4zjGXQpsMWbBrjZIcxBlSm7OFK1NNBZIOY6_qtDOThQPhVVQYBS4D3g3tgk");'></div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-slate-900 dark:text-white">Pdt. Andi Wijaya</span>
+<span class="text-xs text-slate-500 dark:text-slate-500">ID: #USR-004</span>
+</div>
+</div>
+</td>
+<td class="hidden sm:table-cell px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Gembala Cabang</td>
+<td class="hidden md:table-cell px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Wilayah 3</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                                Aktif
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center" data-alt="Avatar of Ev. Sarah" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBOSNV2SoOYzzoE3wGB_wq6SZge6NdUsx0e-WfowaUlPJpdzmyXWDeWPGsBv54c5-TRDUhm2c0ZPCXp-Ui1zYPEIpXLmeYP7Kldbg961vLUWHNfwEY1VC182tizOu8aepRdFyRIEv7pUGEarltKBp-WkQzWakt3XzT-YqmpQKgXdZdacbmjYZAN9AYiVZiWepc-JQX68ccIyeH_K39FXYMyShMEF4l78Ov_0pTwi4Jk7BKg5EaP8xVQ-CiSw6OgokodGKj6D2o0Bgk");'></div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-slate-900 dark:text-white">Ev. Sarah Tan</span>
+<span class="text-xs text-slate-500 dark:text-slate-500">ID: #USR-005</span>
+</div>
+</div>
+</td>
+<td class="hidden sm:table-cell px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Musik &amp; Pujian</td>
+<td class="hidden md:table-cell px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Wilayah 1</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                                Aktif
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between px-6 py-4 border-t border-slate-100 dark:border-slate-700">
+<p class="text-sm text-slate-500 dark:text-slate-400">Menampilkan 1-5 dari 142 data</p>
+<div class="flex gap-2">
+<button class="px-3 py-1 rounded border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 text-sm hover:bg-slate-50 dark:hover:bg-slate-800">Prev</button>
+<button class="px-3 py-1 rounded bg-primary text-white text-sm">1</button>
+<button class="px-3 py-1 rounded border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 text-sm hover:bg-slate-50 dark:hover:bg-slate-800">2</button>
+<button class="px-3 py-1 rounded border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 text-sm hover:bg-slate-50 dark:hover:bg-slate-800">3</button>
+<button class="px-3 py-1 rounded border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 text-sm hover:bg-slate-50 dark:hover:bg-slate-800">Next</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

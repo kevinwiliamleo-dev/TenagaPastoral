@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Manajemen Penugasan</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=Noto+Sans:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Sidebar -->
+<aside class="flex w-64 flex-col border-r border-slate-200 bg-white dark:bg-slate-900 hidden md:flex">
+<div class="flex h-16 items-center gap-3 px-6 border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center justify-center rounded-lg bg-primary/10 p-2 text-primary">
+<span class="material-symbols-outlined text-2xl">church</span>
+</div>
+<h1 class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">Gereja App</h1>
+</div>
+<nav class="flex-1 overflow-y-auto px-3 py-6">
+<div class="flex flex-col gap-1">
+<p class="px-3 text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Menu Utama</p>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2.5 text-primary dark:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined fill-1 text-[20px]">assignment</span>
+<span class="text-sm font-medium">Penugasan</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="text-sm font-medium">Staf</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">assessment</span>
+<span class="text-sm font-medium">Laporan</span>
+</a>
+</div>
+<div class="mt-8 flex flex-col gap-1">
+<p class="px-3 text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Settings</p>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-sm font-medium">Pengaturan</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span class="text-sm font-medium">Bantuan</span>
+</a>
+</div>
+</nav>
+<div class="border-t border-slate-100 p-4 dark:border-slate-800">
+<div class="flex items-center gap-3 rounded-lg p-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer">
+<div class="h-9 w-9 overflow-hidden rounded-full bg-slate-200 bg-center bg-cover" data-alt="User avatar placeholder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDnXPwB5JIu-pvayY72FtIlCUplsMSitsPG3E5ixyOP7D-ASRO0ugIwOjEIF5_mamTZUFiYQMqEAkPKDAf3MWpIfQPGek5S_DUpXoOeiOatK9Syqy33DPNFwhkGHvH1ZgWrWRtDcyZvnnSNYzO_Hy1evA_7wNLuZFWPh51JgDoGFas9BWZld4ovgL5g9jEJ5Ht4oQPTXaVnQ7g7Zlem-f3E3Vw5fhH5Eud3z_6vmCBkfrwWT5IHE1eX_EHKRdjPACT9oSPLgyUvVxw');"></div>
+<div class="flex flex-col">
+<p class="text-sm font-medium text-slate-900 dark:text-white">Alexander</p>
+<p class="text-xs text-slate-500">Administrator</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex flex-1 flex-col overflow-hidden bg-background-light dark:bg-background-dark">
+<!-- Top Header -->
+<header class="flex h-16 items-center justify-between border-b border-slate-200 bg-white px-8 dark:border-slate-800 dark:bg-slate-900">
+<!-- Mobile Menu Toggle -->
+<button class="mr-4 text-slate-500 md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex items-center text-sm text-slate-500">
+<span class="material-symbols-outlined mr-2 text-[20px]">home</span>
+<span class="mx-2">/</span>
+<span>Manajemen Penugasan</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative flex h-8 w-8 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100 hover:text-primary dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute right-2 top-2 h-2 w-2 rounded-full bg-red-500 ring-2 ring-white dark:ring-slate-900"></span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-4 sm:p-8">
+<div class="mx-auto max-w-7xl">
+<!-- Page Heading -->
+<div class="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+<div>
+<h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Daftar Penugasan</h1>
+<p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Kelola dan pantau kinerja staf pastoral Anda.</p>
+</div>
+<button class="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                        Buat Tugas Baru
+                    </button>
+</div>
+<!-- Search and Filters -->
+<div class="mb-8 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+<!-- Search Bar -->
+<div class="relative w-full lg:max-w-md">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-symbols-outlined text-slate-400">search</span>
+</div>
+<input class="block w-full rounded-lg border-0 bg-white py-2.5 pl-10 pr-3 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 dark:bg-slate-800 dark:ring-slate-700 dark:text-white" placeholder="Cari tugas, indikator, atau staf..." type="text"/>
+</div>
+<!-- Chips/Filters -->
+<div class="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0 scrollbar-hide">
+<button class="inline-flex shrink-0 items-center gap-2 rounded-full bg-slate-900 px-4 py-1.5 text-sm font-medium text-white shadow-sm dark:bg-white dark:text-slate-900 transition-colors">
+                            Semua
+                        </button>
+<button class="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-medium text-slate-600 shadow-sm ring-1 ring-inset ring-slate-200 hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700 transition-colors">
+                            In Progress
+                            <span class="flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-xs text-slate-600 dark:bg-slate-700 dark:text-slate-300">4</span>
+</button>
+<button class="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-medium text-slate-600 shadow-sm ring-1 ring-inset ring-slate-200 hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700 transition-colors">
+                            Completed
+                        </button>
+<button class="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-medium text-slate-600 shadow-sm ring-1 ring-inset ring-slate-200 hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700 transition-colors">
+                            Overdue
+                            <span class="flex h-5 w-5 items-center justify-center rounded-full bg-red-100 text-xs text-red-600 dark:bg-red-900/30 dark:text-red-400">1</span>
+</button>
+<div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1"></div>
+<button class="inline-flex shrink-0 items-center justify-center rounded-lg bg-white p-1.5 text-slate-500 shadow-sm ring-1 ring-inset ring-slate-200 hover:text-slate-700 dark:bg-slate-800 dark:ring-slate-700 dark:hover:text-slate-300">
+<span class="material-symbols-outlined text-[20px]">view_module</span>
+</button>
+<button class="inline-flex shrink-0 items-center justify-center rounded-lg bg-transparent p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300">
+<span class="material-symbols-outlined text-[20px]">view_list</span>
+</button>
+</div>
+</div>
+<!-- Kanban/Grid View -->
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+<!-- Card 1: In Progress -->
+<div class="group flex flex-col justify-between rounded-xl bg-white p-5 shadow-sm ring-1 ring-slate-200 transition-all hover:shadow-md hover:ring-primary/50 dark:bg-slate-800 dark:ring-slate-700 dark:hover:ring-primary/50">
+<div>
+<div class="flex items-start justify-between">
+<div class="flex gap-2">
+<span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10 dark:bg-blue-400/10 dark:text-blue-400 dark:ring-blue-400/20">High Priority</span>
+</div>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<h3 class="mt-3 text-lg font-semibold leading-6 text-slate-900 group-hover:text-primary dark:text-white dark:group-hover:text-primary transition-colors cursor-pointer">
+                                Pelayanan Wilayah A
+                            </h3>
+<a class="mt-1 inline-flex items-center text-xs font-medium text-slate-500 hover:text-primary dark:text-slate-400 transition-colors" href="#">
+<span class="material-symbols-outlined mr-1 text-[16px]">link</span>
+                                Indikator: Kunjungan Rutin
+                            </a>
+<div class="mt-4 flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>12 Okt 2023</span>
+<span class="mx-1 text-slate-300">|</span>
+<span class="text-orange-600 font-medium">3 days left</span>
+</div>
+</div>
+<div class="mt-6">
+<div class="mb-2 flex items-center justify-between text-xs">
+<span class="font-medium text-slate-500">Progress</span>
+<span class="font-medium text-slate-900 dark:text-white">40%</span>
+</div>
+<div class="h-1.5 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-700">
+<div class="h-full bg-primary rounded-full" style="width: 40%"></div>
+</div>
+<div class="mt-4 flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-700">
+<div class="flex -space-x-2 overflow-hidden">
+<img alt="Assignee avatar" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-slate-800" data-alt="Male portrait assignee" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOrW--Vvr7JGiBN8GxbAF61EZTRxwD2oIZFk02tKi5GqtQpYykHA-k0KEu2yrBitDkBf7I4cJUFV85bfIzehctdjoygjmrL3_S7GDGAzLc68vRUqKgp7J-65gFg4A2hdqmQN9-cVKPt9VS7I72dnh6ut4VySvSFeDs3jjRVpfuOgjlxpfRMxakC53ahVriBH7f2_WIiR2Hh9OcAULu33xcrk3y1655BNHQYjBOVAFi3iOhmqUqPBtDmev98x7XFw4C7JHbPxHdCdU"/>
+<img alt="Assignee avatar" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-slate-800" data-alt="Female portrait assignee" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBso2pu1MNKyS-5U03TcgolzXWljjQFX9w3xc-b7jUu8rCg5hDISv3S9wyz248zA5mMaAaV5BXTH59rLPI4Q59mvBO-5Hv-iHn9DmpCMhtpqjXERvpuFuf6SdXVkzmM4I2SJuTjo8_Odxy52eGHr0NxmlGgt_yfiaKuDr5ZBJJmO5ikmZxu0ZeOxsUVUg0hr8q1kSg8ecoL3A-fOWUl5mefXWGRgCFng90RuTapBAHYyHFtwEWhXYltfhAZdfCB1tpP04Ngow9BF2o"/>
+</div>
+<span class="inline-flex items-center rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+                                    In Progress
+                                </span>
+</div>
+</div>
+</div>
+<!-- Card 2: Completed -->
+<div class="group flex flex-col justify-between rounded-xl bg-white p-5 shadow-sm ring-1 ring-slate-200 transition-all hover:shadow-md hover:ring-primary/50 dark:bg-slate-800 dark:ring-slate-700 dark:hover:ring-primary/50">
+<div>
+<div class="flex items-start justify-between">
+<div class="flex gap-2">
+<!-- No priority badge -->
+</div>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<h3 class="mt-3 text-lg font-semibold leading-6 text-slate-900 group-hover:text-primary dark:text-white dark:group-hover:text-primary transition-colors cursor-pointer">
+                                Laporan Mingguan
+                            </h3>
+<a class="mt-1 inline-flex items-center text-xs font-medium text-slate-500 hover:text-primary dark:text-slate-400 transition-colors" href="#">
+<span class="material-symbols-outlined mr-1 text-[16px]">link</span>
+                                Indikator: Administrasi
+                            </a>
+<div class="mt-4 flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>Today</span>
+</div>
+</div>
+<div class="mt-6">
+<div class="mb-2 flex items-center justify-between text-xs">
+<span class="font-medium text-slate-500">Progress</span>
+<span class="font-medium text-emerald-600 dark:text-emerald-400">100%</span>
+</div>
+<div class="h-1.5 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-700">
+<div class="h-full bg-emerald-500 rounded-full" style="width: 100%"></div>
+</div>
+<div class="mt-4 flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-700">
+<div class="flex -space-x-2 overflow-hidden">
+<img alt="Assignee avatar" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-slate-800" data-alt="Female portrait assignee" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvCkasAghJVZ_JMDfwV6MwMZJrx3X9OEeSprUGypLPeWDtbpCjISo27jMDKc8sICP57wCvATctKay5ca-w4PymKwtfjpTVLXL6dKSsUrkuU9PftnofsRAsee4_Ox9OyZC2MY_11Pw4jS93MJIJdp2hJ6Pk7fMZx7SkCjI-0csAn-5tccBx_LMab6GYQkLZeTFQhrXXgimbcdfgY5cw66jrm8bLKN6E9Cw36bocUiVDgoTRvL96_HVgfAxblrcneqHthuUR1BhfsEQ"/>
+</div>
+<span class="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
+<span class="material-symbols-outlined mr-1 text-[14px]">check</span>
+                                    Completed
+                                </span>
+</div>
+</div>
+</div>
+<!-- Card 3: Overdue -->
+<div class="group flex flex-col justify-between rounded-xl bg-white p-5 shadow-sm ring-1 ring-slate-200 transition-all hover:shadow-md hover:ring-primary/50 dark:bg-slate-800 dark:ring-slate-700 dark:hover:ring-primary/50">
+<div>
+<div class="flex items-start justify-between">
+<div class="flex gap-2">
+<span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10 dark:bg-red-400/10 dark:text-red-400 dark:ring-red-400/20">Urgent</span>
+</div>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<h3 class="mt-3 text-lg font-semibold leading-6 text-slate-900 group-hover:text-primary dark:text-white dark:group-hover:text-primary transition-colors cursor-pointer">
+                                Persiapan Ibadah Raya
+                            </h3>
+<a class="mt-1 inline-flex items-center text-xs font-medium text-slate-500 hover:text-primary dark:text-slate-400 transition-colors" href="#">
+<span class="material-symbols-outlined mr-1 text-[16px]">link</span>
+                                Indikator: Liturgi
+                            </a>
+<div class="mt-4 flex items-center gap-2 text-sm text-red-600 font-medium dark:text-red-400">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+<span>Due Yesterday</span>
+</div>
+</div>
+<div class="mt-6">
+<div class="mb-2 flex items-center justify-between text-xs">
+<span class="font-medium text-slate-500">Progress</span>
+<span class="font-medium text-slate-900 dark:text-white">80%</span>
+</div>
+<div class="h-1.5 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-700">
+<div class="h-full bg-slate-400 rounded-full dark:bg-slate-500" style="width: 80%"></div>
+</div>
+<div class="mt-4 flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-700">
+<div class="flex -space-x-2 overflow-hidden">
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-xs font-medium text-slate-600 ring-2 ring-white dark:bg-slate-700 dark:text-slate-300 dark:ring-slate-800">
+                                        JD
+                                    </div>
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-xs font-medium text-slate-600 ring-2 ring-white dark:bg-slate-700 dark:text-slate-300 dark:ring-slate-800">
+                                        +2
+                                    </div>
+</div>
+<span class="inline-flex items-center rounded-full bg-red-50 px-2.5 py-0.5 text-xs font-medium text-red-700 dark:bg-red-900/30 dark:text-red-300">
+                                    Overdue
+                                </span>
+</div>
+</div>
+</div>
+<!-- Card 4: Pending/New -->
+<div class="group flex flex-col justify-between rounded-xl bg-white p-5 shadow-sm ring-1 ring-slate-200 transition-all hover:shadow-md hover:ring-primary/50 dark:bg-slate-800 dark:ring-slate-700 dark:hover:ring-primary/50">
+<div>
+<div class="flex items-start justify-between">
+<div class="flex gap-2">
+<!-- No priority badge -->
+</div>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+<h3 class="mt-3 text-lg font-semibold leading-6 text-slate-900 group-hover:text-primary dark:text-white dark:group-hover:text-primary transition-colors cursor-pointer">
+                                Konseling Jemaat Baru
+                            </h3>
+<a class="mt-1 inline-flex items-center text-xs font-medium text-slate-500 hover:text-primary dark:text-slate-400 transition-colors" href="#">
+<span class="material-symbols-outlined mr-1 text-[16px]">link</span>
+                                Indikator: Pastoral Care
+                            </a>
+<div class="mt-4 flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>15 Nov 2023</span>
+</div>
+</div>
+<div class="mt-6">
+<div class="mb-2 flex items-center justify-between text-xs">
+<span class="font-medium text-slate-500">Progress</span>
+<span class="font-medium text-slate-900 dark:text-white">0%</span>
+</div>
+<div class="h-1.5 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-700">
+<div class="h-full bg-slate-200 rounded-full dark:bg-slate-600" style="width: 0%"></div>
+</div>
+<div class="mt-4 flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-700">
+<div class="flex -space-x-2 overflow-hidden">
+<img alt="Assignee avatar" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-slate-800" data-alt="Smiling man portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRiKIxUEhO9yOrNUj35mcdGjLCqrsPNhHOB1yAqSZ_K0gBL9HXRtXspXMtwKb3slrML2MvZU14aDFEv18wx6_zar24s9ap-hc8PjRn46v305dw5rUkpyJSaSTvYdJrviQeWe9kEWrJS31aA6rq0lQ1aP2e9rIX9wZrFsM5nbP6ddBw3Wqjsaj6bLfXHcQYjgVDnolLF2P-nRi-qIdUs5flEEex7MZ9XcLYZR7BfbZsLm5b-bcMJZXpHj5c51tu7D0qXXgoqOqxYKk"/>
+</div>
+<span class="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600 dark:bg-slate-700 dark:text-slate-300">
+                                    Not Started
+                                </span>
+</div>
+</div>
+</div>
+<!-- Add New Placeholder Card -->
+<button class="group flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-200 bg-slate-50/50 p-5 hover:border-primary hover:bg-primary/5 dark:border-slate-700 dark:bg-slate-800/30 dark:hover:border-primary transition-all min-h-[280px]">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-slate-100 group-hover:scale-110 group-hover:bg-primary group-hover:text-white group-hover:ring-primary transition-all dark:bg-slate-800 dark:ring-slate-600">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-white dark:text-slate-500">add</span>
+</div>
+<h3 class="mt-4 text-sm font-semibold text-slate-900 group-hover:text-primary dark:text-white">Buat Tugas Baru</h3>
+<p class="mt-1 text-center text-xs text-slate-500 dark:text-slate-400">Tambahkan penugasan baru untuk staf</p>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Modal Konfirmasi Hapus Data</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#13a4ec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101c22",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen relative overflow-hidden">
+<!-- Background Content (Simulating the application underneath) -->
+<div aria-hidden="true" class="layout-container flex h-full grow flex-col opacity-20 pointer-events-none select-none blur-[2px]">
+<div class="px-10 py-5">
+<div class="h-8 w-48 bg-slate-200 dark:bg-slate-700 rounded mb-6"></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="h-32 bg-white dark:bg-slate-800 rounded shadow-sm border border-slate-200 dark:border-slate-700"></div>
+<div class="h-32 bg-white dark:bg-slate-800 rounded shadow-sm border border-slate-200 dark:border-slate-700"></div>
+<div class="h-32 bg-white dark:bg-slate-800 rounded shadow-sm border border-slate-200 dark:border-slate-700"></div>
+</div>
+<div class="mt-8 h-64 bg-white dark:bg-slate-800 rounded shadow-sm border border-slate-200 dark:border-slate-700"></div>
+</div>
+</div>
+<!-- Modal Backdrop -->
+<div aria-hidden="true" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-40 transition-opacity"></div>
+<!-- Modal Layout Wrapper -->
+<div class="fixed inset-0 z-50 overflow-y-auto">
+<div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+<!-- Modal Panel -->
+<div class="relative transform overflow-hidden rounded-lg bg-white dark:bg-[#15252e] px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-md sm:p-6 border border-slate-100 dark:border-slate-700">
+<!-- Main Content Flex -->
+<div class="flex flex-col items-center text-center">
+<!-- Icon -->
+<div class="mx-auto flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-red-50 dark:bg-red-900/20 sm:mx-0 mb-5">
+<span class="material-symbols-outlined text-red-600 dark:text-red-500 text-[28px]">warning</span>
+</div>
+<!-- Text Content -->
+<div class="mt-0">
+<h2 class="text-xl font-bold leading-6 text-slate-900 dark:text-white" id="modal-title">
+                            Hapus Data Pengguna?
+                        </h2>
+<div class="mt-3">
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-xs mx-auto">
+                                Tindakan ini tidak dapat dibatalkan. Seluruh data yang terkait dengan pengguna ini akan dihapus secara permanen dari sistem.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Footer / Actions -->
+<div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-2">
+<button class="inline-flex w-full justify-center rounded-lg bg-white dark:bg-transparent px-3 py-2.5 text-sm font-semibold text-slate-700 dark:text-slate-300 shadow-sm ring-1 ring-inset ring-slate-300 dark:ring-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-slate-900" type="button">
+                        Batal
+                    </button>
+<button class="inline-flex w-full justify-center rounded-lg bg-red-600 px-3 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-700 dark:hover:bg-red-500 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900" type="button">
+                        Hapus
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

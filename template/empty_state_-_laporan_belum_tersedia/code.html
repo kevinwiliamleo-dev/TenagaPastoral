@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sistem Evaluasi Pastoral - Laporan Belum Tersedia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-200">
+<div class="flex min-h-screen w-full flex-col">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex w-full items-center justify-between border-b border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-800 px-6 py-3 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined">church</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight text-slate-900 dark:text-white">Sistem Evaluasi Pastoral</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+<nav class="flex items-center gap-6">
+<a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#">Evaluasi</a>
+<a class="text-sm font-medium text-primary" href="#">Laporan</a>
+<a class="text-sm font-medium text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#">Pengaturan</a>
+</nav>
+<div class="flex items-center gap-3 pl-6 border-l border-slate-200 dark:border-slate-800">
+<div class="flex flex-col items-end">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Pdt. Andi Wijaya</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Administrator</span>
+</div>
+<div class="h-10 w-10 rounded-full bg-slate-200 bg-cover bg-center ring-2 ring-white dark:ring-slate-800 shadow-sm" data-alt="Profile picture of a smiling man" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCkP5m9kwOfu5MQzNTpQXZ4Q9BH7VkDjr278VFqQlEq6xmfDqvkHuhLs31B_9OgptuoVrWiDldZOS9d41gpKyF7kAVlmwHfv1v2X21WwsJrP0cgSjX5wmn_c8EU7ts5VK69vtjq2vmhy5A7WcsHVdj0GelGRMLqn8N3_hDrGxTmut-eTqc366tlnWuI1jjnm_iqs-_gUK-S429iZ57tSbsgQq2q8XvkFKHqxC48vpFRo2D_3vrstvFQQvitWzDh0VmGja5WqwEU-UM");'></div>
+</div>
+</div>
+<button class="md:hidden p-2 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar -->
+<aside class="hidden w-64 flex-col border-r border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-800 lg:flex">
+<div class="p-6">
+<div class="flex items-center gap-3 rounded-xl bg-slate-50 p-3 dark:bg-slate-800/50">
+<div class="h-10 w-10 rounded-full bg-cover bg-center" data-alt="Church logo symbol" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0fsCZVKwPuuGpfW1vH5jjWvAa-A-WmjthP8XErwxhKSmRRD5wsGVxBzmo5Gl0yFafxlUBsd04Y4YBLtqplTI5A0e-dUCK0hbaSXiJuRi5vOpRcxuQnSWdXKcA2lruT7CehEH5JrlUBzqGbyDAwcFcx-wTG8_UR2QlRFEpITIEyoVwqpCMBUJZ90JUotm_GcPj_aCq3ONC2WK9HvukngfZvpsSAVn78PuEMz_bBudvrv-OvMScHzuZkWewNxXgu7S3Tp0EszIdbDM");'></div>
+<div class="flex flex-col">
+<h1 class="text-sm font-bold text-slate-900 dark:text-white">Admin Panel</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400">Gereja Masehi</p>
+</div>
+</div>
+</div>
+<nav class="flex flex-1 flex-col gap-1 px-4">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-primary dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="text-sm font-medium">Beranda</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-primary dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-[22px]">calendar_month</span>
+<span class="text-sm font-medium">Manajemen Periode</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-600 hover:bg-slate-50 hover:text-primary dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-[22px]">edit_document</span>
+<span class="text-sm font-medium">Input Evaluasi</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2.5 text-primary dark:bg-primary/20" href="#">
+<span class="material-symbols-outlined text-[22px] fill-current">bar_chart</span>
+<span class="text-sm font-bold">Laporan Hasil</span>
+</a>
+</nav>
+<div class="p-4 mt-auto">
+<div class="rounded-xl bg-gradient-to-br from-primary to-[#0d8bc5] p-4 text-white">
+<div class="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white/20">
+<span class="material-symbols-outlined text-sm">tips_and_updates</span>
+</div>
+<p class="text-xs font-medium opacity-90 mb-1">Butuh bantuan?</p>
+<p class="text-[10px] opacity-70 mb-3">Hubungi tim support teknis jika mengalami kendala.</p>
+<button class="w-full rounded bg-white/20 py-1.5 text-xs font-semibold text-white hover:bg-white/30 transition-colors">Hubungi Support</button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex flex-1 flex-col overflow-y-auto bg-background-light dark:bg-background-dark p-6 md:p-10">
+<div class="mx-auto flex w-full max-w-5xl flex-col gap-6">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 text-sm">
+<a class="font-medium text-slate-500 hover:text-primary transition-colors dark:text-slate-400" href="#">Beranda</a>
+<span class="material-symbols-outlined text-sm text-slate-400">chevron_right</span>
+<a class="font-medium text-slate-500 hover:text-primary transition-colors dark:text-slate-400" href="#">Laporan</a>
+<span class="material-symbols-outlined text-sm text-slate-400">chevron_right</span>
+<span class="font-semibold text-slate-900 dark:text-white">Hasil Evaluasi</span>
+</div>
+<!-- Page Heading -->
+<div class="flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
+<div>
+<h1 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Laporan Hasil Evaluasi</h1>
+<p class="text-sm text-slate-500 dark:text-slate-400">Tinjauan kinerja dan umpan balik pastoral.</p>
+</div>
+<div class="mt-4 flex items-center gap-3 md:mt-0">
+<!-- Could contain filters or date pickers here if needed, but currently empty state -->
+</div>
+</div>
+<!-- Empty State Content -->
+<div class="flex min-h-[500px] flex-1 flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white p-8 text-center shadow-sm dark:border-slate-700 dark:bg-slate-900">
+<div class="mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-slate-50 dark:bg-slate-800">
+<!-- Illustration using Material Symbols and CSS styling -->
+<div class="relative">
+<span class="material-symbols-outlined text-[64px] text-slate-300 dark:text-slate-600">folder_open</span>
+<div class="absolute -bottom-1 -right-1 flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-slate-900 ring-4 ring-white dark:ring-slate-900">
+<span class="material-symbols-outlined text-[24px] text-slate-400 dark:text-slate-500">search</span>
+</div>
+</div>
+</div>
+<h2 class="mb-2 max-w-md text-xl font-bold text-slate-900 dark:text-white">
+                            Belum Ada Laporan Tersedia
+                        </h2>
+<p class="mb-8 max-w-sm text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+                            Data laporan akan muncul setelah periode evaluasi selesai dan diolah oleh sistem.
+                        </p>
+<button class="group inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 transition-all hover:border-primary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary/20 active:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:border-primary dark:hover:text-primary">
+<span>Lihat Periode Aktif</span>
+<span class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-0.5">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

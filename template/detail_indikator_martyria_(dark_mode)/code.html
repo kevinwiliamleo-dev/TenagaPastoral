@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detail Indikator Martyria - Pastoral Performance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4c025",
+                        "slate-dark": "#0f172a",
+                        "slate-card": "#1e293b",
+                        "slate-border": "#334155",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-[#0f172a] text-white font-display antialiased overflow-hidden">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 flex-shrink-0 flex flex-col border-r border-[#334155] bg-[#0f172a]">
+<div class="flex items-center gap-3 px-6 py-6">
+<div class="size-10 rounded-full bg-primary flex items-center justify-center text-[#0f172a]">
+<span class="material-symbols-outlined">church</span>
+</div>
+<div>
+<h1 class="text-base font-bold leading-none">Pastoral Eval</h1>
+<p class="text-slate-400 text-xs mt-1">Admin Console</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1 px-4 py-4 overflow-y-auto">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-[#1e293b] hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-white">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-[#1e293b] hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-white">groups</span>
+<span class="text-sm font-medium">Koinonia</span>
+</a>
+<!-- Active Item -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#1e293b] border-l-2 border-primary text-white shadow-sm" href="#">
+<span class="material-symbols-outlined text-primary icon-filled">public</span>
+<span class="text-sm font-bold">Martyria</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-[#1e293b] hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-white">volunteer_activism</span>
+<span class="text-sm font-medium">Diakonia</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-[#1e293b] hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-white">menu_book</span>
+<span class="text-sm font-medium">Liturgia</span>
+</a>
+</nav>
+<div class="p-4 border-t border-[#334155]">
+<div class="flex items-center gap-3">
+<div class="size-9 rounded-full bg-cover bg-center" data-alt="User profile avatar gradient" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJJYFcIj7kg52eyzhEiwLNiCU5cYzMXN7ISmj4-EVPXw-LRmWZ_2NVcZzri2GJBjHdbsxnNmHAPafOhK--bKrz3wIaDi_u7p6FYL1Q4TiTRFG4k70FFiPQDagMXIiyjIM75KE7EQHwSO2N5hE20GHC3uJZhpOM7zK84A4GYDu2g3qIIqCwcL6H9i_nXRAD7H5fLXWAOD5qsWLbAMw3Er5IrWwjvfvpia1v7B-66xPTd83hyvqLuUcdpqAQIWVG8pGYGvVyAl7FbM0');"></div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-white">Rev. Anderson</span>
+<span class="text-xs text-slate-400">Head Pastor</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-hidden bg-[#0f172a] relative">
+<!-- Top Navbar -->
+<header class="h-16 flex items-center justify-between px-8 border-b border-[#334155] flex-shrink-0 bg-[#0f172a]/95 backdrop-blur z-10">
+<!-- Breadcrumbs -->
+<div class="flex items-center text-sm text-slate-400">
+<span class="hover:text-white cursor-pointer">Dashboard</span>
+<span class="material-symbols-outlined mx-2 text-[16px]">chevron_right</span>
+<span class="hover:text-white cursor-pointer">Evaluasi Kinerja</span>
+<span class="material-symbols-outlined mx-2 text-[16px]">chevron_right</span>
+<span class="text-primary font-medium">Martyria</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-[20px]">search</span>
+<input class="h-9 w-64 rounded-lg bg-[#1e293b] border-none pl-10 pr-4 text-sm text-white placeholder-slate-500 focus:ring-1 focus:ring-primary" placeholder="Search data..." type="text"/>
+</div>
+<button class="size-9 flex items-center justify-center rounded-lg bg-[#1e293b] text-slate-300 hover:text-white hover:bg-[#334155]">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-8 scrollbar-hide">
+<div class="max-w-6xl mx-auto space-y-6">
+<!-- Page Header -->
+<div class="flex flex-wrap items-end justify-between gap-4">
+<div>
+<h2 class="text-3xl font-bold text-white tracking-tight">Detail Indikator Martyria</h2>
+<p class="text-slate-400 mt-1">Analisis performa misi dan kesaksian publik (Witnessing) periode Q3 2023.</p>
+</div>
+<div class="flex gap-3">
+<button class="h-10 px-4 rounded-lg border border-[#334155] bg-[#1e293b] text-sm font-medium text-slate-300 hover:text-white hover:border-slate-500 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                                Oct 2023
+                            </button>
+<button class="h-10 px-4 rounded-lg bg-[#1e293b] text-sm font-medium text-white hover:bg-[#334155] transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                                Export Report
+                            </button>
+</div>
+</div>
+<!-- KPI Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="p-5 rounded-lg bg-[#1e293b] border border-[#334155] relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">campaign</span>
+</div>
+<p class="text-slate-400 text-sm font-medium">External Engagement Score</p>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="text-3xl font-bold text-white">8.8</span>
+<span class="text-sm text-slate-500">/ 10</span>
+</div>
+<div class="mt-2 flex items-center gap-1 text-xs text-green-400 bg-green-400/10 w-fit px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+5% vs last month</span>
+</div>
+</div>
+<div class="p-5 rounded-lg bg-[#1e293b] border border-[#334155] relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">event_available</span>
+</div>
+<p class="text-slate-400 text-sm font-medium">Outreach Events</p>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="text-3xl font-bold text-white">15</span>
+<span class="text-sm text-slate-500">Events</span>
+</div>
+<div class="mt-2 flex items-center gap-1 text-xs text-green-400 bg-green-400/10 w-fit px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]">add</span>
+<span>2 new this week</span>
+</div>
+</div>
+<div class="p-5 rounded-lg bg-[#1e293b] border border-[#334155] relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">verified</span>
+</div>
+<p class="text-slate-400 text-sm font-medium">Public Testimony Level</p>
+<div class="mt-2 flex items-baseline gap-2">
+<span class="text-2xl font-bold text-white">Consistent</span>
+</div>
+<div class="mt-3 flex items-center gap-1 text-xs text-primary bg-primary/10 w-fit px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]">remove</span>
+<span>Stable performance</span>
+</div>
+</div>
+</div>
+<!-- Main Grid Area -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Radar Chart Section -->
+<div class="lg:col-span-2 rounded-lg bg-[#1e293b] border border-[#334155] p-6 flex flex-col">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-lg font-semibold text-white">Engagement Radar</h3>
+<button class="text-slate-400 hover:text-white">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="flex-1 flex items-center justify-center relative min-h-[300px]">
+<!-- Custom SVG Radar Chart -->
+<svg class="w-full h-full max-h-[350px]" viewbox="0 0 400 350">
+<!-- Background Grid -->
+<g fill="none" stroke="#334155" stroke-width="1">
+<!-- Outer Pentagons -->
+<path d="M200 50 L342 150 L290 300 L110 300 L58 150 Z"></path>
+<path d="M200 100 L285 160 L254 250 L146 250 L115 160 Z" opacity="0.5"></path>
+<path d="M200 150 L228 170 L218 200 L182 200 L172 170 Z" opacity="0.2"></path>
+</g>
+<!-- Axes -->
+<g stroke="#334155" stroke-dasharray="4 4" stroke-width="1">
+<line x1="200" x2="200" y1="200" y2="50"></line>
+<line x1="200" x2="342" y1="200" y2="150"></line>
+<line x1="200" x2="290" y1="200" y2="300"></line>
+<line x1="200" x2="110" y1="200" y2="300"></line>
+<line x1="200" x2="58" y1="200" y2="150"></line>
+</g>
+<!-- Data Area -->
+<path d="M200 70 L320 155 L260 270 L130 280 L80 160 Z" fill="rgba(244, 192, 37, 0.2)" stroke="#f4c025" stroke-linejoin="round" stroke-width="3"></path>
+<!-- Data Points -->
+<g fill="#f4c025">
+<circle cx="200" cy="70" r="4"></circle>
+<circle cx="320" cy="155" r="4"></circle>
+<circle cx="260" cy="270" r="4"></circle>
+<circle cx="130" cy="280" r="4"></circle>
+<circle cx="80" cy="160" r="4"></circle>
+</g>
+<!-- Labels -->
+<g fill="#94a3b8" font-family="Inter" font-size="12" text-anchor="middle">
+<text fill="#cbd5e1" font-weight="600" x="200" y="35">Public Speaking</text>
+<text text-anchor="start" x="365" y="150">Social Justice</text>
+<text x="300" y="320">Inter-faith</text>
+<text x="100" y="320">Community</text>
+<text text-anchor="end" x="40" y="150">Advocacy</text>
+</g>
+</svg>
+</div>
+<div class="mt-4 flex justify-center gap-6 text-sm">
+<div class="flex items-center gap-2">
+<span class="size-3 rounded-full bg-primary"></span>
+<span class="text-slate-300">Current Performance</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="size-3 rounded-full border border-slate-500"></span>
+<span class="text-slate-500">Target Benchmark</span>
+</div>
+</div>
+</div>
+<!-- Right Column Stack -->
+<div class="flex flex-col gap-6">
+<!-- Observations / Feedback -->
+<div class="rounded-lg bg-[#1e293b] border border-[#334155] flex flex-col h-full max-h-[500px]">
+<div class="p-4 border-b border-[#334155] flex justify-between items-center">
+<h3 class="text-lg font-semibold text-white">Recent Feedback</h3>
+<a class="text-xs text-primary hover:underline" href="#">View All</a>
+</div>
+<div class="p-4 overflow-y-auto flex-1 space-y-4 custom-scrollbar">
+<!-- Item 1 -->
+<div class="flex gap-3">
+<div class="flex-shrink-0 mt-1">
+<div class="size-8 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold text-white">JD</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="text-sm font-semibold text-slate-200">John Doe (Elder)</span>
+<span class="text-[10px] text-slate-500">Oct 12</span>
+</div>
+<p class="text-sm text-slate-400 leading-relaxed">Demonstrated strong leadership during the inter-faith community forum. Very articulate.</p>
+<span class="inline-flex w-fit items-center rounded-md bg-green-400/10 px-2 py-1 text-xs font-medium text-green-400 ring-1 ring-inset ring-green-400/20 mt-1">Positive Integrity</span>
+</div>
+</div>
+<div class="h-px bg-[#334155] w-full"></div>
+<!-- Item 2 -->
+<div class="flex gap-3">
+<div class="flex-shrink-0 mt-1">
+<div class="size-8 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold text-white">AS</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="text-sm font-semibold text-slate-200">Sarah Smith</span>
+<span class="text-[10px] text-slate-500">Oct 05</span>
+</div>
+<p class="text-sm text-slate-400 leading-relaxed">Consistency in public values noted during the town hall meeting. Good representation.</p>
+<span class="inline-flex w-fit items-center rounded-md bg-primary/10 px-2 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20 mt-1">Strong Witness</span>
+</div>
+</div>
+<div class="h-px bg-[#334155] w-full"></div>
+<!-- Item 3 -->
+<div class="flex gap-3">
+<div class="flex-shrink-0 mt-1">
+<div class="size-8 rounded-full bg-slate-700 flex items-center justify-center text-xs font-bold text-white">MK</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="text-sm font-semibold text-slate-200">Mike K.</span>
+<span class="text-[10px] text-slate-500">Sep 28</span>
+</div>
+<p class="text-sm text-slate-400 leading-relaxed">Needs to follow up more promptly on social justice initiatives promised last month.</p>
+<span class="inline-flex w-fit items-center rounded-md bg-orange-400/10 px-2 py-1 text-xs font-medium text-orange-400 ring-1 ring-inset ring-orange-400/20 mt-1">Needs Improvement</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Panel -->
+<div class="rounded-lg bg-[#1e293b] border border-dashed border-[#334155] p-6 flex flex-col items-center justify-center gap-4 text-center hover:bg-[#1e293b]/80 transition-colors cursor-pointer group">
+<div class="size-12 rounded-full bg-[#0f172a] flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-2xl">upload_file</span>
+</div>
+<div>
+<h4 class="text-white font-medium">Unggah Bukti Kesaksian</h4>
+<p class="text-slate-500 text-xs mt-1">Upload documentation, photos or recordings of mission activities.</p>
+</div>
+<button class="w-full rounded-lg bg-primary text-[#0f172a] font-bold py-2.5 px-4 text-sm hover:bg-yellow-400 transition-colors shadow-lg shadow-yellow-500/20">
+                                    Upload Evidence
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<div class="h-10"></div> <!-- Bottom spacer -->
+</div>
+</main>
+</div>
+</body></html>

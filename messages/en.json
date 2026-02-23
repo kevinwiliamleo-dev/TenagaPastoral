@@ -1,0 +1,477 @@
+{
+  "Common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "search": "Search",
+    "filter": "Filter",
+    "actions": "Actions",
+    "status": "Status",
+    "date": "Date",
+    "back": "Back",
+    "submit": "Submit",
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "Sidebar": {
+    "dashboard": "Dashboard",
+    "tasks": "Tasks",
+    "activities": "Activities",
+    "results": "Results / Report",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout",
+    "admin": "Admin",
+    "users": "User Management",
+    "periods": "Evaluation Periods",
+    "questions": "Questions",
+    "admin_tasks": "Staff Tasks",
+    "admin_activities": "Staff Activities",
+    "master_data": "Master Data",
+    "analytics": "Analytics",
+    "scoring_config": "Scoring Config",
+    "wording": "Text Management",
+    "reports": "Reports",
+    "goals": "Performance Goals",
+    "evaluations": "Evaluations",
+    "performance": "Service Performance",
+    "leaderboard": "Leaderboard",
+    "help": "Help & Support",
+    "calendar": "Calendar",
+    "goal_review": "Goal Review"
+  },
+  "Dashboard": {
+    "welcome": "Welcome, {name}",
+    "role": "Role: {role}",
+    "overview": "Overview",
+    "stats": {
+      "total_staff": "Total Staff",
+      "active_period": "Active Period",
+      "no_active_period": "No Active Period",
+      "completed_evaluation": "Completed Evaluation",
+      "evaluation_progress": "Evaluation Progress",
+      "pending_review": "Pending Review",
+      "pending_tasks": "Pending Tasks",
+      "total_tasks": "Total Tasks",
+      "completed_tasks": "Completed",
+      "activities": "Activities",
+      "avg_score": "Average Score"
+    },
+    "deadlines": {
+      "title": "Period Deadline",
+      "days": "Days",
+      "hours": "Hours",
+      "minutes": "Minutes",
+      "urgent": "Urgent! Less than 7 days left."
+    },
+    "charts": {
+      "score_dist": "Score Distribution",
+      "pillar_perf": "Performance by Pillar",
+      "click_detail": "Click pillar for details"
+    }
+  },
+  "Tasks": {
+    "title": "Task Management",
+    "subtitle": "Manage pastoral tasks and work",
+    "add_task": "Add Task",
+    "todo": "To Do",
+    "in_progress": "In Progress",
+    "completed": "Completed",
+    "no_tasks": "No tasks",
+    "form": {
+      "title": "Title",
+      "description": "Description",
+      "priority": "Priority",
+      "due_date": "Due Date"
+    },
+    "modal": {
+      "checklist": "Checklist",
+      "add_item": "Add item...",
+      "progress": "Progress"
+    }
+  },
+  "Activities": {
+    "title": "Pastoral Activities",
+    "subtitle": "Track activities across 5 pastoral pillars",
+    "add_activity": "Add Activity",
+    "total_activities": "Total Activities",
+    "total_duration": "Total Duration",
+    "activity_list": "Activity List",
+    "all_activities": "All Activities",
+    "show_all": "Show All",
+    "no_activities": "No activities recorded",
+    "start_tracking": "Start tracking your pastoral activities to monitor progress.",
+    "add_first": "Add first activity",
+    "minutes": "mins",
+    "hours": "hours",
+    "pillars": {
+      "LITURGIA": "Liturgia (Worship)",
+      "DIAKONIA": "Diakonia (Social Service)",
+      "KERYGMA": "Kerygma (Proclamation)",
+      "KOINONIA": "Koinonia (Fellowship)",
+      "MARTYRIA": "Martyria (Witness)"
+    },
+    "form": {
+      "title": "Activity Title",
+      "pillar": "Pillar",
+      "description": "Description",
+      "date": "Date",
+      "duration": "Duration (minutes)",
+      "location": "Location"
+    }
+  },
+  "Goals": {
+    "title": "My Goals",
+    "subtitle": "Set and track your personal goals, {name}",
+    "add_goal": "Add Goal",
+    "stats": {
+      "total": "Total Goals",
+      "active": "Active",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "filter": {
+      "all": "All",
+      "active": "Active",
+      "completed": "Completed"
+    },
+    "empty": {
+      "title": "No goals yet",
+      "description": "Start by creating your first goal!"
+    },
+    "types": {
+      "ACTIVITY_COUNT": "Activity Count",
+      "ACTIVITY_DURATION": "Activity Duration",
+      "TASK_COMPLETION": "Task Completion",
+      "PILLAR_BALANCE": "Pillar Balance",
+      "CUSTOM": "Custom"
+    },
+    "actions": {
+      "complete": "Complete",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "confirm_delete": "Delete this goal?"
+    },
+    "status": {
+      "completed_on": "Completed on {date}",
+      "cancelled": "Cancelled",
+      "overdue": "Overdue by {days} days",
+      "due_today": "Due today!",
+      "days_left": "{days} days left"
+    },
+    "form": {
+      "title": "Add New Goal",
+      "label_title": "Goal Title",
+      "label_description": "Description",
+      "label_type": "Goal Type",
+      "label_pillar": "Pillar",
+      "label_target_value": "Target Value",
+      "label_target_date": "Target Date",
+      "placeholder_title": "Example: Complete 10 activities",
+      "placeholder_description": "Optional description...",
+      "option_all_pillars": "All Pillars"
+    }
+  },
+  "Auth": {
+    "login_title": "Performance Evaluation System",
+    "login_subtitle": "Pastoral Staff (v2.0)",
+    "email_label": "Email",
+    "email_placeholder": "name@church.org",
+    "password_label": "Password",
+    "password_placeholder": "••••••••",
+    "forgot_password": "Forgot Password?",
+    "login_button": "Sign In",
+    "login_processing": "Processing...",
+    "error_login_failed": "Login Failed. Please check your email and password.",
+    "error_generic": "An error occurred. Please try again.",
+    "validation_email": "Invalid Email",
+    "validation_password": "Password is required",
+    "footer": "© 2024 Archdiocese. All rights reserved."
+  },
+  "Evaluations": {
+    "title": "Evaluations",
+    "subtitle": "Manage and fill out performance evaluation forms",
+    "tabs": {
+      "start_new": "Start New Evaluation",
+      "history": "Evaluation History"
+    },
+    "active_periods": {
+      "title": "Active Evaluation Periods",
+      "subtitle": "Select an ongoing evaluation period to fill out the form",
+      "empty_title": "No Active Periods",
+      "empty_desc": "There are currently no active evaluation periods. Please wait for the administrator to create a new period.",
+      "self_eval": "Self Evaluation",
+      "peer_eval": "Peer Evaluation"
+    },
+    "history": {
+      "title": "Your Evaluation History",
+      "subtitle": "List of evaluations you have completed",
+      "empty_title": "No Evaluations Yet",
+      "empty_desc": "You have not filled out any evaluation forms. Start by selecting an active evaluation period.",
+      "start_button": "Start Evaluation",
+      "table": {
+        "period": "Period",
+        "target": "Target",
+        "date": "Date",
+        "status": "Status",
+        "action": "Action"
+      },
+      "self": "Self",
+      "status": {
+        "submitted": "Submitted",
+        "draft": "Draft"
+      },
+      "continue": "Continue"
+    }
+  },
+  "EvaluationForm": {
+    "header": {
+      "title": "Pastoral Evaluation System",
+      "self": "Self Evaluation",
+      "peer": "Peer Evaluation",
+      "saved": "Saved"
+    },
+    "peer_selection": {
+      "title": "Select Peer to Evaluate",
+      "subtitle": "Select a pastoral colleague to evaluate",
+      "empty": "No peers available to evaluate",
+      "back": "Back"
+    },
+    "context": {
+      "target": "Evaluation Target",
+      "status_submitted": "SUBMITTED",
+      "status_draft": "DRAFT",
+      "progress": "Question {current} of {total}",
+      "completed": "{percent}% Completed",
+      "answered": "Answered: {count}/{total}"
+    },
+    "question": {
+      "required": "* Required",
+      "rating_label": "Your Rating",
+      "boolean_label": "Select Answer",
+      "text_label": "Your Answer",
+      "text_placeholder": "Write your answer here...",
+      "chars": "characters"
+    },
+    "actions": {
+      "save_draft": "Save Draft",
+      "prev": "Previous",
+      "next": "Next",
+      "submit": "Submit Evaluation"
+    },
+    "hint": "Use the \"Save Draft\" button to save your progress.",
+    "toast": {
+      "error_title": "Error",
+      "success_title": "Success",
+      "saved_title": "Saved",
+      "attention_title": "Attention",
+      "select_target": "Please select a target first",
+      "draft_saved": "Draft saved successfully",
+      "save_failed": "Failed to save draft",
+      "unanswered": "There are still {count} required questions unanswered",
+      "submit_success": "Evaluation submitted successfully!",
+      "submit_failed": "Failed to submit evaluation"
+    },
+    "ratings": {
+      "1": "Very Poor",
+      "2": "Poor",
+      "3": "Fair",
+      "4": "Good",
+      "5": "Excellent"
+    },
+    "boolean": {
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  "Results": {
+    "title": "My Results",
+    "subtitle": "View your evaluation results and development plans",
+    "period_selector": {
+      "empty_title": "No Periods Available",
+      "empty_desc": "There are no evaluation periods available at this time.",
+      "loading": "Loading results..."
+    },
+    "evaluation_card": {
+      "title": "Evaluation Results",
+      "subtitle": "Summary of evaluation results from your appraisers",
+      "average_score": "Average Score",
+      "category_score": "Score by Category",
+      "total_evaluators": "Total evaluations received: {count} appraisers",
+      "empty_title": "No Evaluations Yet",
+      "empty_desc": "You have not received any evaluations for this period."
+    },
+    "development_plan": {
+      "title": "Development Plan",
+      "subtitle": "Recommendations from Admin for your development",
+      "strengths": "Strengths",
+      "areas_of_improvement": "Areas for Improvement",
+      "recommendations": "Recommendations",
+      "status_label": "Status",
+      "status_final": "Finalized",
+      "status_draft": "Draft",
+      "empty_title": "No Plan Yet",
+      "empty_desc": "Admin has not created a development plan for you for this period."
+    },
+    "history": {
+      "title": "Development History",
+      "subtitle": "Development plans from previous periods",
+      "empty_title": "No History",
+      "empty_desc": "No recorded development plans."
+    },
+    "badges": {
+      "excellent": "Excellent",
+      "good": "Good",
+      "average": "Average",
+      "needs_improvement": "Needs Improvement"
+    }
+  },
+  "Performance": {
+    "title": "Performance Dashboard",
+    "subtitle": "Summary of your activity and task performance, {name}",
+    "score_card": {
+      "title": "Your Performance Score",
+      "activity": "Activity",
+      "pillar": "Pillar",
+      "task": "Task",
+      "consistency": "Consistency",
+      "evaluation": "Evaluation",
+      "view_rank": "Click to view rank →"
+    },
+    "summary": {
+      "total_activities": "Total Activities",
+      "total_duration": "Total Duration",
+      "active_streak": "Active Streak",
+      "tasks_completed": "Tasks Completed",
+      "days": "days",
+      "minutes": "mins",
+      "hours": "hours"
+    },
+    "charts": {
+      "monthly_activity": "Monthly Activity",
+      "no_data": "No activity data yet",
+      "pillar_balance": "Pillar Balance",
+      "activities_count": "{count} activities"
+    },
+    "tasks": {
+      "title": "Task Status",
+      "total": "Total Tasks",
+      "todo": "To Do",
+      "in_progress": "In Progress",
+      "completed": "Completed",
+      "progress": "Overall Progress"
+    },
+    "metrics": {
+      "this_month": "This Month",
+      "recorded_activities": "recorded activities",
+      "avg_duration": "Average Duration",
+      "per_activity": "per activity",
+      "longest_streak": "Longest Streak",
+      "last_30_days": "in last 30 days"
+    }
+  },
+  "Calendar": {
+    "title": "Activity Calendar",
+    "subtitle": "Schedule for evaluation periods, tasks, and your achievement targets.",
+    "controls": {
+      "today": "Today"
+    },
+    "legend": {
+      "period": "Period",
+      "task": "Task",
+      "goal": "Goal"
+    },
+    "days": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun"
+    },
+    "event_details": {
+      "status": "Status",
+      "view_detail": "View Detail"
+    }
+  },
+  "Leaderboard": {
+    "title": "Performance Leaderboard",
+    "subtitle": "Compare your score and rank with other staff members",
+    "your_score": "Your Score",
+    "rank": "Rank",
+    "from_staff": "from {count} staff",
+    "metrics": {
+      "activity": "Activity",
+      "pillar": "Pillar",
+      "task": "Task",
+      "consistency": "Consistency",
+      "evaluation": "Evaluation",
+      "total": "Total"
+    },
+    "table": {
+      "title": "Leaderboard",
+      "headers": {
+        "rank": "#",
+        "name": "Name",
+        "activity": "Activity",
+        "pillar": "Pillar",
+        "task": "Task",
+        "consistency": "Consistency",
+        "evaluation": "Evaluation",
+        "total": "Total"
+      },
+      "you": "(You)"
+    },
+    "scoring_info": {
+      "title": "How Scoring Works",
+      "activity_desc": "Monthly activity count & duration",
+      "pillar_desc": "Balance of 5 pastoral pillars",
+      "task_desc": "Task completion rate",
+      "consistency_desc": "Streak & activity regularity",
+      "evaluation_desc": "Average 360° evaluation results"
+    }
+  },
+  "Profile": {
+    "title": "Profile Page",
+    "subtitle": "Manage your account information and security",
+    "roles": {
+      "admin": "Administrator",
+      "staff": "Pastoral Staff"
+    },
+    "info": {
+      "name_placeholder": "Name not set",
+      "email_label": "Account Email",
+      "contact_admin": "Contact administrator to change email."
+    },
+    "edit_profile": {
+      "title": "Personal Info",
+      "name_label": "Full Name",
+      "name_placeholder": "Enter full name",
+      "name_help": "This name will be displayed on evaluation reports.",
+      "save": "Save Name",
+      "saving": "Saving..."
+    },
+    "security": {
+      "title": "Security",
+      "current_password": "Current Password",
+      "new_password": "New Password",
+      "confirm_password": "Confirm Password",
+      "show_password": "Show password",
+      "min_chars": "Minimum 6 characters.",
+      "change_password": "Change Password",
+      "changing": "Changing..."
+    },
+    "messages": {
+      "success": "Success",
+      "error": "Error",
+      "update_error": "Failed to update profile",
+      "password_mismatch": "Password confirmation mismatch",
+      "password_error": "Failed to change password"
+    }
+  }
+}

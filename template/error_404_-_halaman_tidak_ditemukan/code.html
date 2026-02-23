@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Error 404 - Halaman Tidak Ditemukan</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0d171b] dark:text-slate-100 min-h-screen flex flex-col antialiased">
+<!-- Top Navigation (Simplified) -->
+<header class="w-full border-b border-[#e7eff3] dark:border-slate-800 bg-white dark:bg-[#15232b]">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">church</span>
+</div>
+<h2 class="text-lg font-bold tracking-tight text-[#0d171b] dark:text-white">Pastoral System</h2>
+</div>
+<div>
+<a class="text-sm font-medium text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#">
+                        Need Help?
+                    </a>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow flex items-center justify-center p-4 sm:p-8">
+<div class="w-full max-w-3xl flex flex-col items-center text-center space-y-8 animate-fade-in-up">
+<!-- Hero Illustration/Graphic -->
+<div class="relative w-full max-w-[400px] aspect-[16/9] flex items-center justify-center">
+<!-- Abstract 404 Representation using Tailwind Shapes and Icon -->
+<div class="relative z-10 flex items-center justify-center">
+<h1 class="text-[120px] sm:text-[180px] font-extrabold text-slate-200 dark:text-slate-800 leading-none select-none">
+                       404
+                   </h1>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-white dark:bg-[#15232b] p-4 rounded-full shadow-sm border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-6xl text-primary/80">church</span>
+<span class="absolute -top-1 -right-1 bg-red-500 text-white rounded-full p-1 border-2 border-white dark:border-[#15232b]">
+<span class="material-symbols-outlined text-sm font-bold block">question_mark</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Decorative Blur Background -->
+<div class="absolute inset-0 bg-primary/5 dark:bg-primary/10 rounded-full blur-3xl transform scale-75 -z-0"></div>
+</div>
+<!-- Text Content -->
+<div class="space-y-4 max-w-lg">
+<h1 class="text-2xl sm:text-3xl font-bold text-[#0d171b] dark:text-white tracking-tight">
+                    Halaman Tidak Ditemukan
+                </h1>
+<p class="text-slate-500 dark:text-slate-400 text-base leading-relaxed">
+                    Maaf, halaman yang Anda cari tidak tersedia atau telah dipindahkan. Silakan periksa URL atau kembali ke halaman utama.
+                </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
+<button class="group flex items-center justify-center gap-2 h-12 px-8 bg-primary hover:bg-primary/90 text-white text-sm font-bold rounded-lg transition-all w-full sm:w-auto shadow-sm hover:shadow-md hover:-translate-y-0.5">
+<span class="material-symbols-outlined text-[20px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+<span>Kembali ke Dashboard</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-12 px-8 bg-white dark:bg-[#15232b] border border-slate-200 dark:border-slate-700 text-[#0d171b] dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-bold rounded-lg transition-all w-full sm:w-auto">
+<span class="material-symbols-outlined text-[20px]">flag</span>
+<span>Lapor Masalah</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#e7eff3] dark:border-slate-800 bg-white dark:bg-[#15232b] py-8">
+<div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+<p class="text-slate-400 dark:text-slate-500 text-sm font-medium">
+                © 2023 Pastoral Performance System. All rights reserved.
+            </p>
+<div class="flex items-center gap-6">
+<a class="text-slate-500 hover:text-primary text-sm font-medium transition-colors" href="#">Support</a>
+<a class="text-slate-500 hover:text-primary text-sm font-medium transition-colors" href="#">Contact Admin</a>
+<a class="text-slate-500 hover:text-primary text-sm font-medium transition-colors" href="#">Privacy</a>
+</div>
+</div>
+</footer>
+</body></html>
