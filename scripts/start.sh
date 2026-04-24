@@ -42,5 +42,20 @@ done
 
 echo "[entrypoint] Running prisma db push..."
 node node_modules/prisma/build/index.js db push --skip-generate
+
+echo "[entrypoint] Seeding admin user if not exists..."
+node -e "
+const { PrismaClient } = require('@prisma/client');
+const bcrypt = require('bcryptjs');
+const prisma = new PrismaClient();
+(async () => {
+  const existing = await prisma.user.findUnique({ where: { email: 'admin@kpi-pastoral.com' } });
+  if (existing) { console.log('[seed] Admin user already exists, skipping'); return; }
+  const hash = await bcrypt.hash('PastoralAdmin2026!', 12);
+  await prisma.user.create({ data: { email: 'admin@kpi-pastoral.com', name: 'Administrator', password: hash, role: 'ADMIN' } });
+  console.log('[seed] Admin user created: admin@kpi-pastoral.com');
+})().catch(e => console.error('[seed] Error:', e.message)).finally(() => prisma.\$disconnect());
+"
+
 echo "[entrypoint] Starting server..."
 exec node server.js

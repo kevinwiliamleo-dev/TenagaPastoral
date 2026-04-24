@@ -59,6 +59,9 @@ COPY --from=builder /app/messages ./messages
 # Copy Prisma CLI for db push at runtime (includes WASM binaries in build/)
 COPY --from=builder /app/node_modules/prisma ./node_modules/prisma
 
+# Copy bcryptjs for seed script
+COPY --from=builder /app/node_modules/bcryptjs ./node_modules/bcryptjs
+
 # Copy entrypoint script
 COPY --from=builder /app/scripts/start.sh ./scripts/start.sh
 
