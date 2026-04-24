@@ -12,6 +12,17 @@ if [ -z "$DIRECT_URL" ]; then
   export DIRECT_URL="$DATABASE_URL"
 fi
 
+# Generate AUTH_SECRET if not set (required by NextAuth v5)
+if [ -z "$AUTH_SECRET" ]; then
+  echo "[entrypoint] AUTH_SECRET not set, generating a random secret"
+  export AUTH_SECRET=$(node -e "console.log(require('crypto').randomBytes(32).toString('base64'))")
+fi
+
+# Default AUTH_TRUST_HOST for containerized deployments
+if [ -z "$AUTH_TRUST_HOST" ]; then
+  export AUTH_TRUST_HOST=true
+fi
+
 # Wait for the database to accept TCP connections before running db push
 echo "[entrypoint] Waiting for database to be ready..."
 until node -e "
