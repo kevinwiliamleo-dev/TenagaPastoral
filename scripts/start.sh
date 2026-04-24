@@ -8,8 +8,8 @@ if [ -z "$DATABASE_URL" ]; then
 fi
 
 if [ -z "$DIRECT_URL" ]; then
-  echo "[entrypoint] ERROR: DIRECT_URL is not set (required by prisma/schema.prisma)" >&2
-  exit 1
+  echo "[entrypoint] DIRECT_URL not set, falling back to DATABASE_URL"
+  export DIRECT_URL="$DATABASE_URL"
 fi
 
 # Wait for the database to accept TCP connections before running db push
