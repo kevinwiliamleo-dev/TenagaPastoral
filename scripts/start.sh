@@ -30,6 +30,6 @@ s.on('timeout', () => { s.destroy(); process.exit(1); });
 done
 
 echo "[entrypoint] Running prisma db push..."
-node node_modules/.bin/prisma db push --skip-generate
+node node_modules/prisma/build/index.js db push --skip-generate
 echo "[entrypoint] Starting server..."
 exec node server.js

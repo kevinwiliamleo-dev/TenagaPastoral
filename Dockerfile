@@ -56,9 +56,8 @@ COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
 # Copy i18n message files
 COPY --from=builder /app/messages ./messages
 
-# Copy Prisma CLI + binary for db push at runtime
+# Copy Prisma CLI for db push at runtime (includes WASM binaries in build/)
 COPY --from=builder /app/node_modules/prisma ./node_modules/prisma
-COPY --from=builder /app/node_modules/.bin/prisma ./node_modules/.bin/prisma
 
 # Copy entrypoint script
 COPY --from=builder /app/scripts/start.sh ./scripts/start.sh
